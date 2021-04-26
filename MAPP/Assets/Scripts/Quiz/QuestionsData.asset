@@ -206,7 +206,7 @@ MonoBehaviour:
     - Hindi
     - Kinesiska
     correctAns: Kinesiska
-  - questionInfo: 7340
+  - questionInfo: 2779 + 1969
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
