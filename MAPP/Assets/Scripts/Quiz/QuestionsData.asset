@@ -14,146 +14,205 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   categoryName: 
   questions:
-  - questionInfo: 
+  - questionInfo: "Vilken \xE4r Sveriges huvudstad? "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
     options:
-    - 
-    - 
-    - 
-    correctAns: lol
-  - questionInfo: 
+    - "G\xF6teborg"
+    - "Malm\xF6"
+    - Stockholm
+    correctAns: Stockholm
+  - questionInfo: 'Vem av dessa personer var en Romersk kejsare '
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 'Napoleon I '
+    - Julius Caesar
+    - Karl den Store
+    correctAns: Julius Caesar
+  - questionInfo: '1 megaherz = ?  herz  '
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - '1 000 000                  '
+    - '10 000 000           '
+    - '100 000 '
+    correctAns: '1 000 000                  '
+  - questionInfo: "Vad \xE4r ett exempel p\xE5 ett adjektiv? "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - Stor
+    - "G\xE5r"
+    - "H\xE4st"
+    correctAns: Stor
+  - questionInfo: 1443 + 5817
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 6905
+    - 7260
+    - 7340
+    correctAns: 7260
+  - questionInfo: ' Den minsta planeten '
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 'Venus '
+    - Merkurius
+    - 'Mars '
+    correctAns: Merkurius
+  - questionInfo: "Vilket \xE5r dog Gustav III, efter blivit attackerad p\xE5 en
+      maskeradbal"
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 1792
+    - 1784
+    - 1796
+    correctAns: 1792
+  - questionInfo: "Vilken \xE4r Brasiliens huvudstad? "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - "Bras\xEDlia"
+    - Rio de Janeiro
+    - Sao Paulo
+    correctAns: "Bras\xEDlia"
+  - questionInfo: "Gr\xF6nland \xE4r inget eget land utan h\xF6r till\u2026? "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - Danmark
+    - Island
+    - Sverige
+    correctAns: Danmark
+  - questionInfo: "Vilket \xE5r m\xF6rdades Indiska politikern Mahatma Gandhi "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 1948
+    - '1944 '
+    - 1952
+    correctAns: '1944 '
+  - questionInfo: "Vilka \xE5r var Gustav Vasa Kung av Sverige "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - '1523-1560 '
+    - 1508-1539
+    - 1531-1558
+    correctAns: '1523-1560 '
+  - questionInfo: 'Vilken energi har batteri? '
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - ' Kemisk energi '
+    - 'Elektrisk energi '
+    - "V\xE4rmeenergi "
+    correctAns: 'Elektrisk energi '
+  - questionInfo: "Vad \xE4r ett exempel p\xE5 ett substantiv? "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 'Spring '
+    - "R\xF6d "
+    - 'Tavla '
+    correctAns: 'Tavla '
+  - questionInfo: "Hur m\xE5nga ordklasser finns det? "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 6
+    - 10
+    - 9
+    correctAns: 9
+  - questionInfo: "9.16 \u2212 6.81"
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 2.35
+    - 2.32
+    - ' 1.35'
+    correctAns: 2.35
+  - questionInfo: "Vad \xE4r 1.2 minuter i sekunder?"
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
+    options:
+    - 72
+    - 60
+    - 65
     correctAns: 
-  - questionInfo: 
+  - questionInfo: '3326 + 2862 '
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 5832
+    - 6188
+    - 6455
+    correctAns: 6188
+  - questionInfo: "Den n\xE4rmaste stj\xE4rna som vi kan se fr\xE5n oss, bortsett
+      fr\xE5n solen. "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - 'Betelgeuze '
+    - 'Sirius '
+    - Vega
+    correctAns: 'Sirius '
+  - questionInfo: "Vilket \xE4r v\xE4rldens st\xF6rsta spr\xE5k? "
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
-  - questionInfo: 
+    options:
+    - Engelska
+    - Hindi
+    - Kinesiska
+    correctAns: Kinesiska
+  - questionInfo: 7340
     questionType: 0
     questionImage: {fileID: 0}
     audioClip: {fileID: 0}
     videoClip: {fileID: 0}
-    options: []
-    correctAns: 
+    options:
+    - 5002
+    - 4670
+    - 4748
+    correctAns: 4748
