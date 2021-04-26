@@ -8,7 +8,7 @@ public class QuizGameUI : MonoBehaviour
 {
 #pragma warning disable 649
     [SerializeField] private QuizManager quizManager;               //ref to the QuizManager script
-    [SerializeField] private CategoryBtnScript categoryBtnPrefab;
+   //[SerializeField] private CategoryBtnScript categoryBtnPrefab;
     [SerializeField] private GameObject scrollHolder;
     [SerializeField] private Text scoreText, timerText;
     [SerializeField] private List<Image> lifeImageList;
