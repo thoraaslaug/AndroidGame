@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
     public int laneNum = 2;
     public float horizVel = 0;
     public string controlLocked = "n";
+    bool toggle = false;
+    private Vector3 move;
+    public float forwardSpeed;
+    public float maxSpeed;
 
     private void FixedUpdate()
     {
@@ -36,17 +40,35 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Rigidbody>().velocity = new Vector3(horizVel, 0, 4);
 
         rb.MovePosition(rb.position + forwardMove);
+
+        if (toggle)
+        {
+            toggle = false;
+            if (forwardSpeed < maxSpeed)
+                forwardSpeed += 0.2f * Time.fixedDeltaTime;
+        }
+        else
+        {
+            toggle = true;
+            if (Time.timeScale < 2f)
+                Time.timeScale += 0.01f * Time.fixedDeltaTime;
+        }
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        horizentalInput = Input.GetAxis("Horizontal");
+       
+
+    horizentalInput = Input.GetAxis("Horizontal");
 
         if (transform.position.y < -5)
         {
             Die();
         }
+
+
     }
 
     public void Die()
