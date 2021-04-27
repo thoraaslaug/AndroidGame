@@ -3522,6 +3522,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: maxSpeed
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: forwardSpeed
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: m_Name
       value: Player
