@@ -100,6 +100,10 @@ MonoBehaviour:
   speed: 5
   rb: {fileID: 290833025451896410}
   horizontalMuliplier: 2
+  jumpForce: 400
+  groundMask:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!1 &290833027307810434
 GameObject:
   m_ObjectHideFlags: 0
