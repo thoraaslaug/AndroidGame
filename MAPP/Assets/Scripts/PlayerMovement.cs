@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,14 +11,30 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody rb;
     float horizentalInput;
     [SerializeField] float horizontalMuliplier = 2f;
+    public int laneNum = 2;
+    public float horizVel = 0;
+    public string controlLocked = "n";
 
     private void FixedUpdate()
     {
         if (!alive) return;
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = transform.right * horizentalInput * speed * Time.fixedDeltaTime*horizontalMuliplier;
-        rb.MovePosition(rb.position + forwardMove+horizontalMove);
+        if (Input.GetAxis("Horizontal") > 0 && (laneNum < 3) && (controlLocked == "n")) {
+            horizVel = 7;
+            StartCoroutine(stopSlide());
+            laneNum += 1;
+            controlLocked = "y";
+        }
+        if (Input.GetAxis("Horizontal") < 0 && (laneNum > 1) && (controlLocked == "n")) {
+            horizVel = -7;
+            StartCoroutine(stopSlide());
+            laneNum -= 1;
+            controlLocked = "y";
+        }
+        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, 0, 4);
+
+        rb.MovePosition(rb.position + forwardMove);
     }
 
     // Update is called once per frame
@@ -43,5 +61,9 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
+    IEnumerator stopSlide() {
+        yield return new WaitForSeconds(.5f);
+        horizVel = 0;
+        controlLocked = "n";
+    }
 }
