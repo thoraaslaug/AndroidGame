@@ -1,5 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using System.Collections;
+using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -9,34 +11,63 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Rigidbody rb;
     float horizentalInput;
     [SerializeField] float horizontalMuliplier = 2f;
-
-    [SerializeField] float jumpForce = 400f;
-
-    [SerializeField] LayerMask groundMask;
+    public int laneNum = 2;
+    public float horizVel = 0;
+    public string controlLocked = "n";
+    bool toggle = false;
+    private Vector3 move;
+    public float forwardSpeed;
+    public float maxSpeed;
 
     private void FixedUpdate()
     {
         if (!alive) return;
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        Vector3 horizontalMove = transform.right * horizentalInput * speed * Time.fixedDeltaTime*horizontalMuliplier;
-        rb.MovePosition(rb.position + forwardMove+horizontalMove);
+
+        if (Input.GetAxis("Horizontal") > 0 && (laneNum < 3) && (controlLocked == "n")) {
+            horizVel = 7;
+            StartCoroutine(stopSlide());
+            laneNum += 1;
+            controlLocked = "y";
+        }
+        if (Input.GetAxis("Horizontal") < 0 && (laneNum > 1) && (controlLocked == "n")) {
+            horizVel = -7;
+            StartCoroutine(stopSlide());
+            laneNum -= 1;
+            controlLocked = "y";
+        }
+        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, 0, 4);
+
+        rb.MovePosition(rb.position + forwardMove);
+
+        if (toggle)
+        {
+            toggle = false;
+            if (forwardSpeed < maxSpeed)
+                forwardSpeed += 0.2f * Time.fixedDeltaTime;
+        }
+        else
+        {
+            toggle = true;
+            if (Time.timeScale < 2f)
+                Time.timeScale += 0.01f * Time.fixedDeltaTime;
+        }
     }
+
 
     // Update is called once per frame
     void Update()
     {
-        horizentalInput = Input.GetAxis("Horizontal");
+       
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
+    horizentalInput = Input.GetAxis("Horizontal");
 
         if (transform.position.y < -5)
         {
             Die();
         }
+
 
     }
 
@@ -53,13 +84,10 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-
-    void Jump()
-    {
-        float height = GetComponent<Collider>().bounds.size.y;
-        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
-
-        rb.AddForce(Vector3.up * jumpForce);
+    IEnumerator stopSlide() {
+        yield return new WaitForSeconds(.5f);
+        horizVel = 0;
+        controlLocked = "n";
     }
 
 }
