@@ -148,9 +148,7 @@ public class Question
 {
     public string questionInfo;         //question text
     public QuestionType questionType;   //type
-    public Sprite questionImage;        //image for Image Type
-    public AudioClip audioClip;         //audio for audio type
-    public UnityEngine.Video.VideoClip videoClip;   //video for video type
+    
     public List<string> options;        //options to select
     public string correctAns;           //correct option
 }
@@ -158,10 +156,7 @@ public class Question
 [System.Serializable]
 public enum QuestionType
 {
-    TEXT,
-    IMAGE,
-    AUDIO,
-    VIDEO
+    TEXT
 }
 
 [SerializeField]
