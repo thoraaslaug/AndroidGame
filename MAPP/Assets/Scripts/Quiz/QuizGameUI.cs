@@ -14,9 +14,9 @@ public class QuizGameUI : MonoBehaviour
     [SerializeField] private List<Image> lifeImageList;
     [SerializeField] private GameObject gameOverPanel, mainMenu, gamePanel;
     [SerializeField] private Color correctCol, wrongCol, normalCol; //color of buttons
-    //[SerializeField] private Image questionImg;                     //image component to show image
-    //[SerializeField] private UnityEngine.Video.VideoPlayer questionVideo;   //to show video
-    //[SerializeField] private AudioSource questionAudio;             //audio source for audio clip
+    [SerializeField] private Image questionImg;                     //image component to show image
+    [SerializeField] private UnityEngine.Video.VideoPlayer questionVideo;   //to show video
+    [SerializeField] private AudioSource questionAudio;             //audio source for audio clip
     [SerializeField] private Text questionInfoText;                 //text to show question
     [SerializeField] private List<Button> options;                  //options button reference
 #pragma warning restore 649
@@ -53,7 +53,7 @@ public class QuizGameUI : MonoBehaviour
         switch (question.questionType)
         {
             case QuestionType.TEXT:
-                //questionImg.transform.parent.gameObject.SetActive(false);   //deactivate image holder
+                questionImg.transform.parent.gameObject.SetActive(false);   //deactivate image holder
                 break;
           
         }
@@ -91,7 +91,7 @@ public class QuizGameUI : MonoBehaviour
         if (question.questionType == QuestionType.AUDIO)
         {
             //PlayOneShot
-            //questionAudio.PlayOneShot(question.audioClip);
+            questionAudio.PlayOneShot(question.audioClip);
             //wait for few seconds
             yield return new WaitForSeconds(audioLength + 0.5f);
             //play again
