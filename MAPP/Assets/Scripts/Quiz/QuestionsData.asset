@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 906d6c19b61d5b04e80f5d696c622775, type: 3}
   m_Name: QuestionsData
   m_EditorClassIdentifier: 
-  categoryName: Min
+  categoryName: 
   questions:
   - questionInfo: "Vilken \xE4r Sveriges huvudstad? "
     questionType: 0
