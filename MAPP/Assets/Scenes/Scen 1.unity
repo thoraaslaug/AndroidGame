@@ -816,10 +816,13 @@ CanvasRenderer:
   m_GameObject: {fileID: 463654836}
   m_CullTransparentMesh: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
 =======
 >>>>>>> parent of 892e48d (Revert "Merge branch 'main' of https://github.com/thoaram/MAPP13 into main")
+=======
+>>>>>>> parent of 4f12036 (Merge branch 'main' of https://github.com/thoaram/MAPP13 into main)
 --- !u!1 &467909080
 GameObject:
   m_ObjectHideFlags: 0
@@ -837,10 +840,14 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
 <<<<<<< HEAD
+<<<<<<< HEAD
   m_IsActive: 0
 =======
   m_IsActive: 1
 >>>>>>> parent of 892e48d (Revert "Merge branch 'main' of https://github.com/thoaram/MAPP13 into main")
+=======
+  m_IsActive: 1
+>>>>>>> parent of 4f12036 (Merge branch 'main' of https://github.com/thoaram/MAPP13 into main)
 --- !u!224 &467909081
 RectTransform:
   m_ObjectHideFlags: 0
@@ -871,9 +878,12 @@ CanvasRenderer:
   m_GameObject: {fileID: 467909080}
   m_CullTransparentMesh: 1
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 >>>>>>> parent of 6230974 (Fixad version av Quizet)
 >>>>>>> parent of 892e48d (Revert "Merge branch 'main' of https://github.com/thoaram/MAPP13 into main")
+=======
+>>>>>>> parent of 4f12036 (Merge branch 'main' of https://github.com/thoaram/MAPP13 into main)
 --- !u!1 &548108063
 GameObject:
   m_ObjectHideFlags: 0
@@ -1861,8 +1871,23 @@ Transform:
   m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
 <<<<<<< HEAD
+=======
+--- !u!114 &1009199101
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1009199099}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 681fef8cff3b8ac49b5a0003cad27cb2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+>>>>>>> parent of 4f12036 (Merge branch 'main' of https://github.com/thoaram/MAPP13 into main)
 --- !u!1 &1053532687
 =======
 >>>>>>> parent of 892e48d (Revert "Merge branch 'main' of https://github.com/thoaram/MAPP13 into main")
@@ -3167,6 +3192,7 @@ MonoBehaviour:
   wrongCol: {r: 1, g: 0, b: 0, a: 0}
   normalCol: {r: 0.06061351, g: 0, b: 0.3584906, a: 0}
 <<<<<<< HEAD
+<<<<<<< HEAD
   questionInfoText: {fileID: 650898130}
 =======
 <<<<<<< HEAD
@@ -3175,6 +3201,8 @@ MonoBehaviour:
   questionAudio: {fileID: 0}
 =======
 >>>>>>> parent of 6230974 (Fixad version av Quizet)
+=======
+>>>>>>> parent of 4f12036 (Merge branch 'main' of https://github.com/thoaram/MAPP13 into main)
   questionInfoText: {fileID: 1193719125}
 >>>>>>> parent of 892e48d (Revert "Merge branch 'main' of https://github.com/thoaram/MAPP13 into main")
   options:
