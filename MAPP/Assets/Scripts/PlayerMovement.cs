@@ -19,6 +19,10 @@ public class PlayerMovement : MonoBehaviour
     public float forwardSpeed;
     public float maxSpeed;
 
+    [SerializeField] float jumpForce = 10f;
+
+    [SerializeField] LayerMask groundMask;
+
     private void FixedUpdate()
     {
         if (!alive) return;
@@ -67,7 +71,10 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
-
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
 
     }
 
@@ -88,6 +95,14 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(.5f);
         horizVel = 0;
         controlLocked = "n";
+    }
+
+    void Jump()
+    {
+        float height = GetComponent<Collider>().bounds.size.y;
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
+
+        rb.AddForce(Vector3.up * jumpForce);
     }
 
 }
