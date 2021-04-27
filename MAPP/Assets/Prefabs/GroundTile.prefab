@@ -205,6 +205,7 @@ Transform:
   - {fileID: 893896962735418633}
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
   - {fileID: 8118037905512146273}
   - {fileID: 6806022987981054136}
   - {fileID: 2862686503684397779}
@@ -212,6 +213,8 @@ Transform:
   - {fileID: 1837089481847726962}
   - {fileID: 7669807826372518310}
 >>>>>>> d5aa0c678848cf434bb6e1cc1b82ef7f8880d22e
+=======
+>>>>>>> parent of 1456e18 (Player and Room)
 =======
 >>>>>>> parent of 1456e18 (Player and Room)
   m_Father: {fileID: 0}
@@ -316,6 +319,7 @@ Transform:
   m_Father: {fileID: 8084995399139764066}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
 --- !u!1001 &2862686503684784211
@@ -717,5 +721,7 @@ Transform:
   m_PrefabInstance: {fileID: 5891996202886306702}
 >>>>>>> d5aa0c678848cf434bb6e1cc1b82ef7f8880d22e
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> parent of 1456e18 (Player and Room)
 =======
 >>>>>>> parent of 1456e18 (Player and Room)
