@@ -1,7 +1,5 @@
 
 using UnityEngine;
-using System;
-using System.Collections;
 
 public class GroundTile : MonoBehaviour
 {
@@ -25,23 +23,14 @@ public class GroundTile : MonoBehaviour
         
     }
 
-    public UnityEngine.GameObject obstaclePrefab;
-    public UnityEngine.GameObject obstaclePrefabtwo;
-    public UnityEngine.GameObject obstaclePrefabthree;
+    public GameObject obstaclePrefab;
 
     void SpawnObstacle()
     {
-        GameObject[] obstacles = new GameObject[4];
-        obstacles.SetValue(obstaclePrefab, 1);
-        obstacles.SetValue(obstaclePrefabtwo, 2);
-        obstacles.SetValue(obstaclePrefabthree, 3);
-        System.Random rand = new System.Random();
-        int rndnmb = rand.Next(1, 3);
-        int obstacleSpawnIndex = UnityEngine.Random.Range(3, 5);
+        int obstacleSpawnIndex = Random.Range(3, 5);
         Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
-        Instantiate(obstacles[rndnmb], spawnPoint.position, Quaternion.identity, transform);
-    }
 
-    
+        Instantiate(obstaclePrefab, spawnPoint.position, Quaternion.identity, transform);
+    }
 }
 
