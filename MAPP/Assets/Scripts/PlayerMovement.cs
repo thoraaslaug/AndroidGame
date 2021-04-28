@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float jumpForce = 400f;
 
-    [SerializeField] LayerMask groundMask;
+    [SerializeField] LayerMask groundLayerMask;
 
     private void FixedUpdate()
     {
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
-        
+
         rb.MovePosition(rb.position + forwardMove);
         
         if (toggle)
@@ -102,8 +102,9 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         float height = GetComponent<Collider>().bounds.size.y;
-        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
 
-        rb.AddForce(Vector3.up * jumpForce);
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
+        
+        if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
     }
 }
