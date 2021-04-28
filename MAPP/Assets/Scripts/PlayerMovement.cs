@@ -19,28 +19,47 @@ public class PlayerMovement : MonoBehaviour
     public float forwardSpeed;
     public float maxSpeed;
 
+    [SerializeField] float jumpForce = 400f;
+
+    [SerializeField] LayerMask groundMask;
+
     private void FixedUpdate()
     {
         if (!alive) return;
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
 
+        
         if (Input.GetAxis("Horizontal") > 0 && (laneNum < 3) && (controlLocked == "n")) {
-            horizVel = 7;
+            horizVel = 10;
             StartCoroutine(stopSlide());
             laneNum += 1;
             controlLocked = "y";
         }
+
         if (Input.GetAxis("Horizontal") < 0 && (laneNum > 1) && (controlLocked == "n")) {
-            horizVel = -7;
+            horizVel = -10;
             StartCoroutine(stopSlide());
             laneNum -= 1;
             controlLocked = "y";
         }
-        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, 0, 4);
 
+        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
+
+        horizentalInput = Input.GetAxis("Horizontal");
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            Jump();
+        }
+
+        if (transform.position.y < -5)
+        {
+            Die();
+        }
+        
         rb.MovePosition(rb.position + forwardMove);
-
+        
         if (toggle)
         {
             toggle = false;
@@ -53,22 +72,12 @@ public class PlayerMovement : MonoBehaviour
             if (Time.timeScale < 2f)
                 Time.timeScale += 0.01f * Time.fixedDeltaTime;
         }
+        
     }
 
-
-    // Update is called once per frame
     void Update()
     {
-       
-
-    horizentalInput = Input.GetAxis("Horizontal");
-
-        if (transform.position.y < -5)
-        {
-            Die();
-        }
-
-
+        
     }
 
     public void Die()
@@ -85,9 +94,16 @@ public class PlayerMovement : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
     IEnumerator stopSlide() {
-        yield return new WaitForSeconds(.5f);
+        yield return new WaitForSeconds(.3f);
         horizVel = 0;
         controlLocked = "n";
     }
 
+    void Jump()
+    {
+        float height = GetComponent<Collider>().bounds.size.y;
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
+
+        rb.AddForce(Vector3.up * jumpForce);
+    }
 }
