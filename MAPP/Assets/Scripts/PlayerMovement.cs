@@ -21,7 +21,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float jumpForce = 400f;
 
-    [SerializeField] LayerMask groundMask;
+    [SerializeField] LayerMask groundLayerMask;
 
     private void FixedUpdate()
     {
@@ -29,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
 
-        
+       
+
+
         if (Input.GetAxis("Horizontal") > 0 && (laneNum < 3) && (controlLocked == "n")) {
             horizVel = 10;
             StartCoroutine(stopSlide());
@@ -48,16 +50,13 @@ public class PlayerMovement : MonoBehaviour
 
         horizentalInput = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
+        
 
         if (transform.position.y < -5)
         {
             Die();
         }
-        
+
         rb.MovePosition(rb.position + forwardMove);
         
         if (toggle)
@@ -77,7 +76,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Jump();
+        }
+
     }
 
     public void Die()
@@ -102,8 +104,9 @@ public class PlayerMovement : MonoBehaviour
     void Jump()
     {
         float height = GetComponent<Collider>().bounds.size.y;
-        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundMask);
 
-        rb.AddForce(Vector3.up * jumpForce);
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
+        
+        if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
     }
 }

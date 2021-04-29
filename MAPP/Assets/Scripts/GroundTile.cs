@@ -36,8 +36,8 @@ public class GroundTile : MonoBehaviour
         obstacles.SetValue(obstaclePrefabtwo, 2);
         obstacles.SetValue(obstaclePrefabthree, 3);
         System.Random rand = new System.Random();
-        int rndnmb = rand.Next(1, 3);
-        int obstacleSpawnIndex = UnityEngine.Random.Range(3, 5);
+        int rndnmb = rand.Next(1, 4);
+        int obstacleSpawnIndex = UnityEngine.Random.Range(2, 5);
         Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
         Instantiate(obstacles[rndnmb], spawnPoint.position, Quaternion.identity, transform);
     }
