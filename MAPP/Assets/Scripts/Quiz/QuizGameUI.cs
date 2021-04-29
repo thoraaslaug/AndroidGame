@@ -4,7 +4,8 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class QuizGameUI : MonoBehaviour
+/*
+ * public class QuizGameUI : MonoBehaviour
 {
 #pragma warning disable 649
     [SerializeField] private QuizManager quizManager;               //ref to the QuizManager script
@@ -182,3 +183,4 @@ public class QuizGameUI : MonoBehaviour
     }
 
 }
+*/

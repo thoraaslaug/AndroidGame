@@ -2,7 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class QuizManager : MonoBehaviour
 {
 #pragma warning disable 649
@@ -169,4 +169,6 @@ public enum GameStatus
 {
     PLAYING,
     NEXT
+
 }
+*/
