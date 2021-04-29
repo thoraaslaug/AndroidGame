@@ -12,7 +12,6 @@ public class PlayerMovement : MonoBehaviour
     float horizentalInput;
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
-
     public int QuizAmount = 0;
     [SerializeField] private int amountToCollect = 20;
     [SerializeField] int levelToLoad;
@@ -97,9 +96,10 @@ public class PlayerMovement : MonoBehaviour
     public void Die()
     {
         alive = false;
-
+        QuizAmount = 0;
         // Restart the game with a 2 second delay
         Invoke("Restart", 2);
+        
 
     }
 
@@ -127,7 +127,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform pauseGame()
     {
 
-        Debug.Log("I am pauseing");
+        Debug.Log("I am pausing");
         return gameObject.transform;
     }
 
