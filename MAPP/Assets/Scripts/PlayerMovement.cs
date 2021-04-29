@@ -12,10 +12,6 @@ public class PlayerMovement : MonoBehaviour
     float horizentalInput;
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
-<<<<<<< HEAD
-=======
-   
->>>>>>> JiangNew
     public int QuizAmount = 0;
     [SerializeField] private int amountToCollect = 20;
     [SerializeField] int levelToLoad;
@@ -29,8 +25,6 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float jumpForce = 400f;
 
     [SerializeField] LayerMask groundLayerMask;
-
-    //*********quiz
     [SerializeField] Animator anim;
     [SerializeField] int currentRightAnswer;
 
@@ -127,10 +121,7 @@ public class PlayerMovement : MonoBehaviour
         
         if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
     }
-<<<<<<< HEAD
-=======
 
-    //quiz
     public Transform pauseGame()
     {
       
@@ -146,15 +137,10 @@ public class PlayerMovement : MonoBehaviour
     {
         return currentRightAnswer;
     }
-    //*****************
 
->>>>>>> JiangNew
     public void QuizCounter()
     {
         QuizAmount++;
     }
-<<<<<<< HEAD
-=======
 
->>>>>>> JiangNew
 }

@@ -16,8 +16,6 @@ public class QuizCounter : MonoBehaviour
             {
                collision.GetComponent<PlayerMovement>().QuizCounter();
             }
-            
-
         }
     }
 }
