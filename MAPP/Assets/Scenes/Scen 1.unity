@@ -1653,10 +1653,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 412e0dc0a394e854a80f77aa4901c840, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizGameUI: {fileID: 1595851968}
-  quizDataList:
-  - {fileID: 11400000, guid: 94e2a60c092e9394ebc5fe8d410ca78d, type: 2}
-  timeInSeconds: 1000000
 --- !u!1 &862478954
 GameObject:
   m_ObjectHideFlags: 0
@@ -2924,13 +2920,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f2033777e40dca4bab612a8a8a1f5c1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 0
+  spawnTime: 5
   questPanel: {fileID: 1316261051}
   questionText: {fileID: 576041538}
   answer1: {fileID: 1471676840}
   answer2: {fileID: 2138211425}
   answer3: {fileID: 1260267990}
-  hinder: {fileID: 1396384808925681518, guid: 0df15e7b1d442c9429aff83fe071bcea, type: 3}
+  hinder: {fileID: 2045334975520078406, guid: 0df15e7b1d442c9429aff83fe071bcea, type: 3}
 --- !u!4 &1405944744
 Transform:
   m_ObjectHideFlags: 0
@@ -3275,26 +3271,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5059e7cc7424725498167ec1e50fb0b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  quizManager: {fileID: 838081690}
-  categoryBtnPrefab: {fileID: 3544487920038157689, guid: f2380049983d61d43aa5dcf9e360a72d, type: 3}
-  scrollHolder: {fileID: 2123869236}
-  scoreText: {fileID: 1147355276}
-  timerText: {fileID: 120186456}
-  lifeImageList:
-  - {fileID: 1143835771}
-  - {fileID: 1137531332}
-  - {fileID: 1610990836}
-  gameOverPanel: {fileID: 1902277368}
-  mainMenu: {fileID: 467909080}
-  gamePanel: {fileID: 1405855447}
-  correctCol: {r: 0.11645889, g: 1, b: 0, a: 0}
-  wrongCol: {r: 1, g: 0, b: 0, a: 0}
-  normalCol: {r: 0.06061351, g: 0, b: 0.3584906, a: 0}
-  questionInfoText: {fileID: 650898130}
-  options:
-  - {fileID: 376268577}
-  - {fileID: 1533471681}
-  - {fileID: 1180355297}
 --- !u!4 &1595851969
 Transform:
   m_ObjectHideFlags: 0
