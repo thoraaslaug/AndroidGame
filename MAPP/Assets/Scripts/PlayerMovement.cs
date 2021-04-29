@@ -12,6 +12,10 @@ public class PlayerMovement : MonoBehaviour
     float horizentalInput;
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
+   
+    public int QuizAmount = 0;
+    [SerializeField] private int amountToCollect = 20;
+    [SerializeField] int levelToLoad;
     public float horizVel = 0;
     public string controlLocked = "n";
     bool toggle = false;
@@ -133,6 +137,9 @@ public class PlayerMovement : MonoBehaviour
     }
     //*****************
 
-
+    public void QuizCounter()
+    {
+        QuizAmount++;
+    }
 
 }
