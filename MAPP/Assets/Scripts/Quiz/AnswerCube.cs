@@ -44,7 +44,7 @@ public class AnswerCube : MonoBehaviour
         }
         else
         {
-            coll.gameObject.GetComponent<BoxCollider>().enabled = false;
+            coll.gameObject.GetComponent<CapsuleCollider>().enabled = false;
             Destroy(coll.gameObject);
         }
 
