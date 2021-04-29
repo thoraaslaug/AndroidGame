@@ -31,6 +31,7 @@ public class AnswerCube : MonoBehaviour
         {
             if (coll.GetComponent<PlayerMovement>().getCurrentAnserIndex() == representNumb)
             {
+                Debug.Log("lol");
                 quizUI.setPanelOaktiv();
                 Destroy(parent, 1f);
                 Destroy(gameObject);
