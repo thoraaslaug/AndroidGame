@@ -4,10 +4,8 @@
 TagManager:
   serializedVersion: 2
   tags:
-  - Button1
-  - Button2
-  - New tag
-  - Button3
+  - Answers
+  - Obstacles
   layers:
   - Default
   - TransparentFX
@@ -15,7 +13,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Ground
+  - 
   - 
   - 
   - 
