@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
 {
     bool alive = true;
 
-    [SerializeField ]float speed  = 5;
+    [SerializeField] float speed = 5;
     [SerializeField] Rigidbody rb;
     float horizentalInput;
     [SerializeField] float horizontalMuliplier = 2f;
@@ -26,23 +26,30 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] LayerMask groundLayerMask;
 
+    //*********quiz
+    [SerializeField] Animator anim;
+    [SerializeField] int currentRightAnswer;
+
+
     private void FixedUpdate()
     {
         if (!alive) return;
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
 
-       
 
 
-        if (Input.GetAxis("Horizontal") > 0 && (laneNum < 3) && (controlLocked == "n")) {
+
+        if (Input.GetAxis("Horizontal") > 0 && (laneNum < 3) && (controlLocked == "n"))
+        {
             horizVel = 10;
             StartCoroutine(stopSlide());
             laneNum += 1;
             controlLocked = "y";
         }
 
-        if (Input.GetAxis("Horizontal") < 0 && (laneNum > 1) && (controlLocked == "n")) {
+        if (Input.GetAxis("Horizontal") < 0 && (laneNum > 1) && (controlLocked == "n"))
+        {
             horizVel = -10;
             StartCoroutine(stopSlide());
             laneNum -= 1;
@@ -53,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
 
         horizentalInput = Input.GetAxis("Horizontal");
 
-        
+
 
         if (transform.position.y < -5)
         {
@@ -61,7 +68,7 @@ public class PlayerMovement : MonoBehaviour
         }
 
         rb.MovePosition(rb.position + forwardMove);
-        
+
         if (toggle)
         {
             toggle = false;
@@ -74,17 +81,13 @@ public class PlayerMovement : MonoBehaviour
             if (Time.timeScale < 2f)
                 Time.timeScale += 0.01f * Time.fixedDeltaTime;
         }
-        
+
     }
 
     void Update()
     {
-        if (QuizAmount >= amountToCollect)
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            SceneManager.LoadScene(levelToLoad);
-        }
-
-        if (Input.GetKeyDown(KeyCode.Space)) {
             Jump();
         }
 
@@ -104,7 +107,8 @@ public class PlayerMovement : MonoBehaviour
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
-    IEnumerator stopSlide() {
+    IEnumerator stopSlide()
+    {
         yield return new WaitForSeconds(.3f);
         horizVel = 0;
         controlLocked = "n";
@@ -115,11 +119,31 @@ public class PlayerMovement : MonoBehaviour
         float height = GetComponent<Collider>().bounds.size.y;
 
         bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
-        
+
         if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
     }
+
+    //quiz
+    public Transform pauseGame()
+    {
+
+        Debug.Log("I am pausing");
+        return gameObject.transform;
+    }
+
+    public void setCurrentAnswerIndex(int i)
+    {
+        currentRightAnswer = i;
+    }
+    public int getCurrentAnserIndex()
+    {
+        return currentRightAnswer;
+    }
+    //*****************
+
     public void QuizCounter()
     {
         QuizAmount++;
     }
+
 }
