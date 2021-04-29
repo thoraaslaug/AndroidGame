@@ -23,6 +23,11 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] LayerMask groundLayerMask;
 
+    //*********quiz
+    [SerializeField] Animator anim;
+    [SerializeField] int currentRightAnswer;
+
+
     private void FixedUpdate()
     {
         if (!alive) return;
@@ -109,4 +114,25 @@ public class PlayerMovement : MonoBehaviour
         
         if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
     }
+
+    //quiz
+    public Transform pauseGame()
+    {
+      
+        Debug.Log("I am pauseing");
+        return gameObject.transform;
+    }
+
+    public void setCurrentAnswerIndex(int i)
+    {
+        currentRightAnswer = i;
+    }
+    public int getCurrentAnserIndex()
+    {
+        return currentRightAnswer;
+    }
+    //*****************
+
+
+
 }

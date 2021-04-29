@@ -17,6 +17,11 @@ public class Obstacle : MonoBehaviour
         if (collision.gameObject.name == "Player")
         {
             playerMovement.Die();
+        }else
+       
+        {
+            gameObject.GetComponent<BoxCollider>().enabled = false;
+            Destroy(gameObject);
         }
     }
 
