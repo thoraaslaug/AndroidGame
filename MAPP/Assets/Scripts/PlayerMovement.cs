@@ -29,7 +29,9 @@ public class PlayerMovement : MonoBehaviour
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
 
-        
+       
+
+
         if (Input.GetAxis("Horizontal") > 0 && (laneNum < 3) && (controlLocked == "n")) {
             horizVel = 10;
             StartCoroutine(stopSlide());
@@ -48,10 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         horizentalInput = Input.GetAxis("Horizontal");
 
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            Jump();
-        }
+        
 
         if (transform.position.y < -5)
         {
@@ -77,7 +76,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.Space)) {
+            Jump();
+        }
+
     }
 
     public void Die()
