@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float speed = 5;
     [SerializeField] Rigidbody rb;
-    float horizentalInput;
+    
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
     public int QuizAmount = 0;
@@ -28,6 +28,7 @@ public class PlayerMovement : MonoBehaviour
 
     //*********quiz
     [SerializeField] Animator anim;
+    [SerializeField] Joystick joystick;
     [SerializeField] int currentRightAnswer;
 
 
@@ -40,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (Input.GetAxis("Horizontal") > 0 && (laneNum < 3) && (controlLocked == "n"))
+        if (joystick.Horizontal >= 0.1 && (laneNum < 3) && (controlLocked == "n"))
         {
             horizVel = 12;
             StartCoroutine(stopSlide());
@@ -48,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
             controlLocked = "y";
         }
 
-        if (Input.GetAxis("Horizontal") < 0 && (laneNum > 1) && (controlLocked == "n"))
+        if (joystick.Horizontal < 0 && (laneNum > 1) && (controlLocked == "n"))
         {
             horizVel = -12;
             StartCoroutine(stopSlide());
@@ -58,7 +59,8 @@ public class PlayerMovement : MonoBehaviour
 
         GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
-        horizentalInput = Input.GetAxis("Horizontal");
+        float horizentalInput = joystick.Horizontal;
+        
 
 
 
@@ -86,7 +88,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        float verticalMove = joystick.Vertical;
+        if (verticalMove >= 5)
         {
             Jump();
         }
