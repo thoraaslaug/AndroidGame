@@ -33,6 +33,8 @@ public class AnswerCube : MonoBehaviour
             {
                 Debug.Log("lol");
                 quizUI.setPanelOaktiv();
+                coll.GetComponent<PlayerState>().quizCounter();
+                coll.GetComponent<PlayerState>().setCounter();
                 Destroy(parent, 1f);
                 Destroy(gameObject);
             }
@@ -43,11 +45,7 @@ public class AnswerCube : MonoBehaviour
 
 
         }
-        else
-        {
-            coll.gameObject.GetComponent<BoxCollider>().enabled = false;
-            Destroy(coll.gameObject);
-        }
+   
 
     }
 

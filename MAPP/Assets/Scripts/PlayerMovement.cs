@@ -42,7 +42,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetAxis("Horizontal") > 0 && (laneNum < 3) && (controlLocked == "n"))
         {
-            horizVel = 10;
+            horizVel = 12;
             StartCoroutine(stopSlide());
             laneNum += 1;
             controlLocked = "y";
@@ -50,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (Input.GetAxis("Horizontal") < 0 && (laneNum > 1) && (controlLocked == "n"))
         {
-            horizVel = -10;
+            horizVel = -12;
             StartCoroutine(stopSlide());
             laneNum -= 1;
             controlLocked = "y";
