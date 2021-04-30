@@ -41,7 +41,7 @@ public class PlayerMovement : MonoBehaviour
 
 
 
-        if (joystick.Horizontal >= 0.1 && (laneNum < 3) && (controlLocked == "n"))
+        if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
         {
             horizVel = 12;
             StartCoroutine(stopSlide());
@@ -49,7 +49,7 @@ public class PlayerMovement : MonoBehaviour
             controlLocked = "y";
         }
 
-        if (joystick.Horizontal < 0 && (laneNum > 1) && (controlLocked == "n"))
+        if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
         {
             horizVel = -12;
             StartCoroutine(stopSlide());
