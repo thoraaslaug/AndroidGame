@@ -5,6 +5,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     PlayerMovement playerMovement;
+    [SerializeField] private GameObject objectToDestory;
 
     void Start()
     {
@@ -12,13 +13,18 @@ public class Obstacle : MonoBehaviour
     }
 
     private void OnCollisionEnter(Collision collision)
-    {
-        // Kill the player
-        if (collision.gameObject.name == "Player")
+   {
+       //  Kill the player
+       if (collision.gameObject.name == "Player")
         {
-            playerMovement.Die();
+           playerMovement.Die();
+        }
+        if(collision.gameObject.tag == "Answers")
+        {
+            Destroy(objectToDestory);
         }
     }
+
 
     void Update()
     {

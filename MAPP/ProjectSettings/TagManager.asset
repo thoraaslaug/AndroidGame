@@ -8,6 +8,8 @@ TagManager:
   - Button2
   - New tag
   - Button3
+  - Answers
+  - Obstacle
   layers:
   - Default
   - TransparentFX

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: -302598607380026832}
   m_Layer: 0
   m_Name: Obstacletable
-  m_TagString: Untagged
+  m_TagString: Obstacle
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -111,8 +111,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1.7272816, y: 1.2187607, z: 1.1905923}
-  m_Center: {x: 0.013488531, y: 0.5577564, z: -0.11427647}
+  m_Size: {x: 1.4244181, y: 1.2187607, z: 0.9580742}
+  m_Center: {x: -0.0054844855, y: 0.5577564, z: -0.060079288}
 --- !u!114 &-302598607380026832
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -125,3 +125,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bd222bd21ce77448e59f103b1b83c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  objectToDestory: {fileID: 1729782501303860}
