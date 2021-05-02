@@ -16,6 +16,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private int amountToCollect = 20;
     [SerializeField] int levelToLoad;
     public float horizVel = 0;
+    public float verticalMove = 0;
     public string controlLocked = "n";
     bool toggle = false;
     private Vector3 move;
@@ -60,7 +61,7 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
         float horizentalInput = joystick.Horizontal;
-        
+        verticalMove = joystick.Vertical;
 
 
 
@@ -88,8 +89,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float verticalMove = joystick.Vertical;
-        if (verticalMove >= 5)
+        
+        if (joystick.Vertical >= 0.5)
         {
             Jump();
         }
