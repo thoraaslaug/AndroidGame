@@ -526,6 +526,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8790315216830233166, guid: 4af7da65169b48c47b3b86e7d6323744, type: 3}
+      propertyPath: m_Convex
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8790315216830233166, guid: 4af7da65169b48c47b3b86e7d6323744, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4af7da65169b48c47b3b86e7d6323744, type: 3}
 --- !u!4 &148480724109972651 stripped
@@ -606,6 +614,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8084995399139764066}
     m_Modifications:
+    - target: {fileID: -7082523171883417226, guid: 288b229db858c114299d1bf70ffc95cd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1336309957540940, guid: 288b229db858c114299d1bf70ffc95cd, type: 3}
       propertyPath: m_Name
       value: wall4 (1)
@@ -680,6 +692,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8084995399139764066}
     m_Modifications:
+    - target: {fileID: -7082523171883417226, guid: 288b229db858c114299d1bf70ffc95cd, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1336309957540940, guid: 288b229db858c114299d1bf70ffc95cd, type: 3}
       propertyPath: m_Name
       value: wall4 (2)
@@ -886,6 +902,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8084995399139764066}
     m_Modifications:
+    - target: {fileID: -3764384105875501502, guid: 0480571cf64de034d9d908aa51157db8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1796756107964060, guid: 0480571cf64de034d9d908aa51157db8, type: 3}
       propertyPath: m_Name
       value: locker_3 (1)
@@ -952,6 +972,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8084995399139764066}
     m_Modifications:
+    - target: {fileID: -7548283370836916533, guid: f67ff9d455ede6d448bdf23bc838c236, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1255291659422360, guid: f67ff9d455ede6d448bdf23bc838c236, type: 3}
       propertyPath: m_Name
       value: jalousie
@@ -1070,6 +1094,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8790315216830233166, guid: 4af7da65169b48c47b3b86e7d6323744, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4af7da65169b48c47b3b86e7d6323744, type: 3}
 --- !u!4 &6624205294532082476 stripped
@@ -1084,6 +1112,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8084995399139764066}
     m_Modifications:
+    - target: {fileID: -3764384105875501502, guid: 0480571cf64de034d9d908aa51157db8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1796756107964060, guid: 0480571cf64de034d9d908aa51157db8, type: 3}
       propertyPath: m_Name
       value: locker_3
@@ -1438,6 +1470,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 8084995399139764066}
     m_Modifications:
+    - target: {fileID: -8792810669795091996, guid: 62b11dd993aa50e42a0890a734908161, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1004668372880332, guid: 62b11dd993aa50e42a0890a734908161, type: 3}
       propertyPath: m_Name
       value: locker_2
