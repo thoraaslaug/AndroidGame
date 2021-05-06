@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float speed = 5;
     [SerializeField] Rigidbody rb;
-    
+
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
     public int QuizAmount = 0;
@@ -23,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     public float forwardSpeed;
     public float maxSpeed;
 
+    private Vector2 startTouchPosition, endTouchPosition;
+
+
     [SerializeField] float jumpForce = 400f;
 
     [SerializeField] LayerMask groundLayerMask;
@@ -31,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator anim;
     [SerializeField] Joystick joystick;
     [SerializeField] int currentRightAnswer;
+
 
 
     private void FixedUpdate()
@@ -58,7 +62,26 @@ public class PlayerMovement : MonoBehaviour
             controlLocked = "y";
         }
 
-        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
+        if (Input.touchCount> 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
+            startTouchPosition = Input.GetTouch(0).position;
+        }
+    
+        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        {
+            endTouchPosition = Input.GetTouch(0).position;
+            
+            if ((endTouchPosition.x<startTouchPosition.x) && transform.position.x> -1.75f) 
+            transform.position = new Vector2(transform.position.x - 1.75f, transform.position.y);
+        
+            if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x< 1.75f) 
+            transform.position = new Vector2(transform.position.x + 1.75f, transform.position.y);
+
+        
+
+            
+        
+
+            GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
         float horizentalInput = joystick.Horizontal;
         verticalMove = joystick.Vertical;
