@@ -11,6 +11,7 @@ public class GroundSpawner : MonoBehaviour
     Vector3 nextSpawnPoint;
     private int groundNumber;
     private int groundNumberTwo;
+    private int groundNumberThree;
     private int groundSpawn;
 
     public void SpawnTile()
@@ -24,11 +25,16 @@ public class GroundSpawner : MonoBehaviour
         System.Random rand = new System.Random();
         int rndnmb = rand.Next(1, 6);
         if (rndnmb == groundNumber || rndnmb == groundNumberTwo) {
-            while (rndnmb == groundNumber || rndnmb == groundNumberTwo) {
+            while (rndnmb == groundNumber || rndnmb == groundNumberTwo || rndnmb == groundNumberThree) {
                 rndnmb = rand.Next(1, 6);
                 
             }
         }
+        if (rndnmb == 4 || rndnmb == 5)
+            if ( groundNumber == 4 || groundNumberTwo == 4 || groundNumberThree == 4 || groundNumber == 5 || groundNumberTwo == 5 || groundNumberThree == 5){
+                rndnmb = rand.Next(1, 4);
+        }
+        
         if ( rndnmb == 4 && groundSpawn != 0) {
             nextSpawnPoint.z += 10;
         }
@@ -37,9 +43,10 @@ public class GroundSpawner : MonoBehaviour
         }
         GameObject temp = Instantiate(groundTile[rndnmb], nextSpawnPoint, Quaternion.identity); // no rotation
         nextSpawnPoint = temp.transform.GetChild(1).transform.position;
+        groundNumberThree = groundNumberTwo;
         groundNumberTwo = groundNumber;
         groundNumber = rndnmb;
-        groundSpawn++;
+        groundSpawn = 1;
     }
     // Start is called before the first frame update
     void Start()
