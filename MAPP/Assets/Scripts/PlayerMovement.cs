@@ -32,6 +32,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Joystick joystick;
     [SerializeField] int currentRightAnswer;
 
+    [SerializeField] private ParticleSystem particles;
 
     private void FixedUpdate()
     {
@@ -125,6 +126,7 @@ public class PlayerMovement : MonoBehaviour
         bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
 
         if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
+        particles.Play();
     }
 
     //quiz
