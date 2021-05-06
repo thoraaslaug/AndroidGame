@@ -62,6 +62,7 @@
       },
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.polybrush": {
       "version": "1.0.2",
       "depth": 0,
@@ -80,6 +81,8 @@
       },
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> Main
     "com.unity.scriptablebuildpipeline": {
       "version": "1.17.0",
       "depth": 2,
@@ -87,6 +90,7 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+<<<<<<< HEAD
     "com.unity.settings-manager": {
       "version": "1.0.3",
       "depth": 1,
@@ -94,6 +98,8 @@
       "dependencies": {},
       "url": "https://packages.unity.com"
     },
+=======
+>>>>>>> Main
     "com.unity.test-framework": {
       "version": "1.1.22",
       "depth": 0,
