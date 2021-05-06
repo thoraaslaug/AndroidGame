@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PlayerState : MonoBehaviour
 {
@@ -13,11 +14,12 @@ public class PlayerState : MonoBehaviour
     [SerializeField] private int antalQuizSteg2 = 40;
     [SerializeField] private int antalQuizSteg3 = 60;
     [SerializeField] private int antalRight=0;
-    private QuizUI quizUI;
+    [SerializeField] private GameObject quizAntalText;
+   
     // Start is called before the first frame update
     void Start()
     {
-        quizUI = GameObject.FindObjectOfType<QuizUI>();
+        
 
         healthPoints = initialHealthPoints;
         if (useStartPosition == true)
@@ -42,6 +44,6 @@ public class PlayerState : MonoBehaviour
     }
     public void setCounter()
     {
-        quizUI.setCounter(antalRight);
+        quizAntalText.GetComponent<Text>().text = "" + antalRight;
     }
 }

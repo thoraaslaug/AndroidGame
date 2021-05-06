@@ -5,6 +5,7 @@ public class CameraFollow: MonoBehaviour
 {
 
     [SerializeField] Transform player;
+    [SerializeField] float maxYxel=6f;
     Vector3 offset;
     // Start is called before the first frame update
     void Start()
@@ -13,10 +14,21 @@ public class CameraFollow: MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void FixedUpdate()
     {
-        Vector3 targetPos = player.position + offset;
-        targetPos.x = 0;
-        transform.position = targetPos;
+        if (player.position.y >= 2.5f)
+        {
+            Vector3 fastPos = new Vector3(0, maxYxel, player.position.z - 4f);
+            transform.position = fastPos;
+        }
+        else
+        {
+
+            Vector3 targetPos = player.position + offset;
+            targetPos.x = 0;
+            transform.position = targetPos;
+        }
+       
     }
+  
 }

@@ -13,6 +13,7 @@ public class AnswerCube : MonoBehaviour
     void Start()
     {
         quizUI = GameObject.FindObjectOfType<QuizUI>();
+        Invoke("changeColliderSize", 0.5f);
     }
 
     // Update is called once per frame
@@ -45,8 +46,16 @@ public class AnswerCube : MonoBehaviour
 
 
         }
+        if(coll.gameObject.tag == "Obstacle")
+        {
+            Destroy(coll.gameObject);
+        }
    
 
+    }
+    private void changeColliderSize()
+    {
+        gameObject.GetComponent<BoxCollider>().size = new Vector3(2f, 1, 1);
     }
 
 }
