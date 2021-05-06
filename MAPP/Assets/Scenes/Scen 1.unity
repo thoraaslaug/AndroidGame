@@ -490,7 +490,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bb6b7297ab121644396f39533849454e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  groundTile: {fileID: 4342481156772899607, guid: 8936b007bdaad4249993452ebe3bcdeb, type: 3}
+  groundTileOne: {fileID: 4342481156772899607, guid: 8936b007bdaad4249993452ebe3bcdeb, type: 3}
+  groundTileTwo: {fileID: 5296619739303441421, guid: 6690ed3439cb20e4a934ef390134441e, type: 3}
+  groundTileThree: {fileID: 718954074140610423, guid: 6cff8a6e8021c7b4ea5ca6462fca3894, type: 3}
+  groundTileFour: {fileID: 2116620985736715470, guid: a87320af55b9e3f468660e10f4c0fc5b, type: 3}
+  groundTileFive: {fileID: 7641878453890443292, guid: c495ee8c9749e3142bcbbfc0548547e8, type: 3}
 --- !u!4 &441180295
 Transform:
   m_ObjectHideFlags: 0
