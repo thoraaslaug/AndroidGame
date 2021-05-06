@@ -5,10 +5,15 @@ using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] GameObject deathMenu;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip musicClip;
+
     bool alive = true;
 
     [SerializeField] float speed = 5;
     [SerializeField] Rigidbody rb;
+    
 
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
@@ -23,6 +28,8 @@ public class PlayerMovement : MonoBehaviour
     public float forwardSpeed;
     public float maxSpeed;
 
+    private bool deathMenuOn = false;
+
     private Vector2 startTouchPosition, endTouchPosition;
 
 
@@ -31,21 +38,29 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] LayerMask groundLayerMask;
 
     //*********quiz
-    [SerializeField] Animator anim;
+    [SerializeField] Animator animator;
     [SerializeField] Joystick joystick;
     [SerializeField] int currentRightAnswer;
-
-
+   
+    void Start()
+    {
+        audioSource.clip = musicClip;
+        audioSource.loop = true;
+        audioSource.Play();
+        animator = gameObject.GetComponent<Animator>();
+        animator.SetBool("Dead", false);
+    }
 
     private void FixedUpdate()
     {
         if (!alive) return;
 
+
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
 
 
 
-
+        //JoyStick
         if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
         {
             horizVel = 12;
@@ -62,6 +77,8 @@ public class PlayerMovement : MonoBehaviour
             controlLocked = "y";
         }
 
+
+        //Touch Controll
         if (Input.touchCount> 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
             startTouchPosition = Input.GetTouch(0).position;
         }
@@ -70,11 +87,21 @@ public class PlayerMovement : MonoBehaviour
         {
             endTouchPosition = Input.GetTouch(0).position;
 
-            if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
-                transform.position = new Vector2(transform.position.x - 1.75f, transform.position.y);
+            if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f) {
+                horizVel = 12;
+                StartCoroutine(stopSlide());
+                laneNum += 1;
+                controlLocked = "y"; 
+            }
+                
 
             if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
-                transform.position = new Vector2(transform.position.x + 1.75f, transform.position.y);
+            {
+                horizVel = -12;
+                StartCoroutine(stopSlide());
+                laneNum -= 1;
+                controlLocked = "y";
+            }
         }
         
 
@@ -118,6 +145,10 @@ public class PlayerMovement : MonoBehaviour
             Jump();
         }
 
+        
+                
+       
+
     }
 
     public void Die()
@@ -125,14 +156,25 @@ public class PlayerMovement : MonoBehaviour
         alive = false;
         QuizAmount = 0;
         // Restart the game with a 2 second delay
+        animator.SetBool("Dead", true);
+        audioSource.loop = false;
         Invoke("Restart", 2);
+        
         
 
     }
 
     void Restart()
     {
+        deathMenu.GetComponent<DeathMenu>().PauseGame();
+
+        
+    }
+    public void keepRunning()
+    {
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
     }
     IEnumerator stopSlide()
     {
