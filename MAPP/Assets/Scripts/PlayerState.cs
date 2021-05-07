@@ -46,4 +46,24 @@ public class PlayerState : MonoBehaviour
     {
         quizAntalText.GetComponent<Text>().text = "" + antalRight;
     }
+
+    public void DoHarm(int doHarmByThisMuch)
+    {
+        healthPoints -= doHarmByThisMuch;
+        if (healthPoints <= 0)
+        {
+            Respawn();
+
+        }
+
+
+    }
+
+    public void Respawn()
+    {
+        healthPoints = initialHealthPoints;
+        gameObject.transform.position = respawnPosition.transform.position;
+
+
+    }
 }
