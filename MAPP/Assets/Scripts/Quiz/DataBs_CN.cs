@@ -1,4 +1,4 @@
-using System.Collections;
+ï»¿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,148 +18,150 @@ public class DataBs_CN : MonoBehaviour
 
     void dataBs()
     {
-        addQuest(new Answer("¸çµÂ±¤", false, -1), new Answer("Âí¶ûÄ¬", false, 0), new Answer("Ë¹µÂ¸ç¶ûÄ¦", true, 1), "ÈğµäµÄÊ×¶¼ÊÇ£¿");
+        addQuest(new Answer("å“¥å¾·å ¡", false, -1), new Answer("é©¬å°”é»˜", false, 0), new Answer("æ–¯å¾·å“¥å°”æ‘©", true, 1), "ç‘å…¸çš„é¦–éƒ½æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("40", false, -1), new Answer("62", false, 0), new Answer("50", true, 1), "ÃÀ¹úÓĞ¶àÉÙ¸ö×ÔÖÎÖİ?");
+        addQuest(new Answer("40", false, -1), new Answer("62", false, 0), new Answer("50", true, 1), "ç¾å›½æœ‰å¤šå°‘ä¸ªè‡ªæ²»å·?");
 
-        addQuest(new Answer("¶«¾©", true, -1), new Answer("¾©¶«", false, 0), new Answer("´ó°æ", false, 1), "ÈÕ±¾µÄÊ×¶¼ÊÇ");
+        addQuest(new Answer("ä¸œäº¬", true, -1), new Answer("äº¬ä¸œ", false, 0), new Answer("å¤§ç‰ˆ", false, 1), "æ—¥æœ¬çš„é¦–éƒ½æ˜¯");
 
-        addQuest(new Answer("°ÂË¹Â½", true, -1), new Answer("±°¶û¸ù", false, 0), new Answer("ÌØÂ¡ºÕÄ·", false, 1), "Å²ÍşµÄÊ×¶¼ÊÇ");
+        addQuest(new Answer("å¥¥æ–¯é™†", true, -1), new Answer("å‘å°”æ ¹", false, 0), new Answer("ç‰¹éš†èµ«å§†", false, 1), "æŒªå¨çš„é¦–éƒ½æ˜¯");
 
-        addQuest(new Answer("¶íÂŞË¹", true, -1), new Answer("ÃÀ¹ú", false, 0), new Answer("°Ä´óÀûÑÇ", false, 1), "ÊÀ½çÉÏÍÁµØÃæ»ı×î´óµÄ¹ú¼ÒÊÇ?");
+        addQuest(new Answer("ä¿„ç½—æ–¯", true, -1), new Answer("ç¾å›½", false, 0), new Answer("æ¾³å¤§åˆ©äºš", false, 1), "ä¸–ç•Œä¸ŠåœŸåœ°é¢ç§¯æœ€å¤§çš„å›½å®¶æ˜¯?");
 
-        addQuest(new Answer("ÖéÄÂÀÊÂê·å ", true, -1), new Answer("ÆòÁ¦ÂíÔúÂŞÉ½", false, 0), new Answer("ÇÇ¸êÀï·å", false, 1), "ÊÀ½çÉÏ×î¸ßµÄÉ½ÊÇ£¿");
+        addQuest(new Answer("ç ç©†æœ—ç›å³° ", true, -1), new Answer("ä¹åŠ›é©¬æ‰ç½—å±±", false, 0), new Answer("ä¹”æˆˆé‡Œå³°", false, 1), "ä¸–ç•Œä¸Šæœ€é«˜çš„å±±æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("¶Å¶û¼ÓºÓ", true, -1), new Answer("¶àè§ºÓ", false, 0), new Answer("µÚÄô²®ºÓ", false, 1), "Å·ÖŞ×î³¤µÄºÓÁ÷ÊÇ£¿");
+        addQuest(new Answer("æœå°”åŠ æ²³", true, -1), new Answer("å¤šç‘™æ²³", false, 0), new Answer("ç¬¬è‚ä¼¯æ²³", false, 1), "æ¬§æ´²æœ€é•¿çš„æ²³æµæ˜¯ï¼Ÿ");
 
 
-        addQuest(new Answer("ÆòÁ¦ÂíÔúÂŞÉ½", false, -1), new Answer("ÇÇ¸êÀï·å", true, 0), new Answer("Âí¿¨Â³·å", false, 1), "ÊÀ½çÉÏµÚ¶ş¸ßµÄÉ½ÊÇ£¿");
+        addQuest(new Answer("ä¹åŠ›é©¬æ‰ç½—å±±", false, -1), new Answer("ä¹”æˆˆé‡Œå³°", true, 0), new Answer("é©¬å¡é²å³°", false, 1), "ä¸–ç•Œä¸Šç¬¬äºŒé«˜çš„å±±æ˜¯ï¼Ÿ");
 
 
-        addQuest(new Answer("µ¤Âó", false, -1), new Answer("±ùµº", true, 0), new Answer("Èğµä", false, 1), "¸ñÁÖÀ¼µºÊôÓÚÄÄ¸ö¹ú¼Ò£¿");
+        addQuest(new Answer("ä¸¹éº¦", false, -1), new Answer("å†°å²›", true, 0), new Answer("ç‘å…¸", false, 1), "æ ¼æ—å…°å²›å±äºå“ªä¸ªå›½å®¶ï¼Ÿ");
 
-        addQuest(new Answer("ÄÏ¼«", false, -1), new Answer("±±¼«", true, 0), new Answer("¶«°ëÇò", false, 1), "±±±ùÑóÎ»ÓÚÄÄÀï£¿");
+        addQuest(new Answer("å—æ", false, -1), new Answer("åŒ—æ", true, 0), new Answer("ä¸œåŠçƒ", false, 1), "åŒ—å†°æ´‹ä½äºå“ªé‡Œï¼Ÿ");
 
-        addQuest(new Answer("±±¼«", false, -1), new Answer("Î÷°ëÇò", false, 0), new Answer("ÄÏ¼«", true, 1), "ÄÏ¼«ÖŞÎ»ÓÚµØÇòµÄÄÄÀï£¿");
+        addQuest(new Answer("åŒ—æ", false, -1), new Answer("è¥¿åŠçƒ", false, 0), new Answer("å—æ", true, 1), "å—ææ´²ä½äºåœ°çƒçš„å“ªé‡Œï¼Ÿ");
 
-        addQuest(new Answer("Ä«¶û±¾", false, -1), new Answer("¿°ÅàÀ­", true, 0), new Answer("Ï¤Äá", false, 1), "°Ä´óÀûÑÇµÄÊ×¶¼ÊÇ£¿");
+        addQuest(new Answer("å¢¨å°”æœ¬", false, -1), new Answer("å ªåŸ¹æ‹‰", true, 0), new Answer("æ‚‰å°¼", false, 1), "æ¾³å¤§åˆ©äºšçš„é¦–éƒ½æ˜¯ï¼Ÿ");
 
 
-        addQuest(new Answer("ÄªË¹¿Æ", true, -1), new Answer("Ê¥±ËµÃ±¤", false, 0), new Answer("¿¦É½", false, 1), "¶íÂŞË¹µÄÊ×¶¼ÊÇÄÄÀï£¿");
+        addQuest(new Answer("è«æ–¯ç§‘", true, -1), new Answer("åœ£å½¼å¾—å ¡", false, 0), new Answer("å–€å±±", false, 1), "ä¿„ç½—æ–¯çš„é¦–éƒ½æ˜¯å“ªé‡Œï¼Ÿ");
 
-        addQuest(new Answer("49", true, -1), new Answer("72", false, 0), new Answer("38", false, 1), "Å·ÖŞÓĞ¶àÉÙ¹ú¼Ò£¿");
+        addQuest(new Answer("49", true, -1), new Answer("72", false, 0), new Answer("38", false, 1), "æ¬§æ´²æœ‰å¤šå°‘å›½å®¶ï¼Ÿ");
 
-        addQuest(new Answer("5", false, -1), new Answer("7", true, 0), new Answer("10", false, 1), "µØÇòÓĞ¼¸¸ö´óÖŞ£¿");
+        addQuest(new Answer("5", false, -1), new Answer("7", true, 0), new Answer("10", false, 1), "åœ°çƒæœ‰å‡ ä¸ªå¤§æ´²ï¼Ÿ");
 
-        addQuest(new Answer("ÑÇÂíÑ·ºÓ", true, -1), new Answer("ÄáÂŞºÓ", false, 0), new Answer("äØ¹«ºÓ", false, 1), "µØÇò×î³¤µÄºÓÁ÷ÊÇ£¿");
+        addQuest(new Answer("äºšé©¬é€Šæ²³", true, -1), new Answer("å°¼ç½—æ²³", false, 0), new Answer("æ¹„å…¬æ²³", false, 1), "åœ°çƒæœ€é•¿çš„æ²³æµæ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("ÑÇÂíÑ·ºÓ", false, -1), new Answer("äØ¹«ºÓ", false, 0), new Answer("ÄáÂŞºÓ", true, 1), "µÚ¶ş³¤µÄºÓÁ÷ÊÇ£¿");
+        addQuest(new Answer("äºšé©¬é€Šæ²³", false, -1), new Answer("æ¹„å…¬æ²³", false, 0), new Answer("å°¼ç½—æ²³", true, 1), "ç¬¬äºŒé•¿çš„æ²³æµæ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("Ä¦Âå¸ç", false, -1), new Answer("Âí¶úËû", false, 0), new Answer("èóµÙ¸Ô", true, 1), "µØÇòÉÏ×îĞ¡µÄ¹ú¼ÒÊÇ£¿");
+        addQuest(new Answer("æ‘©æ´›å“¥", false, -1), new Answer("é©¬è€³ä»–", false, 0), new Answer("æ¢µè’‚å†ˆ", true, 1), "åœ°çƒä¸Šæœ€å°çš„å›½å®¶æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("°ÍÎ÷", true, -1), new Answer("ÀïÔ¼ÈÈÄÚÂ¬", false, 0), new Answer("Ê¥±£ÂŞ", false, 1), "°ÍÎ÷ÀûÑÇµÄÊ×¶¼ÊÇ£¿");
+        addQuest(new Answer("å·´è¥¿", true, -1), new Answer("é‡Œçº¦çƒ­å†…å¢", false, 0), new Answer("åœ£ä¿ç½—", false, 1), "å·´è¥¿åˆ©äºšçš„é¦–éƒ½æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("Âü¹È", true, -1), new Answer("ÆÕ¼ª", false, 0), new Answer("°ÅÌáÑÅ", false, 1), "Ì©¹úµÄÊ×¶¼ÊÇ£¿");
+        addQuest(new Answer("æ›¼è°·", true, -1), new Answer("æ™®å‰", false, 0), new Answer("èŠ­æé›…", false, 1), "æ³°å›½çš„é¦–éƒ½æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("´óÎ÷Ñó", false, -1), new Answer("Ì«Æ½ÑóµØÇø", true, 0), new Answer("Ó¡¶ÈÑó", false, 1), "ÊÀ½ç×î´óµÄº£ÑóÊÇ£¿");
+        addQuest(new Answer("å¤§è¥¿æ´‹", false, -1), new Answer("å¤ªå¹³æ´‹åœ°åŒº", true, 0), new Answer("å°åº¦æ´‹", false, 1), "ä¸–ç•Œæœ€å¤§çš„æµ·æ´‹æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("ÃÀ¹ú", false, -1), new Answer("¶íÂŞË¹", false, 0), new Answer("ÖĞ¹ú", true, 1), "ÏÂÁĞÄÄ¸ö¹ú¼ÒÈË¿Ú×î¶à£¿");
+        addQuest(new Answer("ç¾å›½", false, -1), new Answer("ä¿„ç½—æ–¯", false, 0), new Answer("ä¸­å›½", true, 1), "ä¸‹åˆ—å“ªä¸ªå›½å®¶äººå£æœ€å¤šï¼Ÿ");
 
-        addQuest(new Answer("±ùµº", true, -1), new Answer("Èğµä", false, 0), new Answer("Å²Íş", true, 1), "ÒÔÏÂÄÄ¸ö¹ú¼Ò²»ÊôÓÚË¹¿°µÄÄÉÎ¬ÑÇ");
+        addQuest(new Answer("å†°å²›", true, -1), new Answer("ç‘å…¸", false, 0), new Answer("æŒªå¨", true, 1), "ä»¥ä¸‹å“ªä¸ªå›½å®¶ä¸å±äºæ–¯å ªçš„çº³ç»´äºš");
 
-        addQuest(new Answer("±ùµº", true, -1), new Answer("¶íÂŞË¹", false, 0), new Answer("²¨À¼", false, 1), "ÒÔÏÂÄÄ¸ö¹ú¼ÒÊôÓÚ±±Å·¹ú¼Ò£¿");
+        addQuest(new Answer("å†°å²›", true, -1), new Answer("ä¿„ç½—æ–¯", false, 0), new Answer("æ³¢å…°", false, 1), "ä»¥ä¸‹å“ªä¸ªå›½å®¶å±äºåŒ—æ¬§å›½å®¶ï¼Ÿ");
 
-        //ÒÔÉÏÊÇµØÀíÎÊÌâ24Ìâ
+        //ä»¥ä¸Šæ˜¯åœ°ç†é—®é¢˜24é¢˜
 
-        addQuest(new Answer("ÄÃÆÆÂØÒ»ÊÀ", false, -1), new Answer("¿­Èö´óµÛ", true, 0), new Answer("²éÀíÂü´óµÛ", false, 1), "ÒÔÏÂË­ÊÇÂŞÂí»ÊµÛ£¿");
+        addQuest(new Answer("æ‹¿ç ´ä»‘ä¸€ä¸–", false, -1), new Answer("å‡¯æ’’å¤§å¸", true, 0), new Answer("æŸ¥ç†æ›¼å¤§å¸", false, 1), "ä»¥ä¸‹è°æ˜¯ç½—é©¬çš‡å¸ï¼Ÿ");
 
-        addQuest(new Answer("³É¼ªË¼º¹", true, -1), new Answer("¹ş²¼¶ûº¹", false, 0), new Answer("ÑÇÀúÉ½´óµÛ", false, 1), "Ë­ÊÇÍÅ½áÃÉ¹Å²¿ÂäµÄÃÉ¹ÅÍ³ÖÎÕß£¿");
+        addQuest(new Answer("æˆå‰æ€æ±—", true, -1), new Answer("å“ˆå¸ƒå°”æ±—", false, 0), new Answer("äºšå†å±±å¤§å¸", false, 1), "è°æ˜¯å›¢ç»“è’™å¤éƒ¨è½çš„è’™å¤ç»Ÿæ²»è€…ï¼Ÿ");
 
-        addQuest(new Answer("Å²Íş", true, -1), new Answer("²¨À¼", false, 0), new Answer("¶íÂŞË¹", false, 1), "¿¨¶ûÊ®¶şÊÀËÀÓÚÄÄ¸ö¹ú¼Ò£¨1718Äê£©");
+        addQuest(new Answer("æŒªå¨", true, -1), new Answer("æ³¢å…°", false, 0), new Answer("ä¿„ç½—æ–¯", false, 1), "å¡å°”åäºŒä¸–æ­»äºå“ªä¸ªå›½å®¶ï¼ˆ1718å¹´ï¼‰");
 
-        addQuest(new Answer("1944", true, -1), new Answer("1948", false, 0), new Answer("1952", false, 1), "Ó¡¶ÈÕş¿Í¸ÊµØÓÚÄÄÒ»ÄêÓöº¦£¿");
+        addQuest(new Answer("1944", true, -1), new Answer("1948", false, 0), new Answer("1952", false, 1), "å°åº¦æ”¿å®¢ç”˜åœ°äºå“ªä¸€å¹´é‡å®³ï¼Ÿ");
 
-        addQuest(new Answer("26", false, -1), new Answer("19", true, 0), new Answer("23", false, 1), "·¨¹úÊ¥Å®ÕäÄİ´ï¶û¿Ë±»ÉÕËÀÔÚ»ğĞÌÖùÉÏµÄÊ±ºò¶àÉÙËê£¿");
+        addQuest(new Answer("26", false, -1), new Answer("19", true, 0), new Answer("23", false, 1), "æ³•å›½åœ£å¥³çå¦®è¾¾å°”å…‹è¢«çƒ§æ­»åœ¨ç«åˆ‘æŸ±ä¸Šçš„æ—¶å€™å¤šå°‘å²ï¼Ÿ");
 
-        addQuest(new Answer("1949", false, -1), new Answer("1954", false, 0), new Answer("1961", true, 1), "°ØÁÖÇ½ÓÚ¼¸¼¸Äê½¨³É£¿");
+        addQuest(new Answer("1949", false, -1), new Answer("1954", false, 0), new Answer("1961", true, 1), "æŸæ—å¢™äºå‡ å‡ å¹´å»ºæˆï¼Ÿ");
 
-        addQuest(new Answer("1985", false, -1), new Answer("1991", false, 0), new Answer("1989", true, 1), "°ØÁÖÇ½ÊÇÄÄÒ»Äê²ğµÄ£¿");
+        addQuest(new Answer("1985", false, -1), new Answer("1991", false, 0), new Answer("1989", true, 1), "æŸæ—å¢™æ˜¯å“ªä¸€å¹´æ‹†çš„ï¼Ÿ");
 
-        addQuest(new Answer("ÂíÆä¶Ù", true, -1), new Answer("ÂŞÂíµÛ¹ú", false, 0), new Answer("°£¼°", false, 1), "ÑÇÀúÉ½´ó´óµÛÔøÍ³ÖÎ¹ıÄÄ¸ö¹ú¼Ò£¿");
+        addQuest(new Answer("é©¬å…¶é¡¿", true, -1), new Answer("ç½—é©¬å¸å›½", false, 0), new Answer("åŸƒåŠ", false, 1), "äºšå†å±±å¤§å¤§å¸æ›¾ç»Ÿæ²»è¿‡å“ªä¸ªå›½å®¶ï¼Ÿ");
 
-        addQuest(new Answer("900Äê´ú", true, -1), new Answer("700Äê´ú", false, 0), new Answer("1000Äê´ú", false, 1), "À¶ÑÀ¹şÀ­¶ûÊÇÄÄ¸öÊ±ÆÚµÄ»ÊµÛ£¿");
+        addQuest(new Answer("900å¹´ä»£", true, -1), new Answer("700å¹´ä»£", false, 0), new Answer("1000å¹´ä»£", false, 1), "è“ç‰™å“ˆæ‹‰å°”æ˜¯å“ªä¸ªæ—¶æœŸçš„çš‡å¸ï¼Ÿ");
 
-        addQuest(new Answer("1429", false, -1), new Answer("1398", false, 0), new Answer("1453", true, 1), "¾ıÊ¿Ì¹¶¡±¤ÊÇÄÄÒ»ÄêÂÙÏİ£¿");
+        addQuest(new Answer("1429", false, -1), new Answer("1398", false, 0), new Answer("1453", true, 1), "å›å£«å¦ä¸å ¡æ˜¯å“ªä¸€å¹´æ²¦é™·ï¼Ÿ");
 
-        addQuest(new Answer("1618-1648", true, -1), new Answer("1534-1564", false, 0), new Answer("1556-1586", false, 1), "ÈıÊ®ÄêÕ½Õù·¢ÉúÔÚÄÄ¼¸Äê£¿");
+        addQuest(new Answer("1618-1648", true, -1), new Answer("1534-1564", false, 0), new Answer("1556-1586", false, 1), "ä¸‰åå¹´æˆ˜äº‰å‘ç”Ÿåœ¨å“ªå‡ å¹´ï¼Ÿ");
 
-        addQuest(new Answer("1523-1560", true, -1), new Answer("1508-1539", false, 0), new Answer("1531-1558", false, 1), "ÒÔÏÂÄÄ¸öÊÇÈğµä¹úÍõ¹ÅË¹Ëş·òÍßÈøµÄÔÚÎ»Ê±¼ä£¿");
+        addQuest(new Answer("1523-1560", true, -1), new Answer("1508-1539", false, 0), new Answer("1531-1558", false, 1), "ä»¥ä¸‹å“ªä¸ªæ˜¯ç‘å…¸å›½ç‹å¤æ–¯å¡”å¤«ç“¦è¨çš„åœ¨ä½æ—¶é—´ï¼Ÿ");
 
-        addQuest(new Answer("µÂ¹ú", false, -1), new Answer("·¨¹ú", true, 0), new Answer("Ó¢¹ú", false, 1), "²éÀíÂü´óµÛÊÇÄÄ¸ö¹ú¼ÒµÄ£¿");
+        addQuest(new Answer("å¾·å›½", false, -1), new Answer("æ³•å›½", true, 0), new Answer("è‹±å›½", false, 1), "æŸ¥ç†æ›¼å¤§å¸æ˜¯å“ªä¸ªå›½å®¶çš„ï¼Ÿ");
 
-        addQuest(new Answer("1518", false, -1), new Answer("1520", true, 0), new Answer("1521", false, 1), "Ë¹µÂ¸ç¶ûÄ¦´óÍÀÉ±·¢ÉúÔÚÄÄÒ»¸ö£¿");
+        addQuest(new Answer("1518", false, -1), new Answer("1520", true, 0), new Answer("1521", false, 1), "æ–¯å¾·å“¥å°”æ‘©å¤§å± æ€å‘ç”Ÿåœ¨å“ªä¸€ä¸ªï¼Ÿ");
 
-        addQuest(new Answer("1792", true, -1), new Answer("1784", false, 0), new Answer("1796", false, 1), "¹ÅË¹Ëş·òÈıÊÀÔÚ»¯×±Îè»á±»´ÌºóÉíÍöÊÇÄÄÒ»Äê£¿");
+        addQuest(new Answer("1792", true, -1), new Answer("1784", false, 0), new Answer("1796", false, 1), "å¤æ–¯å¡”å¤«ä¸‰ä¸–åœ¨åŒ–å¦†èˆä¼šè¢«åˆºåèº«äº¡æ˜¯å“ªä¸€å¹´ï¼Ÿ");
 
-        addQuest(new Answer("1498", false, -1), new Answer("1516", false, 0), new Answer("1492", true, 1), "¿ËÀïË¹ÍĞ¸¥¸çÂ×²¼ÄÄÒ»¸öµ½´ïµÄÃÀ¹ú£¿");
+        addQuest(new Answer("1498", false, -1), new Answer("1516", false, 0), new Answer("1492", true, 1), "å…‹é‡Œæ–¯æ‰˜å¼—å“¥ä¼¦å¸ƒå“ªä¸€ä¸ªåˆ°è¾¾çš„ç¾å›½ï¼Ÿ");
 
-        //³£Ê¶Àà16Ìâ
+        //å¸¸è¯†ç±»16é¢˜
 
-        addQuest(new Answer("1 000 000", true, -1), new Answer("10 000 000", false, 0), new Answer("100 000", false, 1), "Ò»Õ×ºÕ×ÈµÈÓÚ¶àÉÙºÕ×È£¿");
+        addQuest(new Answer("1 000 000", true, -1), new Answer("10 000 000", false, 0), new Answer("100 000", false, 1), "ä¸€å…†èµ«å…¹ç­‰äºå¤šå°‘èµ«å…¹ï¼Ÿ");
 
-        addQuest(new Answer("1,0 kg/dm3", true, -1), new Answer(" 1,5 kg/m3 ", false, 0), new Answer("1,0 kg/m3", false, 1), "Ë®µÄÃÜ¶ÈÊÇ¶àÉÙ£¿");
+        addQuest(new Answer("1,0 kg/dm3", true, -1), new Answer(" 1,5 kg/m3 ", false, 0), new Answer("1,0 kg/m3", false, 1), "æ°´çš„å¯†åº¦æ˜¯å¤šå°‘ï¼Ÿ");
 
-        addQuest(new Answer("36 kg/dm3  ", false, -1), new Answer("9 kg /dm3 ", true, 0), new Answer("16 kg/m3  ", false, 1), "Ò»¿éÍ­ÖØ18¹«½ï£¬Ìå»ıÎª2 dmµÄÈı´Î·½£¬ÃÜ¶ÈÊÇ¶àÉÙ£¿");
-        
+        addQuest(new Answer("36 kg/dm3  ", false, -1), new Answer("9 kg /dm3 ", true, 0), new Answer("16 kg/m3  ", false, 1), "ä¸€å—é“œé‡18å…¬æ–¤ï¼Œä½“ç§¯ä¸º2 dmçš„ä¸‰æ¬¡æ–¹ï¼Œå¯†åº¦æ˜¯å¤šå°‘ï¼Ÿ");
 
-        addQuest(new Answer("19.8", false, -1), new Answer("9.8", true, 0), new Answer("9.88", false, 1), "´¦ÓÚÕæ¿ÕÖĞµÄÎïÌå»á×ÔÓÉÏÂÂä¡£ ËüÎŞÄ¦²ÁµØÏÂÂä£¬ÕâÒâÎ¶×Å¼ÓËÙ¶ÈÊÇºã¶¨µÄ¡£ ÔÚµØÇò¸½½ü£¬Õâ³ÆÎªÖØÁ¦¼ÓËÙ¶È£¬´óÔ¼ÊÇ¶àÉÙ£¿ m / s2£¿");
 
-        addQuest(new Answer("¶Ô", false, -1), new Answer("²»¶Ô", true, 0), new Answer("¿ÉÄÜ¶Ô", false, 1), "³Á»ıÊÇÒ»ÖÖ¹ı³Ì£¬ÆäÖĞÎïÖÊÖ±½Ó´Ó¹ÌÌåĞÎÊ½±äÎªÆøÌåĞÎÊ½¡£");
+        addQuest(new Answer("19.8", false, -1), new Answer("9.8", true, 0), new Answer("9.88", false, 1), "å¤„äºçœŸç©ºä¸­çš„ç‰©ä½“ä¼šè‡ªç”±ä¸‹è½ã€‚ å®ƒæ— æ‘©æ“¦åœ°ä¸‹è½ï¼Œè¿™æ„å‘³ç€åŠ é€Ÿåº¦æ˜¯æ’å®šçš„ã€‚ åœ¨åœ°çƒé™„è¿‘ï¼Œè¿™ç§°ä¸ºé‡åŠ›åŠ é€Ÿåº¦ï¼Œå¤§çº¦æ˜¯å¤šå°‘ï¼Ÿ m / s2ï¼Ÿ");
 
-        addQuest(new Answer("¶Ô", true, -1), new Answer("²»¶Ô", false, 0), new Answer("¿ÉÄÜ¶Ô", false, 1), "Éı»ªÊÇÎïÖÊ´ÓÍÅ¾Û×´Ì¬Ö±½Ó×ª±äÎª¹ÌÌåĞÎÊ½£¬¶øÃ»ÓĞÍ¨¹ıÖĞ¼äÏàÒºÌåĞÎÊ½¡£");
+        addQuest(new Answer("å¯¹", false, -1), new Answer("ä¸å¯¹", true, 0), new Answer("å¯èƒ½å¯¹", false, 1), "æ²‰ç§¯æ˜¯ä¸€ç§è¿‡ç¨‹ï¼Œå…¶ä¸­ç‰©è´¨ç›´æ¥ä»å›ºä½“å½¢å¼å˜ä¸ºæ°”ä½“å½¢å¼ã€‚");
 
-        addQuest(new Answer("»¯Ñ§ÄÜÔ´", false, -1), new Answer("µçÄÜ", true, 0), new Answer("ÈÈÄÜ", false, 1), "µç³ØÓĞÊ²Ã´ÄÜÁ¿£¿");
+        addQuest(new Answer("å¯¹", true, -1), new Answer("ä¸å¯¹", false, 0), new Answer("å¯èƒ½å¯¹", false, 1), "å‡åæ˜¯ç‰©è´¨ä»å›¢èšçŠ¶æ€ç›´æ¥è½¬å˜ä¸ºå›ºä½“å½¢å¼ï¼Œè€Œæ²¡æœ‰é€šè¿‡ä¸­é—´ç›¸æ¶²ä½“å½¢å¼ã€‚");
 
-        addQuest(new Answer("Ò»Ñõ»¯µª", true, -1), new Answer("¶şÑõ»¯Ì¼", false, 0), new Answer("¶şÑõ»¯µª", false, 1), "N2OµÄÕıÈ·Ãû³ÆÊÇ£¿");
+        addQuest(new Answer("åŒ–å­¦èƒ½æº", false, -1), new Answer("ç”µèƒ½", true, 0), new Answer("çƒ­èƒ½", false, 1), "ç”µæ± æœ‰ä»€ä¹ˆèƒ½é‡ï¼Ÿ");
 
-        addQuest(new Answer("H2O", false, -1), new Answer("N2O", false, 0), new Answer("O2", true, 1), "ÒÔÏÂÄÄÖÖÆøÌå²»ÊÇÎÂÊÒÆøÌå£¿");
+        addQuest(new Answer("ä¸€æ°§åŒ–æ°®", true, -1), new Answer("äºŒæ°§åŒ–ç¢³", false, 0), new Answer("äºŒæ°§åŒ–æ°®", false, 1), "N2Oçš„æ­£ç¡®åç§°æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("Ò»Ñõ»¯Ì¼", true, -1), new Answer("¶şÑõ»¯Ì¼", false, 0), new Answer("ÈıÑõ»¯Áò", false, 1), "COµÄÕıÈ·Ãû³ÆÊÇ£¿");
+        addQuest(new Answer("H2O", false, -1), new Answer("N2O", false, 0), new Answer("O2", true, 1), "ä»¥ä¸‹å“ªç§æ°”ä½“ä¸æ˜¯æ¸©å®¤æ°”ä½“ï¼Ÿ");
 
-        addQuest(new Answer("-1¶È", false, -1), new Answer("0¶È", true, 0), new Answer("100¶È", false, 1), "±ùµÄÈÛµãÊÇ£¿");
+        addQuest(new Answer("ä¸€æ°§åŒ–ç¢³", true, -1), new Answer("äºŒæ°§åŒ–ç¢³", false, 0), new Answer("ä¸‰æ°§åŒ–ç¡«", false, 1), "COçš„æ­£ç¡®åç§°æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("55¶È", false, -1), new Answer("0¶È", false, 0), new Answer("100¶È", true, 1), "Ë®µÄ·ĞµãÊÇ£¿");
+        addQuest(new Answer("-1åº¦", false, -1), new Answer("0åº¦", true, 0), new Answer("100åº¦", false, 1), "å†°çš„ç†”ç‚¹æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("", false, -1), new Answer("", true, 0), new Answer("", false, 1), "ÄÄ¸öÎÂ¶È³ÆÎª¾ø¶ÔÁãµã£¿");
+        addQuest(new Answer("55åº¦", false, -1), new Answer("0åº¦", false, 0), new Answer("100åº¦", true, 1), "æ°´çš„æ²¸ç‚¹æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("-273.15¶È", true, -1), new Answer("274.15¶È", false, 0), new Answer("-274.15¶È", false, 1), "");
+        addQuest(new Answer("", false, -1), new Answer("", true, 0), new Answer("", false, 1), "å“ªä¸ªæ¸©åº¦ç§°ä¸ºç»å¯¹é›¶ç‚¹ï¼Ÿ");
 
-        addQuest(new Answer("2", false, -1), new Answer("1", true, 0), new Answer("1.5", false, 1), "Ò»½¹¶úÊÇ¶àÉÙÅ£¶ÙÃ×£¿");
+        addQuest(new Answer("-273.15åº¦", true, -1), new Answer("274.15åº¦", false, 0), new Answer("-274.15åº¦", false, 1), "");
 
-        addQuest(new Answer("²¨³¤", true, -1), new Answer("²¨¾à", false, 0), new Answer("Á¦³¤", false, 1), "Á½¸ö²¨·åÖ®¼äµÄ¾àÀë³ÆÎª£¿");
+        addQuest(new Answer("2", false, -1), new Answer("1", true, 0), new Answer("1.5", false, 1), "ä¸€ç„¦è€³æ˜¯å¤šå°‘ç‰›é¡¿ç±³ï¼Ÿ");
 
-        addQuest(new Answer("Ñ¹Ç¿µÈÓÚÁ¦³ËÒÔÃæ»ı", false, -1), new Answer("Ñ¹Ç¿µÈÓëÁ¦³ıÒÔÃæ»ı", true, 0), new Answer("Á¦µÈÓÚÑ¹Ç¿³ıÒÔÃæ»ı", false, 1), "ÒÔÏÂÄÄ¸ö¹«Ê½ÊÇÕıÈ·µÄ£¿");
+        addQuest(new Answer("æ³¢é•¿", true, -1), new Answer("æ³¢è·", false, 0), new Answer("åŠ›é•¿", false, 1), "ä¸¤ä¸ªæ³¢å³°ä¹‹é—´çš„è·ç¦»ç§°ä¸ºï¼Ÿ");
 
-        addQuest(new Answer("1 N/m2", true, -1), new Answer("2 N/m2", false, 0), new Answer("1.5 N/m2", false, 1), "Ò»ÅÁË¹¿¨µÈÓÚ£¿");
+        addQuest(new Answer("å‹å¼ºç­‰äºåŠ›ä¹˜ä»¥é¢ç§¯", false, -1), new Answer("å‹å¼ºç­‰ä¸åŠ›é™¤ä»¥é¢ç§¯", true, 0), new Answer("åŠ›ç­‰äºå‹å¼ºé™¤ä»¥é¢ç§¯", false, 1), "ä»¥ä¸‹å“ªä¸ªå…¬å¼æ˜¯æ­£ç¡®çš„ï¼Ÿ");
 
-        addQuest(new Answer("1 Pa", true, -1), new Answer("1 N", false, 0), new Answer("1 J", false, 1), "Ñ¹Ç¿µÄ»ù±¾µ¥Î»ÊÇ£¿");
+        addQuest(new Answer("1 N/m2", true, -1), new Answer("2 N/m2", false, 0), new Answer("1.5 N/m2", false, 1), "ä¸€å¸•æ–¯å¡ç­‰äºï¼Ÿ");
 
-        addQuest(new Answer("°²Åà", false, -1), new Answer("·üÌØ", true, 0), new Answer("ÍßÌØ", false, 1), "µçÑ¹µ¥Î»");
+        addQuest(new Answer("1 Pa", true, -1), new Answer("1 N", false, 0), new Answer("1 J", false, 1), "å‹å¼ºçš„åŸºæœ¬å•ä½æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("°²Åà", false, -1), new Answer("m/s", false, 0), new Answer("ºÕ×È", true, 1), "ÆµÂÊµÄµ¥Î»ÊÇ£¿");
+        addQuest(new Answer("å®‰åŸ¹", false, -1), new Answer("ä¼ç‰¹", true, 0), new Answer("ç“¦ç‰¹", false, 1), "ç”µå‹å•ä½");
 
-        addQuest(new Answer("220V", false, -1), new Answer("240V", false, 0), new Answer("230V", true, 1), "ÆÕÍ¨¼ÒÀïµÄ²å×ùµçÑ¹ÊÇ£¿");
+        addQuest(new Answer("å®‰åŸ¹", false, -1), new Answer("m/s", false, 0), new Answer("èµ«å…¹", true, 1), "é¢‘ç‡çš„å•ä½æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("½ğĞÇ", false, -1), new Answer("»ğĞÇ", false, 0), new Answer("Ë®ĞÇ", true, 1), "×îĞ¡µÄĞĞĞÇ");
+        addQuest(new Answer("220V", false, -1), new Answer("240V", false, 0), new Answer("230V", true, 1), "æ™®é€šå®¶é‡Œçš„æ’åº§ç”µå‹æ˜¯ï¼Ÿ");
 
-        addQuest(new Answer("ÍÁĞÇ", false, -1), new Answer("Ä¾ĞÇ", true, 0), new Answer("º£ÍõĞÇ", false, 1), "×î´óµÄĞĞĞÇ£¿");
+        addQuest(new Answer("é‡‘æ˜Ÿ", false, -1), new Answer("ç«æ˜Ÿ", false, 0), new Answer("æ°´æ˜Ÿ", true, 1), "æœ€å°çš„è¡Œæ˜Ÿ");
 
-        addQuest(new Answer("²ÎËŞËÄ", false, -1), new Answer("ÌìÀÇĞÇ", true, 0), new Answer("Ö¯Å®ĞÇ", false, 1), "³ıÁËÌ«Ñô£¬ÎÒÃÇ¿ÉÒÔ´ÓÎÒÃÇ¿´µ½µÄ×î½üµÄºãĞÇ?");
+        addQuest(new Answer("åœŸæ˜Ÿ", false, -1), new Answer("æœ¨æ˜Ÿ", true, 0), new Answer("æµ·ç‹æ˜Ÿ", false, 1), "æœ€å¤§çš„è¡Œæ˜Ÿï¼Ÿ");
 
-        addQuest(new Answer("ĞÇÏµ", false, -1), new Answer("ĞÇÔÆ", true, 0), new Answer("ÓîÖæ´ó±¬Õ¨", false, 1), "ĞÇĞÍÏµÍ³");
+        addQuest(new Answer("å‚å®¿å››", false, -1), new Answer("å¤©ç‹¼æ˜Ÿ", true, 0), new Answer("ç»‡å¥³æ˜Ÿ", false, 1), "é™¤äº†å¤ªé˜³ï¼Œæˆ‘ä»¬å¯ä»¥ä»æˆ‘ä»¬çœ‹åˆ°çš„æœ€è¿‘çš„æ’æ˜Ÿ?");
 
+        addQuest(new Answer("æ˜Ÿç³»", false, -1), new Answer("æ˜Ÿäº‘", true, 0), new Answer("å®‡å®™å¤§çˆ†ç‚¸", false, 1), "æ˜Ÿå‹ç³»ç»Ÿ");
 
-       // ÎïÀí»¯Ñ§26Ìâ
+
+        // ç‰©ç†åŒ–å­¦26é¢˜
+
+
 
 
 
