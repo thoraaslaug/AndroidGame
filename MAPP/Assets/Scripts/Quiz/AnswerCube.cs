@@ -9,6 +9,12 @@ public class AnswerCube : MonoBehaviour
     [SerializeField] private GameObject parent;
     private Answer a;
     QuizUI quizUI;
+
+    private bool removeGameObject = false;
+    [SerializeField] private ParticleSystem particles;
+    private float timer;
+    [SerializeField] private float timeBeforeDeletion = 1f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +25,15 @@ public class AnswerCube : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if (removeGameObject == true)
+        {
+            timer += Time.deltaTime;
+            if (timer >= timeBeforeDeletion)
+            {
+                Destroy(parent, 1f);
+                Destroy(gameObject);
+            }
+        }
     }
     public void setOption(Answer answer)
     {
@@ -36,8 +50,9 @@ public class AnswerCube : MonoBehaviour
                 quizUI.setPanelOaktiv();
                 coll.GetComponent<PlayerState>().quizCounter();
                 coll.GetComponent<PlayerState>().setCounter();
-                Destroy(parent, 1f);
-                Destroy(gameObject);
+                particles.Play();
+                removeGameObject = true;
+                //här var destory först
             }
             else
             {
