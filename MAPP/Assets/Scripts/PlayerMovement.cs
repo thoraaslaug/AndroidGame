@@ -5,6 +5,11 @@ using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] GameObject deathMenu;
+    [SerializeField] GameObject controller;
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip musicClip;
+
     bool alive = true;
 
     [SerializeField] float speed = 5;
@@ -22,6 +27,13 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 move;
     public float forwardSpeed;
     public float maxSpeed;
+
+    private bool joy = false;
+    private bool swipe = false;
+
+
+    private Vector2 startTouchPosition, endTouchPosition;
+
 
     [SerializeField] float jumpForce = 400f;
 
@@ -41,8 +53,11 @@ public class PlayerMovement : MonoBehaviour
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
 
 
+        if (joy)
+        {
 
-
+       
+        //JoyStick
         if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
         {
             horizVel = 12;
@@ -58,8 +73,43 @@ public class PlayerMovement : MonoBehaviour
             laneNum -= 1;
             controlLocked = "y";
         }
+        }
+        if (swipe)
+        {
+            controller.SetActive(false);
+            //Touch Controll
+            if (Input.touchCount> 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
+            startTouchPosition = Input.GetTouch(0).position;
+            }
 
-        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+            endTouchPosition = Input.GetTouch(0).position;
+
+            if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f) {
+                horizVel = 12;
+                StartCoroutine(stopSlide());
+                laneNum += 1;
+                controlLocked = "y"; 
+            }
+                
+
+            if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
+            {
+                horizVel = -12;
+                StartCoroutine(stopSlide());
+                laneNum -= 1;
+                controlLocked = "y";
+            }
+        }
+        }
+            
+        
+
+            
+        
+
+            GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
         float horizentalInput = joystick.Horizontal;
         verticalMove = joystick.Vertical;
@@ -106,6 +156,16 @@ public class PlayerMovement : MonoBehaviour
         Invoke("Restart", 2);
         
 
+    }
+    public void Swipe()
+    {
+        Debug.Log("ASDASDASDSAD");
+        swipe = true;
+    }
+    public void Joy()
+    {
+        Debug.Log("ASDASDASDSAD");
+        joy = true;
     }
 
     void Restart()
