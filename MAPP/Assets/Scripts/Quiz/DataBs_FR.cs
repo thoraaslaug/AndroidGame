@@ -4,15 +4,30 @@ using UnityEngine;
 
 public class DataBs_FR : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    private List<Question> questions;
+    private void Awake()
     {
-        
+        questions = new List<Question>();
+    }
+    void addQuest(Answer a1, Answer a2, Answer a3, string s)
+    {
+        List<Answer> answers = new List<Answer>();
+        answers.Add(a1); answers.Add(a2); answers.Add(a3);
+        questions.Add(new Question(s, answers));
     }
 
-    // Update is called once per frame
-    void Update()
+    void dataBs()
     {
-        
+    }
+
+
+
+
+
+
+    public List<Question> allQues()
+    {
+        dataBs();
+        return questions;
     }
 }

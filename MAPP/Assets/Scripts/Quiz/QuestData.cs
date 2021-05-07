@@ -16,23 +16,69 @@ public class QuestData : MonoBehaviour
     [SerializeField] GameObject answer3;
     [SerializeField] GameObject hinder;
     private DataBs_SV svenska;
-   
+    private DataBs_CN chinese;
+    private DataBs_Eng english;
+    private DataBs_FR franch;
+    private DataBs_IS island;
+
+    [SerializeField] private int curentLang;
+    SetLanguage setLang;
 
     float n;
     private GameObject player;
+ 
 
 
     private void Start()
     {
-        player = GameObject.Find("Player");
+        questions = new List<Question>();
+        setLang = GameObject.FindObjectOfType<SetLanguage>();
+        curentLang = setLang.currentLang;
         svenska = GameObject.FindObjectOfType<DataBs_SV>();
-        questions = svenska.allQues();
+        chinese = GameObject.FindObjectOfType<DataBs_CN>();
+        english = GameObject.FindObjectOfType<DataBs_Eng>();
+        franch = GameObject.FindObjectOfType<DataBs_FR>();
+        island = GameObject.FindObjectOfType<DataBs_IS>();
+        player = GameObject.Find("Player");
+     
+        Debug.Log(curentLang);
+
+
+        if (curentLang == 0)
+        {
+            questions = english.allQues();
+            Debug.Log("en");
+        }
+        else if(curentLang == 1){
+            questions = svenska.allQues();
+            Debug.Log("sv");
+        }
+       else if(curentLang == 2)
+        {
+            questions = chinese.allQues();
+            Debug.Log("cn");
+        }
+        else if(curentLang == 3)
+        {
+            questions = island.allQues();
+            Debug.Log("il");
+        }
+        else
+        {
+            questions = franch.allQues();
+                 Debug.Log("fr"); 
+        }
+
+       // questions = svenska.allQues();
         questPanel.SetActive(false);
         InvokeRepeating("randomQuest", 2f, 20f);
 
         Debug.Log(questions.Count);
     }
-
+    private void Awake()
+    {
+        
+    }
 
     public void randomQuest()
     {
