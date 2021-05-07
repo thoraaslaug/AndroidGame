@@ -520,6 +520,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+--- !u!114 &309175559 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
+  m_PrefabInstance: {fileID: 309175558}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &335733673
 GameObject:
   m_ObjectHideFlags: 0
@@ -689,17 +700,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 2929252283123773938, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
   m_PrefabInstance: {fileID: 309175558}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &375744174 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2929252283123773951, guid: aaa2c939c0359ac4dbce3f49e8b90252, type: 3}
-  m_PrefabInstance: {fileID: 309175558}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 45977bbae16431c46a013576a1aea384, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &402095546 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8003207305463734678, guid: de00515d96c57c945a2f71bb1a95e8e4, type: 3}
@@ -3268,9 +3268,13 @@ PrefabInstance:
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: animator
+      value: 
+      objectReference: {fileID: 290833025423032587}
+    - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: joystick
       value: 
-      objectReference: {fileID: 375744174}
+      objectReference: {fileID: 309175559}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: maxSpeed
       value: 5
@@ -3287,6 +3291,10 @@ PrefabInstance:
       propertyPath: particles
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: Controller
+      value: 
+      objectReference: {fileID: 32412651}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: QuizAmount
       value: 0
@@ -3393,6 +3401,11 @@ MonoBehaviour:
   antalRight: 0
   quizAntalText: {fileID: 774021642}
   curentLang: 0
+--- !u!95 &290833025423032587 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 290833027300547892, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  m_PrefabInstance: {fileID: 290833025423032584}
+  m_PrefabAsset: {fileID: 0}
 --- !u!82 &290833025423032589 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}

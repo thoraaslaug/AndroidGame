@@ -20,7 +20,6 @@ public class SettingsMenu : MonoBehaviour
     }
     public void JoyStick()
     {
-        Debug.Log("HEJASD");
         settingsMenu.SetActive(false);
         player.GetComponent<PlayerMovement>().Joy();
         

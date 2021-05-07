@@ -6,6 +6,7 @@ using System.Collections.Generic;
 public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] GameObject deathMenu;
+    [SerializeField] GameObject controller;
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip musicClip;
 
@@ -63,7 +64,10 @@ public class PlayerMovement : MonoBehaviour
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
 
 
+        if (joy)
+        {
 
+       
         //JoyStick
         if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
         {
@@ -80,15 +84,17 @@ public class PlayerMovement : MonoBehaviour
             laneNum -= 1;
             controlLocked = "y";
         }
-
-
-        //Touch Controll
-        if (Input.touchCount> 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
-            startTouchPosition = Input.GetTouch(0).position;
         }
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        if (swipe)
         {
+            controller.SetActive(false);
+            //Touch Controll
+            if (Input.touchCount> 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
+            startTouchPosition = Input.GetTouch(0).position;
+            }
+
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
             endTouchPosition = Input.GetTouch(0).position;
 
             if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f) {
@@ -107,6 +113,8 @@ public class PlayerMovement : MonoBehaviour
                 controlLocked = "y";
             }
         }
+        }
+            
         
 
             
