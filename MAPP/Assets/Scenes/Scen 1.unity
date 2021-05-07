@@ -3300,6 +3300,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: controller
+      value: 
+      objectReference: {fileID: 32412651}
+    - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: audioSource
       value: 
       objectReference: {fileID: 290833025423032589}
