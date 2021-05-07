@@ -40,7 +40,7 @@ public class PlayerMovement : MonoBehaviour
         if (!alive) return;
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-
+        SoundManager.PlaySound("Background");
 
 
 
@@ -105,9 +105,7 @@ public class PlayerMovement : MonoBehaviour
         QuizAmount = 0;
         // Restart the game with a 2 second delay
         Invoke("Restart", 2);
-        
-        audioSource.PlayOneShot(audioClip);
-
+        SoundManager.PlaySound("Bells");
 
     }
 
