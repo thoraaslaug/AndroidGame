@@ -5,9 +5,9 @@ using UnityEngine;
 public class SettingsMenu : MonoBehaviour
 {
     // Start is called before the first frame update
-    public SettingsMenu settingsMenu;
+    public GameObject settingsMenu;
     void Settings()
     {
-        //settingsMenu.SetActive(true);
+        settingsMenu.SetActive(true);
     }
 }
