@@ -13,14 +13,16 @@ public class PlayerState : MonoBehaviour
     [SerializeField] private int antalQuizSteg1 = 20;
     [SerializeField] private int antalQuizSteg2 = 40;
     [SerializeField] private int antalQuizSteg3 = 60;
-    [SerializeField] private int antalRight=0;
+    [SerializeField] private int antalRight = 0;
     [SerializeField] private GameObject quizAntalText;
-   
+    [SerializeField] private int curentLang;
+    SetLanguage setLang;
+
     // Start is called before the first frame update
     void Start()
     {
-        
 
+        setLang = GameObject.FindObjectOfType<SetLanguage>();
         healthPoints = initialHealthPoints;
         if (useStartPosition == true)
         {
@@ -32,7 +34,7 @@ public class PlayerState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        curentLang = setLang.currentLang;
     }
     public int getTotalRight()
     {
@@ -65,5 +67,10 @@ public class PlayerState : MonoBehaviour
         gameObject.transform.position = respawnPosition.transform.position;
 
 
-    }
+       
+    } 
+    public int getCurrentLang()
+        {
+            return curentLang;
+        }
 }
