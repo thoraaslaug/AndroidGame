@@ -22,7 +22,8 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 move;
     public float forwardSpeed;
     public float maxSpeed;
-
+    [SerializeField] private AudioSource audioSource;
+    [SerializeField] private AudioClip audioClip;
     [SerializeField] float jumpForce = 400f;
 
     [SerializeField] LayerMask groundLayerMask;
@@ -105,6 +106,8 @@ public class PlayerMovement : MonoBehaviour
         // Restart the game with a 2 second delay
         Invoke("Restart", 2);
         
+        audioSource.PlayOneShot(audioClip);
+
 
     }
 
@@ -127,6 +130,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
         particles.Play();
+        
     }
 
     //quiz
