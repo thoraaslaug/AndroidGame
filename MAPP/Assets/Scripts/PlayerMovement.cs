@@ -28,7 +28,9 @@ public class PlayerMovement : MonoBehaviour
     public float forwardSpeed;
     public float maxSpeed;
 
-    private bool deathMenuOn = false;
+    private bool joy = false;
+    private bool swipe = false;
+
 
     private Vector2 startTouchPosition, endTouchPosition;
 
@@ -164,6 +166,16 @@ public class PlayerMovement : MonoBehaviour
         
         
 
+    }
+    public void Swipe()
+    {
+        Debug.Log("ASDASDASDSAD");
+        swipe = true;
+    }
+    public void Joy()
+    {
+        Debug.Log("ASDASDASDSAD");
+        joy = true;
     }
 
     void Restart()
