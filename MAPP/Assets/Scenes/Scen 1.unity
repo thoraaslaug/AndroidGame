@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3290,7 +3290,7 @@ PrefabInstance:
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: particles
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 290833025423032588}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: Controller
       value: 
@@ -3375,6 +3375,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8596864004174528779, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: looping
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596864004174528779, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: lengthInSec
+      value: 0.15
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596864004174528779, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: startDelay.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596864004174528779, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596864004174528779, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: InitialModule.startSpeed.scalar
+      value: -0.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596864004174528779, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: EmissionModule.rateOverTime.scalar
+      value: 400
+      objectReference: {fileID: 0}
+    - target: {fileID: 8596864004174528779, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: InitialModule.startLifetime.scalar
+      value: 0.2
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 290833025423032586, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
@@ -3408,6 +3436,11 @@ MonoBehaviour:
 --- !u!95 &290833025423032587 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 290833027300547892, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  m_PrefabInstance: {fileID: 290833025423032584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!198 &290833025423032588 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 8596864004174528779, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
   m_PrefabInstance: {fileID: 290833025423032584}
   m_PrefabAsset: {fileID: 0}
 --- !u!82 &290833025423032589 stripped
