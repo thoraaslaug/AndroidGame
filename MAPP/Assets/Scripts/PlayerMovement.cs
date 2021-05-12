@@ -154,7 +154,13 @@ public class PlayerMovement : MonoBehaviour
         
         if (joystick.Vertical >= 0.5)
         {
-            Jump();
+
+            float height = GetComponent<Collider>().bounds.size.y;
+
+            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2), groundLayerMask);
+
+            if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
+            particles.Play();
         }
 
         
@@ -205,15 +211,15 @@ public class PlayerMovement : MonoBehaviour
         controlLocked = "n";
     }
 
-    void Jump()
-    {
-        float height = GetComponent<Collider>().bounds.size.y;
+    //void Jump()
+    //{
+    //    float height = GetComponent<Collider>().bounds.size.y;
 
-        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
+    //    bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2), groundLayerMask);
 
-        if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
-        particles.Play();
-    }
+    //    if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
+    //    particles.Play();
+    //}
 
     //quiz
     public Transform pauseGame()
