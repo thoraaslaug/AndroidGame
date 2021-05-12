@@ -3265,7 +3265,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: speed
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: animator
@@ -3283,6 +3283,10 @@ PrefabInstance:
       propertyPath: deathMenu
       value: 
       objectReference: {fileID: 1140643276}
+    - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: jumpForce
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: musicClip
       value: 
@@ -3410,9 +3414,29 @@ Animator:
   m_CorrespondingSourceObject: {fileID: 290833027300547892, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
   m_PrefabInstance: {fileID: 290833025423032584}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &290833025423032588
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290833025423032585}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d986cf62b2368ce4abc4e9de033c1745, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  fallMultiplier: 2.5
+  lowJump: 2
+  rigidbody: {fileID: 290833025423032592}
 --- !u!82 &290833025423032589 stripped
 AudioSource:
   m_CorrespondingSourceObject: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  m_PrefabInstance: {fileID: 290833025423032584}
+  m_PrefabAsset: {fileID: 0}
+--- !u!54 &290833025423032592 stripped
+Rigidbody:
+  m_CorrespondingSourceObject: {fileID: 290833025451896410, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
   m_PrefabInstance: {fileID: 290833025423032584}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8003207305263668268
