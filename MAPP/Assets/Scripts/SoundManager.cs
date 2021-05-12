@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
-    public static AudioClip Bells, Begin, Run;
+    public static AudioClip Bells, Jump, Run;
     static AudioSource audiosrc;
 
     public void Start()
     {
         Bells = Resources.Load<AudioClip>("Bells");
-
+        Jump = Resources.Load<AudioClip>("Jump");
+        Run = Resources.Load<AudioClip>("Run");
         audiosrc = GetComponent<AudioSource>();
     }
 
@@ -28,7 +29,15 @@ public class SoundManager : MonoBehaviour
 
                 audiosrc.PlayOneShot(Bells);
                 break;
+            case "Jump":
+
+                audiosrc.PlayOneShot(Jump);
+            break;
+            case "Run":
+                audiosrc.PlayOneShot(Run);
+                break;
         }
-    }
+        }
+         
 }
 
