@@ -171,7 +171,12 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Dead", true);
         audioSource.loop = false;
         Invoke("Restart", 2);
-        SoundManager.PlaySound("Bells");
+
+
+        if (alive == false)
+        {
+            SoundManager.PlaySound("Bells");
+        }
         
         
 
