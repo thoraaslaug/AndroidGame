@@ -123,7 +123,7 @@ public class PlayerMovement : MonoBehaviour
             GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
         float horizentalInput = joystick.Horizontal;
-        verticalMove = joystick.Vertical;
+        
 
 
 
@@ -151,6 +151,10 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+
+        verticalMove = joystick.Vertical;
+
+
         
         if (joystick.Vertical >= 0.5)
         {
