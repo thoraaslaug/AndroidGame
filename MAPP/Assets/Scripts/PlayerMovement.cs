@@ -115,20 +115,7 @@ public class PlayerMovement : MonoBehaviour
         }
         }
 
-        float height = GetComponent<Collider>().bounds.size.y;
-
-        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
-
-        if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
-        particles.Play();
-        SoundManager.PlaySound("Jump");
-
-
-
-
-
-
-        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
+            GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
         float horizentalInput = joystick.Horizontal;
         verticalMove = joystick.Vertical;
@@ -221,13 +208,13 @@ public class PlayerMovement : MonoBehaviour
 
     void Jump()
     {
-        /*float height = GetComponent<Collider>().bounds.size.y;
+        float height = GetComponent<Collider>().bounds.size.y;
 
         bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
 
         if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
         particles.Play();
-        SoundManager.PlaySound("Jump");*/
+        SoundManager.PlaySound("Jump");
 
 
     }
