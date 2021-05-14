@@ -13,17 +13,15 @@ public class ImprovedJump : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        SoundManager.PlaySound("Jump");
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (rigidbody.velocity.y < 0)
+        if (rigidbody.velocity.y <= 0)
         {
             rigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
-            
-                SoundManager.PlaySound("Jump");
             
         }
     }

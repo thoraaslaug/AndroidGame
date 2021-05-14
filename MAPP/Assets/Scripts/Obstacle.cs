@@ -17,28 +17,16 @@ public class Obstacle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
    {
-       //  Kill the player
-       //if (collision.gameObject.name == "Player")
-       // {
-       //     playerMovement.Die();
-       // }
         if(collision.gameObject.tag == "Answers")
         {
             Destroy(objectToDestory);
         } 
-        if (collision.gameObject.CompareTag("Player") == true)
+        if (collision.gameObject.CompareTag("Player") == true){
             collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
-       
             SoundManager.PlaySound("Bump");
-        
-        {
-
         }
 
     }
-
-
-
 
     void Update()
     {

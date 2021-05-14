@@ -7,8 +7,9 @@ public class PauseLang : MonoBehaviour
 {
     public PauseLangInfo[] languages;
     public Text Play;
-    public SetLanguage setLan;
-
+    
+    public Text Pause;
+    public Text Right;
     public Text Exit;
     public int currentLang;
 
@@ -24,17 +25,14 @@ public class PauseLang : MonoBehaviour
             CurrentLanguage(index);
            
         }
-
-        GameObject.DontDestroyOnLoad(transform.gameObject);
-
     }
-
 
     public void CurrentLanguage(int index)
     {
         Play.text = languages[index].play;
-        
+        Pause.text = languages[index].pause;
         Exit.text = languages[index].exit;
+        Right.text = languages[index].right;
         PlayerPrefs.SetInt("lang", index);
         currentLang = index;
 
