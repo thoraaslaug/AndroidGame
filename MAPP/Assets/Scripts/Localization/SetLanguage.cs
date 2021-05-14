@@ -9,6 +9,14 @@ public class SetLanguage : MonoBehaviour
     public Text Play;
     public Text Settings;
     public Text Exit;
+    public Text easy;
+    public Text normal;
+    public Text hard;
+
+    public GameObject menuPanel;
+    public GameObject langPanel;
+        
+
     public  int currentLang;
 
     //public Text lang;
@@ -23,7 +31,7 @@ public class SetLanguage : MonoBehaviour
             CurrentLanguage(index);
         }
 
-        GameObject.DontDestroyOnLoad(transform.gameObject);
+     
 
     }
 
@@ -33,9 +41,16 @@ public class SetLanguage : MonoBehaviour
         Play.text = languages[index].play;
         Settings.text = languages[index].settings;
         Exit.text = languages[index].exit;
+        easy.text = languages[index].easy;
+        normal.text = languages[index].normal;
+        hard.text = languages[index].hard;
         PlayerPrefs.SetInt("lang", index);
         currentLang = index;
-       
+    }
+
+    public void setDifficulty()
+    {
+        int index = PlayerPrefs.GetInt("lang");
 
     }
 }//end of class
