@@ -22,7 +22,7 @@ public class QuestData : MonoBehaviour
     private DataBs_IS island;
 
     [SerializeField] private int curentLang;
-    SetLanguage setLang;
+
 
     float n;
     private GameObject player;
@@ -32,8 +32,8 @@ public class QuestData : MonoBehaviour
     private void Start()
     {
         questions = new List<Question>();
-        setLang = GameObject.FindObjectOfType<SetLanguage>();
-        curentLang = setLang.currentLang;
+        curentLang = PlayerPrefs.GetInt("lang");
+
         svenska = GameObject.FindObjectOfType<DataBs_SV>();
         chinese = GameObject.FindObjectOfType<DataBs_CN>();
         english = GameObject.FindObjectOfType<DataBs_Eng>();
@@ -43,37 +43,25 @@ public class QuestData : MonoBehaviour
      
         Debug.Log(curentLang);
 
+        switch (curentLang)
+        {
+            case 0: questions = english.allQues(); break;
+            case 1: questions = svenska.allQues(); break;
+            case 2: questions = chinese.allQues(); break;
+            case 3: questions = island.allQues(); break;
+            case 4: questions = franch.allQues(); break;
+            default:
+                questions = svenska.allQues(); break;
 
-        if (curentLang == 0)
-        {
-            questions = english.allQues();
-            Debug.Log("en");
-        }
-        else if(curentLang == 1){
-            questions = svenska.allQues();
-            Debug.Log("sv");
-        }
-       else if(curentLang == 2)
-        {
-            questions = chinese.allQues();
-            Debug.Log("cn");
-        }
-        else if(curentLang == 3)
-        {
-            questions = island.allQues();
-            Debug.Log("il");
-        }
-        else
-        {
-            questions = franch.allQues();
-                 Debug.Log("fr"); 
-        }
 
-       // questions = svenska.allQues();
+        }
+        Debug.Log(questions.Count);
+
+        // questions = svenska.allQues();
         questPanel.SetActive(false);
         InvokeRepeating("randomQuest", 2f, 20f);
 
-        Debug.Log(questions.Count);
+        
     }
     private void Awake()
     {

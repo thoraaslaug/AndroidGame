@@ -9,5 +9,9 @@ public class Language
     public string play;
     public string settings;
     public string exit;
+    public string easy;
+    public string normal;
+    public string hard;
+       
   
 }
