@@ -71,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
         //JoyStick
         if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
         {
-            horizVel = 12;
+            horizVel = 10;
             StartCoroutine(stopSlide());
             laneNum += 1;
             controlLocked = "y";
@@ -79,7 +79,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
         {
-            horizVel = -12;
+            horizVel = -10;
             StartCoroutine(stopSlide());
             laneNum -= 1;
             controlLocked = "y";
@@ -98,7 +98,7 @@ public class PlayerMovement : MonoBehaviour
             endTouchPosition = Input.GetTouch(0).position;
 
             if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f) {
-                horizVel = 12;
+                horizVel = 10;
                 StartCoroutine(stopSlide());
                 laneNum += 1;
                 controlLocked = "y"; 
@@ -107,7 +107,7 @@ public class PlayerMovement : MonoBehaviour
 
             if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
             {
-                horizVel = -12;
+                horizVel = -10;
                 StartCoroutine(stopSlide());
                 laneNum -= 1;
                 controlLocked = "y";

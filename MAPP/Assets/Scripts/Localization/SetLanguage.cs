@@ -48,9 +48,5 @@ public class SetLanguage : MonoBehaviour
         currentLang = index;
     }
 
-    public void setDifficulty()
-    {
-        int index = PlayerPrefs.GetInt("lang");
 
-    }
 }//end of class

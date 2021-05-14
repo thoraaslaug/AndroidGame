@@ -10,18 +10,28 @@ public class PlayerState : MonoBehaviour
     private GameObject respawnPosition;
     [SerializeField] private GameObject startPosition;
     [SerializeField] private bool useStartPosition = true;
-    [SerializeField] private int antalQuizSteg1 = 20;
-    [SerializeField] private int antalQuizSteg2 = 40;
-    [SerializeField] private int antalQuizSteg3 = 60;
+    [SerializeField] private string diffString;
+    [SerializeField]private int diffAntal;
     [SerializeField] private int antalRight=0;
     [SerializeField] private GameObject quizAntalText;
-  
+    [SerializeField] private GameObject winMeny;
+    
    
     // Start is called before the first frame update
     void Start()
     {
+        if (PlayerPrefs.HasKey("Diff"))
+        {
+            diffString = PlayerPrefs.GetString("Diff");
+        }
+        switch (diffString)
+        {
+            case "Easy": diffAntal = 20; break;
+            case "Normal": diffAntal = 40; break;
+            case "Hard": diffAntal = 60; break;
 
-        
+        }
+
         healthPoints = initialHealthPoints;
         if (useStartPosition == true)
         {
@@ -33,7 +43,11 @@ public class PlayerState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        if(antalRight == diffAntal)
+        {
+            Time.timeScale = 0f;
+            winMeny.SetActive(true);
+        }
     }
     public int getTotalRight()
     {
