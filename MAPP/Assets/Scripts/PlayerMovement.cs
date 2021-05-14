@@ -213,9 +213,10 @@ public class PlayerMovement : MonoBehaviour
         bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
 
         if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
-        particles.Play();
-        //SoundManager.PlaySound("Jump");
-
+        {
+            particles.Play();
+            SoundManager.PlaySound("Jump");
+        }
 
     }
 

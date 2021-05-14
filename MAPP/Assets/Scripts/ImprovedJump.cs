@@ -13,7 +13,7 @@ public class ImprovedJump : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        SoundManager.PlaySound("Jump");
+        //SoundManager.PlaySound("Jump");
     }
 
     // Update is called once per frame
