@@ -13,16 +13,16 @@ public class PlayerState : MonoBehaviour
     [SerializeField] private int antalQuizSteg1 = 20;
     [SerializeField] private int antalQuizSteg2 = 40;
     [SerializeField] private int antalQuizSteg3 = 60;
-    [SerializeField] private int antalRight=0;
+    [SerializeField] private int antalRight = 0;
     [SerializeField] private GameObject quizAntalText;
-  
-   
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
 
-        
+
+
         healthPoints = initialHealthPoints;
         if (useStartPosition == true)
         {
@@ -47,6 +47,12 @@ public class PlayerState : MonoBehaviour
     public void setCounter()
     {
         quizAntalText.GetComponent<Text>().text = "" + antalRight;
+    }
+    public void DoHarm(int doHarmByThisMuch)
+    {
+        healthPoints -= doHarmByThisMuch;
+       
+
     }
 
 }
