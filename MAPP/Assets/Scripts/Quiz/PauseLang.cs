@@ -5,46 +5,39 @@ using UnityEngine.UI;
 
 public class PauseLang : MonoBehaviour
 {
-    public Text play;
-    private DataBs_SV svenska;
-    private DataBs_CN chinese;
-    private DataBs_Eng english;
-    private DataBs_FR franch;
-    private DataBs_IS island;
+    public PauseLangInfo[] languages;
+    public Text Play;
+    public SetLanguage setLan;
 
-    [SerializeField] private int curentLang;
-    SetLanguage setLang;
+    public Text Exit;
+    public int currentLang;
 
-    float n;
-    private GameObject player;
-    // Start is called before the first frame update
-    void Start()
-    {   
+    //public Text lang;
 
-        setLang = GameObject.FindObjectOfType<SetLanguage>();
-        curentLang = setLang.currentLang;
-        svenska = GameObject.FindObjectOfType<DataBs_SV>();
-        chinese = GameObject.FindObjectOfType<DataBs_CN>();
-        english = GameObject.FindObjectOfType<DataBs_Eng>();
-        franch = GameObject.FindObjectOfType<DataBs_FR>();
-        island = GameObject.FindObjectOfType<DataBs_IS>();
-
-
-              if (curentLang == 0)
-        {
-            play = english.GetComponent<Text>();
-            Debug.Log("en");
-        }
-        else if (curentLang == 1)
-        {
-            play = svenska.GetComponent<Text>();
-            Debug.Log("sv");
-        }
-    }
-
-    // Update is called once per frame
-    void Update()
+    private void Start()
     {
-        
+      
+
+        if (PlayerPrefs.HasKey("lang"))
+        {
+            int index = PlayerPrefs.GetInt("lang");
+            CurrentLanguage(index);
+           
+        }
+
+        GameObject.DontDestroyOnLoad(transform.gameObject);
+
     }
-}
+
+
+    public void CurrentLanguage(int index)
+    {
+        Play.text = languages[index].play;
+        
+        Exit.text = languages[index].exit;
+        PlayerPrefs.SetInt("lang", index);
+        currentLang = index;
+
+
+    }
+}//end of class

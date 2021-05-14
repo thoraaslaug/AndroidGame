@@ -22,6 +22,9 @@ public class ImprovedJump : MonoBehaviour
         if (rigidbody.velocity.y < 0)
         {
             rigidbody.velocity += Vector3.up * Physics.gravity.y * (fallMultiplier - 1) * Time.deltaTime;
+            
+                SoundManager.PlaySound("Jump");
+            
         }
     }
 }

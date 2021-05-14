@@ -214,7 +214,7 @@ public class PlayerMovement : MonoBehaviour
 
         if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
         particles.Play();
-        SoundManager.PlaySound("Jump");
+        //SoundManager.PlaySound("Jump");
 
 
     }
