@@ -29,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public float forwardSpeed;
     public float maxSpeed;
 
-    private bool joy = false;
+    private bool joy = true;
     private bool swipe = false;
 
 
