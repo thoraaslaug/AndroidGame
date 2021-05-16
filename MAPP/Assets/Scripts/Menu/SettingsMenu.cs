@@ -9,6 +9,8 @@ public class SettingsMenu : MonoBehaviour
     public GameObject menu;
     public GameObject player;
 
+    public int index = 1;
+
     private void Start()
     {
         GameObject.DontDestroyOnLoad(transform.gameObject);
@@ -16,19 +18,20 @@ public class SettingsMenu : MonoBehaviour
     public void Settings()
     {
         settingsMenu.SetActive(true);
-        //menu.SetActive(false);
+        menu.SetActive(false);
     }
     public void JoyStick()
     {
         settingsMenu.SetActive(false);
-        player.GetComponent<PlayerMovement>().Joy();
-        
+        index = 1;
+        menu.SetActive(true);
     }
     public void Swipe()
     {
         settingsMenu.SetActive(false);
-        player.GetComponent<PlayerMovement>().Swipe();
-        
+        index = 0;
+        menu.SetActive(true);
+
     }
 
 
