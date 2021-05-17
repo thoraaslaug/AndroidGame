@@ -29,8 +29,7 @@ public class PlayerMovement : MonoBehaviour
     public float forwardSpeed;
     public float maxSpeed;
 
-    private bool joy = true;
-    private bool swipe = false;
+    [SerializeField] int control = 0;
 
 
     private Vector2 startTouchPosition, endTouchPosition;
@@ -44,6 +43,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Animator animator;
     [SerializeField] Joystick joystick;
     [SerializeField] int currentRightAnswer;
+    SettingsMenu settingsMenu;
 
     [SerializeField] private ParticleSystem particles;
    
@@ -54,6 +54,8 @@ public class PlayerMovement : MonoBehaviour
         audioSource.Play();
         animator = gameObject.GetComponent<Animator>();
         animator.SetBool("Dead", false);
+        settingsMenu = GameObject.FindObjectOfType<SettingsMenu>();
+        control = settingsMenu.index;
     }
 
     private void FixedUpdate()
@@ -64,7 +66,7 @@ public class PlayerMovement : MonoBehaviour
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
 
 
-        if (joy)
+        if (control == 1)
         {
 
        
@@ -85,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
             controlLocked = "y";
         }
         }
-        if (swipe)
+        if (control == 0)
         {
             controller.SetActive(false);
             //Touch Controll
@@ -185,16 +187,7 @@ public class PlayerMovement : MonoBehaviour
         
 
     }
-    public void Swipe()
-    {
-        Debug.Log("ASDASDASDSAD");
-        swipe = true;
-    }
-    public void Joy()
-    {
-        Debug.Log("ASDASDASDSAD");
-        joy = true;
-    }
+    
 
     void Restart()
     {
