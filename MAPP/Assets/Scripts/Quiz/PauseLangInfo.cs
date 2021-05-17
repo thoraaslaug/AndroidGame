@@ -14,6 +14,7 @@ public class PauseLangInfo
     public string die;
     public string restart;
     public string quit;
+    public string congratz;
 
 
 }

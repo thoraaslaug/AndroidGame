@@ -34,9 +34,9 @@ public class SoundManager : MonoBehaviour
 
                 audiosrc.PlayOneShot(Jump);
             break;
-            case "Run":
-                audiosrc.PlayOneShot(Run);
-                break;
+            //case "Run":
+              //  audiosrc.PlayOneShot(Run);
+               // break;
             case "Bump":
                 audiosrc.PlayOneShot(Bump);
                 break;

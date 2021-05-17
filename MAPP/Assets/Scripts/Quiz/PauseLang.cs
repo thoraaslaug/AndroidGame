@@ -15,6 +15,7 @@ public class PauseLang : MonoBehaviour
     public Text MainMenu;
     public Text restart;
     public Text Quit;
+    public Text Congratz;
     public int currentLang;
 
     //public Text lang;
@@ -40,6 +41,7 @@ public class PauseLang : MonoBehaviour
         Death.text = languages[index].die;
         MainMenu.text = languages[index].mainmenu;
         Lose.text = languages[index].lose;
+        Congratz.text = languages[index].congratz;
 
         PlayerPrefs.SetInt("lang", index);
         currentLang = index;
