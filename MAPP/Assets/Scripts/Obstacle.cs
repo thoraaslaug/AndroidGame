@@ -5,7 +5,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     PlayerMovement playerMovement;
-    [SerializeField] private GameObject objectToDestory;
+    [SerializeField] private GameObject objectToDestroy;
 
     void Start()
     {
@@ -21,7 +21,7 @@ public class Obstacle : MonoBehaviour
         }
         if(collision.gameObject.tag == "Answers")
         {
-            Destroy(objectToDestory);
+            Destroy(objectToDestroy);
         }
     }
 

@@ -126,7 +126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bd222bd21ce77448e59f103b1b83c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToDestory: {fileID: 1729782501303860}
+  objectToDestroy: {fileID: 1729782501303860}
 --- !u!54 &-271018538639190078
 Rigidbody:
   m_ObjectHideFlags: 0

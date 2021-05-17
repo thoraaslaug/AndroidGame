@@ -941,6 +941,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1364224499}
   isPaused: 0
+  questionPanel: {fileID: 0}
+  quizCounter: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!1 &441180293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1137,6 +1140,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1364224499}
   isPaused: 0
+  questionPanel: {fileID: 0}
+  quizCounter: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!1 &526041827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1173,9 +1179,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
-  questionPanel: {fileID: 638566702}
-  quizCounter: {fileID: 1736560381}
-  pauseButton: {fileID: 1941737965}
 --- !u!1 &638566702 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8003207304625429762, guid: de00515d96c57c945a2f71bb1a95e8e4, type: 3}
@@ -3061,6 +3064,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1364224499}
   isPaused: 0
+  questionPanel: {fileID: 0}
+  quizCounter: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!1 &1651517956
 GameObject:
   m_ObjectHideFlags: 0
@@ -4454,7 +4460,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8003207304625429763, guid: de00515d96c57c945a2f71bb1a95e8e4, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -21.69812
+      value: -21.69806
       objectReference: {fileID: 0}
     - target: {fileID: 8003207304625429763, guid: de00515d96c57c945a2f71bb1a95e8e4, type: 3}
       propertyPath: m_AnchoredPosition.y
