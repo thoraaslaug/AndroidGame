@@ -10,8 +10,10 @@ public class PauseLangInfo
     public string exit;
     public string right;
     public string lose;
-    public string win;
+    public string mainmenu;
     public string die;
+    public string restart;
+    public string quit;
 
 
 }

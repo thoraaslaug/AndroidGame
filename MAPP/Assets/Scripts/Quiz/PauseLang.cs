@@ -11,6 +11,10 @@ public class PauseLang : MonoBehaviour
     public Text Pause;
     public Text Right;
     public Text Exit;
+    public Text Lose;
+    public Text MainMenu;
+    public Text restart;
+    public Text Quit;
     public int currentLang;
 
     //public Text lang;
@@ -33,6 +37,10 @@ public class PauseLang : MonoBehaviour
         Pause.text = languages[index].pause;
         Exit.text = languages[index].exit;
         Right.text = languages[index].right;
+        Death.text = languages[index].die;
+        MainMenu.text = languages[index].mainmenu;
+        Lose.text = languages[index].lose;
+
         PlayerPrefs.SetInt("lang", index);
         currentLang = index;
 
