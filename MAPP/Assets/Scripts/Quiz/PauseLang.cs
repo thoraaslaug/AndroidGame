@@ -7,7 +7,7 @@ public class PauseLang : MonoBehaviour
 {
     public PauseLangInfo[] languages;
     public Text Play;
-    
+    public Text Death;
     public Text Pause;
     public Text Right;
     public Text Exit;
