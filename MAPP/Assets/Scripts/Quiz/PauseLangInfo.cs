@@ -9,6 +9,9 @@ public class PauseLangInfo
     public string pause; 
     public string exit;
     public string right;
+    public string lose;
+    public string win;
+    public string die;
 
 
 }

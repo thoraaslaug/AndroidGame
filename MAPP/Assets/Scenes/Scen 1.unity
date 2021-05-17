@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1020,6 +1020,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1364224499}
   isPaused: 0
+  questionPanel: {fileID: 0}
+  quizCounter: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!1 &441180293
 GameObject:
   m_ObjectHideFlags: 0
@@ -1217,6 +1220,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   pauseMenu: {fileID: 1364224499}
   isPaused: 0
+  questionPanel: {fileID: 0}
+  quizCounter: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!1 &526041827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1253,9 +1259,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
-  questionPanel: {fileID: 638566702}
-  quizCounter: {fileID: 1736560381}
-  pauseButton: {fileID: 1941737965}
 --- !u!1 &638566702 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8003207304625429762, guid: de00515d96c57c945a2f71bb1a95e8e4, type: 3}
@@ -2479,23 +2482,39 @@ MonoBehaviour:
     pause: Pause
     exit: Exit
     right: Amount Right
+    lose: You Lost!
+    win: You Won!
+    die: You Died!
   - play: Spela
     pause: Pausa
     exit: Sluta
     right: "Antal R\xE4tt"
+    lose: "Du f\xF6rlorade!"
+    win: Du vann!
+    die: Du Dog!
   - play: "\u5F00\u59CB"
     pause: "\u6682\u505C"
     exit: "\u9000\u51FA"
     right: "\u7B54\u5BF9\u9898\u6570"
+    lose: 
+    win: 
+    die: 
   - play: Spila
     pause: "P\xE1sa"
     exit: Haetta
     right: "R\xE9tt"
+    lose: 
+    win: 
+    die: 
   - play: Jouer
     pause: 
     exit: nej
     right: 
+    lose: 
+    win: 
+    die: 
   Play: {fileID: 1542419986}
+  Death: {fileID: 0}
   Pause: {fileID: 1276414445}
   Right: {fileID: 1366597513}
   Exit: {fileID: 201557996}
@@ -2547,6 +2566,7 @@ RectTransform:
   - {fileID: 1396714867}
   - {fileID: 736647245}
   - {fileID: 777076850}
+  - {fileID: 1680674645}
   m_Father: {fileID: 1228208431}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2811,6 +2831,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   languages: []
   Play: {fileID: 0}
+  Death: {fileID: 0}
   Pause: {fileID: 0}
   Right: {fileID: 0}
   Exit: {fileID: 0}
@@ -3089,7 +3110,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1396714867
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3468,6 +3489,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 84d6d1bc1cb72a149a67882e1e405f6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pauseMenu: {fileID: 0}
+  isPaused: 0
+  questionPanel: {fileID: 0}
+  quizCounter: {fileID: 0}
+  pauseButton: {fileID: 0}
 --- !u!1 &1542419983
 GameObject:
   m_ObjectHideFlags: 0
@@ -3577,6 +3603,85 @@ Transform:
   m_Father: {fileID: 1894740968}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1680674644
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1680674645}
+  - component: {fileID: 1680674647}
+  - component: {fileID: 1680674646}
+  m_Layer: 5
+  m_Name: Lose
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1680674645
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680674644}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1140643277}
+  m_RootOrder: 3
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1680674646
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680674644}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: You Lost!
+--- !u!222 &1680674647
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1680674644}
+  m_CullTransparentMesh: 1
 --- !u!1 &1701829396
 GameObject:
   m_ObjectHideFlags: 0
