@@ -13,6 +13,7 @@ public class Obstacle : MonoBehaviour
     void Start()
     {
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
+        playerState = GameObject.FindObjectOfType<PlayerState>();
     }
 
     private void OnCollisionEnter(Collision collision)
@@ -22,14 +23,25 @@ public class Obstacle : MonoBehaviour
             Destroy(objectToDestory);
         } 
         if (collision.gameObject.CompareTag("Player") == true){
-            collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
-            SoundManager.PlaySound("Bump");
+            //collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
+            //SoundManager.PlaySound("Bump");
+            if (playerState.healthPoints == 0)
+        {
+            playerMovement.Die();
+
+            }
+            else
+            {
+                collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
+                SoundManager.PlaySound("Bump");
+            }
         }
+        
 
     }
 
     void Update()
     {
-        
+       
     }
 }

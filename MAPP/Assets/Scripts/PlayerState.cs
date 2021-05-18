@@ -48,6 +48,8 @@ public class PlayerState : MonoBehaviour
             Time.timeScale = 0f;
             winMeny.SetActive(true);
         }
+
+
     }
     public int getTotalRight()
     {

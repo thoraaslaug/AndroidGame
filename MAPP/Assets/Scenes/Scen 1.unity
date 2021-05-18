@@ -2520,7 +2520,7 @@ MonoBehaviour:
     pause: Pausa
     exit: Sluta
     right: "Antal R\xE4tt"
-    lose: "Du f\xF6rlorade!"
+    lose: Spela igen?
     mainmenu: Tillbaka till huvudmenyn?
     die: Du Dog!
     restart: Starta om
@@ -2531,11 +2531,11 @@ MonoBehaviour:
     exit: "\u9000\u51FA"
     right: "\u7B54\u5BF9\u9898\u6570"
     lose: 
-    mainmenu: 
-    die: 
-    restart: 
-    quit: 
-    congratz: 
+    mainmenu: "\u4E3B\u83DC\u5355 "
+    die: "\u6B7B\u4EA1"
+    restart: "\u91CD\u65B0\u5F00\u59CB"
+    quit: "\u9000\u51FA"
+    congratz: "\u606D\u559C"
   - play: Spila
     pause: "P\xE1sa"
     exit: Haetta
@@ -2558,7 +2558,7 @@ MonoBehaviour:
     congratz: "F\xE9licitations"
   Play: {fileID: 1542419986}
   Death: {fileID: 1680674646}
-  Pause: {fileID: 1276414445}
+  Pause: {fileID: 1248046728}
   Right: {fileID: 1366597513}
   Exit: {fileID: 201557996}
   Lose: {fileID: 709908625}

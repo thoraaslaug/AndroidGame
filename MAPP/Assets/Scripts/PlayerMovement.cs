@@ -14,8 +14,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float speed = 5;
     [SerializeField] Rigidbody rb;
-    
 
+    
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
     public int QuizAmount = 0;
