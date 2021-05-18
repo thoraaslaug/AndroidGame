@@ -2513,7 +2513,7 @@ MonoBehaviour:
     right: "R\xE9tt"
     lose: "\xFE\xFA Tapa\xF0ir "
     mainmenu: 
-    die: "\xDE\xFA d\xF3st "
+    die: "\xDE\xFA Tapa\xF0ir!"
     restart: Byrja Aftur
     quit: "H\xE6tta"
     congratz: Til Hamingju!

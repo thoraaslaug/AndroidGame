@@ -18,14 +18,7 @@ public class Obstacle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
    {
-        if(collision.gameObject.tag == "Answers")
-        {
-            Destroy(objectToDestory);
-        } 
-        if (collision.gameObject.CompareTag("Player") == true){
-            //collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
-            //SoundManager.PlaySound("Bump");
-            if (playerState.healthPoints == 0)
+        if (playerState.healthPoints == 0)
         {
             playerMovement.Die();
 
@@ -35,7 +28,15 @@ public class Obstacle : MonoBehaviour
                 collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
                 SoundManager.PlaySound("Bump");
             }
-        }
+        if(collision.gameObject.tag == "Answers")
+        {
+            Destroy(objectToDestory);
+        } 
+        /*if (collision.gameObject.CompareTag("Player") == true){
+            collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
+            SoundManager.PlaySound("Bump");
+            
+        }*/
         
 
     }
