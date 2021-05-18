@@ -14,8 +14,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float speed = 5;
     [SerializeField] Rigidbody rb;
-    
 
+    private bool isGrounded;
+    [SerializeField] private LayerMask whatisground;
+    public GameObject groundcheck;
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
     public int QuizAmount = 0;
@@ -28,6 +30,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 move;
     public float forwardSpeed;
     public float maxSpeed;
+    private float yVelocity = 0.0f;
 
     [SerializeField] int control = 0;
 
@@ -44,7 +47,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Joystick joystick;
     [SerializeField] int currentRightAnswer;
     SettingsMenu settingsMenu;
-
+    private float time = 0.5f;
+    private float timer = 0;
     [SerializeField] private ParticleSystem particles;
    
     void Start()
@@ -153,19 +157,51 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
+<<<<<<< Updated upstream
         
         if (joystick.Vertical >= 0.5)
+=======
+        bool a = false;
+        bool jump = false;
+        verticalMove = joystick.Vertical;
+
+        //Collider2D[] Colliders = Physics2D.OverlapCircleAll(groundcheck.transform.position, 5f, whatisground); // kollar om våran colider kolliderar med något 
+        //isGrounded = false;
+
+        //for (int i = 0; i < Colliders.Length; i++) // om den gör det så är detta sant
+        //{
+        //    if (Colliders[i].gameObject != gameObject) // förutom om den rör vid spelaren 
+        //    {
+        //        isGrounded = true;
+        //    }
+        //}
+        if(a = true)
         {
-
-            float height = GetComponent<Collider>().bounds.size.y;
-
-            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2), groundLayerMask);
-
-            if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
-            particles.Play();
+            timer += Time.deltaTime;
+            a = false;
         }
 
-        
+        if (joystick.Vertical > 0.5f && timer > time )
+>>>>>>> Stashed changes
+        {
+            a = true;
+            jump = true;
+        }
+
+        if (jump)
+        {
+            
+            float height = GetComponent<Collider>().bounds.size.y;
+
+            bool IsGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) -0.5f, groundLayerMask);
+            if (IsGrounded)
+            {
+                GetComponent<Rigidbody>().velocity = new Vector3(0, 10, 3);
+                //rb.AddForce(Vector3.up * jumpForce);
+                particles.Play();
+                
+            }
+        }
                 
        
 
