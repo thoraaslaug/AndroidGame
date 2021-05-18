@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] float speed = 5;
     [SerializeField] Rigidbody rb;
-    
+
 
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
@@ -31,10 +31,10 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] int control = 0;
 
-
+    public Teacher teacher;
     private Vector2 startTouchPosition, endTouchPosition;
-
-
+    public bool isGrounded;
+    public Vector3 jump;
     [SerializeField] float jumpForce = 400f;
 
     [SerializeField] LayerMask groundLayerMask;
@@ -46,7 +46,7 @@ public class PlayerMovement : MonoBehaviour
     SettingsMenu settingsMenu;
 
     [SerializeField] private ParticleSystem particles;
-   
+
     void Start()
     {
         audioSource.clip = musicClip;
@@ -64,50 +64,22 @@ public class PlayerMovement : MonoBehaviour
 
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-
+        SoundManager.PlaySound("Run");
 
         if (control == 1)
         {
 
-       
-        //JoyStick
-        if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
-        {
-            horizVel = 10;
-            StartCoroutine(stopSlide());
-            laneNum += 1;
-            controlLocked = "y";
-        }
 
-        if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
-        {
-            horizVel = -10;
-            StartCoroutine(stopSlide());
-            laneNum -= 1;
-            controlLocked = "y";
-        }
-        }
-        if (control == 0)
-        {
-            controller.SetActive(false);
-            //Touch Controll
-            if (Input.touchCount> 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
-            startTouchPosition = Input.GetTouch(0).position;
-            }
-
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            //JoyStick
+            if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
             {
-            endTouchPosition = Input.GetTouch(0).position;
-
-            if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f) {
                 horizVel = 10;
                 StartCoroutine(stopSlide());
                 laneNum += 1;
-                controlLocked = "y"; 
+                controlLocked = "y";
             }
-                
 
-            if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
+            if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
             {
                 horizVel = -10;
                 StartCoroutine(stopSlide());
@@ -115,17 +87,42 @@ public class PlayerMovement : MonoBehaviour
                 controlLocked = "y";
             }
         }
+        if (control == 0)
+        {
+            controller.SetActive(false);
+            //Touch Controll
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                startTouchPosition = Input.GetTouch(0).position;
+            }
+
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+                endTouchPosition = Input.GetTouch(0).position;
+
+                if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
+                {
+                    horizVel = 10;
+                    StartCoroutine(stopSlide());
+                    laneNum += 1;
+                    controlLocked = "y";
+                }
+
+
+                if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
+                {
+                    horizVel = -10;
+                    StartCoroutine(stopSlide());
+                    laneNum -= 1;
+                    controlLocked = "y";
+                }
+            }
         }
-            
-        
 
-            
-        
-
-            GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
+        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
         float horizentalInput = joystick.Horizontal;
-        
+        verticalMove = joystick.Vertical;
 
 
 
@@ -154,25 +151,18 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
 
-        verticalMove = joystick.Vertical;
-
-
-        
         if (joystick.Vertical >= 0.5)
         {
-
             float height = GetComponent<Collider>().bounds.size.y;
 
-            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2), groundLayerMask);
+            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
 
             if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
-            particles.Play();
+            {
+                particles.Play();
+                SoundManager.PlaySound("Jump");
+            }
         }
-
-        
-                
-       
-
     }
 
     public void Die()
@@ -183,17 +173,23 @@ public class PlayerMovement : MonoBehaviour
         animator.SetBool("Dead", true);
         audioSource.loop = false;
         Invoke("Restart", 2);
-        
-        
+
+
+        if (alive == false)
+        {
+            SoundManager.PlaySound("Bells");
+        }
+
+
 
     }
-    
+
 
     void Restart()
     {
         deathMenu.GetComponent<DeathMenu>().PauseGame();
+        gameObject.SetActive(true);
 
-        
     }
     public void keepRunning()
     {
@@ -208,15 +204,19 @@ public class PlayerMovement : MonoBehaviour
         controlLocked = "n";
     }
 
-    //void Jump()
-    //{
-    //    float height = GetComponent<Collider>().bounds.size.y;
+    /*void Jump()
+    {
+        float height = GetComponent<Collider>().bounds.size.y;
 
-    //    bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2), groundLayerMask);
+        bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
 
-    //    if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
-    //    particles.Play();
-    //}
+        if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
+        {
+            particles.Play();
+            SoundManager.PlaySound("Jump");
+        }
+
+    }*/
 
     //quiz
     public Transform pauseGame()
@@ -240,5 +240,14 @@ public class PlayerMovement : MonoBehaviour
     {
         QuizAmount++;
     }
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Teacher") == true)
+        {
+            gameObject.SetActive(false);
 
+        }
+    }
+
+   
 }

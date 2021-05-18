@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 4694601366413253241}
   - component: {fileID: -302598607380026832}
   - component: {fileID: -271018538639190078}
+  - component: {fileID: 8536084913948927324}
   m_Layer: 0
   m_Name: Obstacletable
   m_TagString: Obstacle
@@ -126,7 +127,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bd222bd21ce77448e59f103b1b83c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToDestroy: {fileID: 1729782501303860}
+  objectToDestory: {fileID: 1729782501303860}
+  damage: 1
 --- !u!54 &-271018538639190078
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -143,3 +145,16 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &8536084913948927324
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729782501303860}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ab23ef5964b3f4f95ea5270806b6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

@@ -48,6 +48,8 @@ public class PlayerState : MonoBehaviour
             Time.timeScale = 0f;
             winMeny.SetActive(true);
         }
+
+
     }
     public int getTotalRight()
     {
@@ -61,6 +63,11 @@ public class PlayerState : MonoBehaviour
     {
         quizAntalText.GetComponent<Text>().text = "" + antalRight;
     }
+    public void DoHarm(int doHarmByThisMuch)
+    {
+        healthPoints -= doHarmByThisMuch;
+       
 
+    }
 
 }

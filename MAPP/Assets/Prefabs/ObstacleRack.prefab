@@ -15,6 +15,7 @@ GameObject:
   - component: {fileID: 5353393758380478623}
   - component: {fileID: -2512540739030943433}
   - component: {fileID: 723798029019252149}
+  - component: {fileID: 1331775621800428819}
   m_Layer: 0
   m_Name: ObstacleRack
   m_TagString: Obstacle
@@ -244,7 +245,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bd222bd21ce77448e59f103b1b83c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToDestroy: {fileID: 1153582326421434}
+  objectToDestory: {fileID: 1153582326421434}
+  damage: 1
 --- !u!54 &723798029019252149
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -261,6 +263,19 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &1331775621800428819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1153582326421434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ab23ef5964b3f4f95ea5270806b6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1
 --- !u!1001 &54571263951575901
 PrefabInstance:
   m_ObjectHideFlags: 0
