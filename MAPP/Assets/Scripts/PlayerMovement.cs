@@ -189,6 +189,7 @@ public class PlayerMovement : MonoBehaviour
     {
         deathMenu.GetComponent<DeathMenu>().PauseGame();
         gameObject.SetActive(true);
+        gameObject.GetComponent<PlayerState>().setHP();
 
     }
     public void keepRunning()

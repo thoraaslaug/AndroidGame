@@ -9,8 +9,9 @@ public class Damage : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Player") == true){
-            collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
+            
             Destroy(gameObject);
+            collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
 
         }
     }

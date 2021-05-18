@@ -65,9 +65,13 @@ public class PlayerState : MonoBehaviour
     }
     public void DoHarm(int doHarmByThisMuch)
     {
+        print(healthPoints);
         healthPoints -= doHarmByThisMuch;
        
 
+    }
+    public void setHP() {
+        healthPoints = initialHealthPoints;
     }
 
 }
