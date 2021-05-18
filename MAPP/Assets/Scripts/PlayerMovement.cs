@@ -5,6 +5,7 @@ using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
+    
     [SerializeField] GameObject deathMenu;
     [SerializeField] GameObject controller;
     [SerializeField] private AudioSource audioSource;
@@ -252,7 +253,7 @@ public class PlayerMovement : MonoBehaviour
         {
             timer += Time.deltaTime;
         }
-        if (joystick.Vertical >= 0.5 && timer > time)
+        if (joystick.Vertical > 0.5 && timer > time)
         {
             a = true;
             jump = true;
@@ -261,7 +262,7 @@ public class PlayerMovement : MonoBehaviour
         {
             float height = GetComponent<Collider>().bounds.size.y;
 
-            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) - 0.5f, groundLayerMask);
+            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) - 0.3f, groundLayerMask);
 
             if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
             {
