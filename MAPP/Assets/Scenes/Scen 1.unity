@@ -2534,7 +2534,7 @@ MonoBehaviour:
   Exit: {fileID: 201557996}
   Lose: {fileID: 709908625}
   MainMenu: {fileID: 204735410}
-  restart: {fileID: 726867574}
+  Restart: {fileID: 726867574}
   Quit: {fileID: 423017788}
   Congratz: {fileID: 1718541131}
   currentLang: 0
@@ -2856,7 +2856,7 @@ MonoBehaviour:
   Exit: {fileID: 0}
   Lose: {fileID: 0}
   MainMenu: {fileID: 0}
-  restart: {fileID: 0}
+  Restart: {fileID: 0}
   Quit: {fileID: 0}
   Congratz: {fileID: 0}
   currentLang: 0
