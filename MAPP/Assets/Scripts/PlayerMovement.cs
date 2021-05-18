@@ -244,7 +244,7 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        float verticalMove = joystick.Vertical;
+        verticalMove = joystick.Vertical;
         bool a = false;
         bool jump = false;
         time = 0.5f;
