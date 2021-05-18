@@ -19,6 +19,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float horizontalMuliplier = 2f;
     public int laneNum = 2;
     public int QuizAmount = 0;
+    private float time = 0;
+    private float timer = 0.5f;
     [SerializeField] private int amountToCollect = 20;
     [SerializeField] int levelToLoad;
     public float horizVel = 0;
@@ -122,7 +124,7 @@ public class PlayerMovement : MonoBehaviour
         GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
         float horizentalInput = joystick.Horizontal;
-        verticalMove = joystick.Vertical;
+        
 
 
 
@@ -150,12 +152,24 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-
-        if (joystick.Vertical >= 0.5)
+        float verticalMove = joystick.Vertical;
+        bool a = false;
+        bool jump = false;
+        time = 0.5f;
+        if (a)
+        {
+            timer += Time.deltaTime;
+        }
+        if (joystick.Vertical >= 0.5 && timer > time)
+        {
+            a = true;
+            jump = true;
+        }
+        if (jump)
         {
             float height = GetComponent<Collider>().bounds.size.y;
 
-            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
+            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) - 0.5f, groundLayerMask);
 
             if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
             {
