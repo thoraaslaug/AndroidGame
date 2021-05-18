@@ -60,71 +60,163 @@ public class PlayerMovement : MonoBehaviour
         control = settingsMenu.index;
     }
 
+    //private void FixedUpdate()
+    //{
+    //    if (!alive) return;
+
+
+    //    Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
+    //    SoundManager.PlaySound("Run");
+
+    //    if (control == 1)
+    //    {
+
+
+    //        JoyStick
+    //        if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
+    //        {
+    //            horizVel = 10;
+    //            StartCoroutine(stopSlide());
+    //            laneNum += 1;
+    //            controlLocked = "y";
+    //        }
+
+    //        if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
+    //        {
+    //            horizVel = -10;
+    //            StartCoroutine(stopSlide());
+    //            laneNum -= 1;
+    //            controlLocked = "y";
+    //        }
+    //    }
+    //    if (control == 0)
+    //    {
+    //        controller.SetActive(false);
+    //        Touch Controll
+    //        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+    //        {
+    //            startTouchPosition = Input.GetTouch(0).position;
+    //        }
+
+    //        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+    //        {
+    //            endTouchPosition = Input.GetTouch(0).position;
+
+    //            if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
+    //            {
+    //                horizVel = 10;
+    //                StartCoroutine(stopSlide());
+    //                laneNum += 1;
+    //                controlLocked = "y";
+    //            }
+
+
+    //            if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
+    //            {
+    //                horizVel = -10;
+    //                StartCoroutine(stopSlide());
+    //                laneNum -= 1;
+    //                controlLocked = "y";
+    //            }
+    //        }
+    //    }
+
+    //    GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
+
+    //    float horizentalInput = joystick.Horizontal;
+
+
+
+
+    //    if (transform.position.y < -5)
+    //    {
+    //        Die();
+    //    }
+
+    //    rb.MovePosition(rb.position + forwardMove);
+
+    //    if (toggle)
+    //    {
+    //        toggle = false;
+    //        if (forwardSpeed < maxSpeed)
+    //            forwardSpeed += 0.2f * Time.fixedDeltaTime;
+    //    }
+    //    else
+    //    {
+    //        toggle = true;
+    //        if (Time.timeScale < 2f)
+    //            Time.timeScale += 0.01f * Time.fixedDeltaTime;
+    //    }
+
+    //}
     private void FixedUpdate()
     {
         if (!alive) return;
 
 
         Vector3 forwardMove = transform.forward * speed * Time.fixedDeltaTime;
-        SoundManager.PlaySound("Run");
+
 
         if (control == 1)
         {
 
+       
+        //JoyStick
+        if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
+        {
+            horizVel = 12;
+            StartCoroutine(stopSlide());
+            laneNum += 1;
+            controlLocked = "y";
+        }
 
-            //JoyStick
-            if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
-            {
-                horizVel = 10;
-                StartCoroutine(stopSlide());
-                laneNum += 1;
-                controlLocked = "y";
-            }
-
-            if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
-            {
-                horizVel = -10;
-                StartCoroutine(stopSlide());
-                laneNum -= 1;
-                controlLocked = "y";
-            }
+        if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
+        {
+            horizVel = -12;
+            StartCoroutine(stopSlide());
+            laneNum -= 1;
+            controlLocked = "y";
+        }
         }
         if (control == 0)
         {
             controller.SetActive(false);
             //Touch Controll
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                startTouchPosition = Input.GetTouch(0).position;
+            if (Input.touchCount> 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
+            startTouchPosition = Input.GetTouch(0).position;
             }
 
             if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
             {
-                endTouchPosition = Input.GetTouch(0).position;
+            endTouchPosition = Input.GetTouch(0).position;
 
-                if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
-                {
-                    horizVel = 10;
-                    StartCoroutine(stopSlide());
-                    laneNum += 1;
-                    controlLocked = "y";
-                }
+            if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f) {
+                horizVel = 12;
+                StartCoroutine(stopSlide());
+                laneNum += 1;
+                controlLocked = "y"; 
+            }
+                
 
-
-                if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
-                {
-                    horizVel = -10;
-                    StartCoroutine(stopSlide());
-                    laneNum -= 1;
-                    controlLocked = "y";
-                }
+            if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
+            {
+                horizVel = -12;
+                StartCoroutine(stopSlide());
+                laneNum -= 1;
+                controlLocked = "y";
             }
         }
+        }
+            
+        
 
-        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
+            
+        
+
+            GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
         float horizentalInput = joystick.Horizontal;
-        
+        verticalMove = joystick.Vertical;
 
 
 
