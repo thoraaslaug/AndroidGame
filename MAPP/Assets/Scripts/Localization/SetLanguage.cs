@@ -23,18 +23,12 @@ public class SetLanguage : MonoBehaviour
 
     private void Start()
     {
-      
-
         if (PlayerPrefs.HasKey("lang"))
         {
             int index = PlayerPrefs.GetInt("lang");
             CurrentLanguage(index);
         }
-
-     
-
     }
-
 
     public void CurrentLanguage(int index)
     {

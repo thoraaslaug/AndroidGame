@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8602726671827006627}
   - component: {fileID: 6439737119094755125}
   - component: {fileID: 5462376698394658489}
+  - component: {fileID: 2939238087258589044}
   m_Layer: 0
   m_Name: Obstacle_Doorstep
   m_TagString: Untagged
@@ -109,7 +110,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bd222bd21ce77448e59f103b1b83c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectToDestroy: {fileID: 6252402064888599334}
+  objectToDestory: {fileID: 0}
+  damage: 1
 --- !u!64 &5462376698394658489
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -124,3 +126,16 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &2939238087258589044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6252402064888599334}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d9ab23ef5964b3f4f95ea5270806b6d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 1

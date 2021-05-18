@@ -34,7 +34,7 @@ public class PauseLang : MonoBehaviour
 
     public void CurrentLanguage(int index)
     {
-        Debug.Log(index);
+        //Debug.Log(index);
         Play.text = languages[index].play;
         Pause.text = languages[index].pause;
         Exit.text = languages[index].exit;
