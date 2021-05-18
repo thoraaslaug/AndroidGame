@@ -25,6 +25,14 @@ public class Teacher : MonoBehaviour
                 transform.position = Vector3.MoveTowards(transform.position, player.position, speed * Time.deltaTime);
             
     }
+
+   /*private void OnCollisionEnter(Collision collision)
+    {
+        if(collision.gameObject.CompareTag("Player") == true)
+        {
+            Destroy(player);
+        }
+    }*/
     //private void OnTriggerEnter2D(Collider2D collision) // om spelaren träffar flugan så dör den 
     //{
     //    if (collision.gameObject.CompareTag("Player") == true)

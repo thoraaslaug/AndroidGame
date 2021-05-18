@@ -10,6 +10,7 @@ TagManager:
   - Button3
   - Answers
   - Obstacle
+  - Teacher
   layers:
   - Default
   - TransparentFX
