@@ -23,8 +23,12 @@ public class Obstacle : MonoBehaviour
         {
             Destroy(objectToDestory);
         }
+       
         if (collision.gameObject.CompareTag("Player") == true)
         {
+            
+            
+                FindObjectOfType<LifeCount>().LoseLife();
             
             //collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
             //SoundManager.PlaySound("Bump");
@@ -39,7 +43,10 @@ public class Obstacle : MonoBehaviour
                 //lifecount.LoseLife();
                 SoundManager.PlaySound("Bump");
             }
-        }
+
+           
+        } 
+        
 
 
     }
