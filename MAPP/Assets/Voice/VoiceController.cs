@@ -9,9 +9,13 @@ public class VoiceController : MonoBehaviour
 {
     const string LANG_CODE = "en—US";
     [SerializeField] Text uiText;
+    private float timer = 0;
+    private float time = 2.5f;
+    private bool listening = false;
 
     private void Start()
     {
+        
         Setup(LANG_CODE);
         SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
         SpeechToText.instance.onResultCallback = OnFinaleSpeechResult;
@@ -19,6 +23,27 @@ public class VoiceController : MonoBehaviour
         TextToSpeech.instance.onDoneCallback = OnSpeakStop;
         CheckPremmision();
 
+    }
+    private void Update()
+    {
+       
+        if (!listening)
+        {
+            listening = true;
+            StartListening();
+        }
+        if (listening)
+        {
+            float listenTimer = 0;
+            float listenTime = 2;
+            listenTimer += Time.deltaTime;
+            if (listenTimer >= listenTime)
+            {
+                listening = false;
+                StopListening();
+                listenTimer = 0;
+            }
+        }
     }
     void CheckPremmision()
     {
@@ -50,11 +75,25 @@ public class VoiceController : MonoBehaviour
     }
     public void StopListening()
     {
+        listening = false;
         SpeechToText.instance.StopRecording();
     }
     void OnFinaleSpeechResult(string result)
     {
         uiText.text = result;
+        if(result.Contains("right")) 
+        {
+            Debug.Log("right");
+        }
+        else if (result.Contains("left"))
+        {
+            Debug.Log("left");
+        }
+        else if (result.Contains("jump"))
+        {
+            Debug.Log("jump");
+        }
+
     }
     void OnPartialSpeechResult(string result)
     {
