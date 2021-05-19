@@ -7,43 +7,48 @@ using UnityEngine.Android;
 
 public class VoiceController : MonoBehaviour
 {
-    const string LANG_CODE = "en—US";
     [SerializeField] Text uiText;
-    private float timer = 0;
-    private float time = 2.5f;
+    private float listenTimer = 0;
+    private float listenTime = 2.5f;
     private bool listening = false;
 
-    private void Start()
+    void Start()
     {
-        
-        Setup(LANG_CODE);
+
+        Setup("en-US");
         SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
         SpeechToText.instance.onResultCallback = OnFinaleSpeechResult;
-        TextToSpeech.instance.onStartCallBack = OnSpeakStart;
-        TextToSpeech.instance.onDoneCallback = OnSpeakStop;
+        //TextToSpeech.instance.onStartCallBack = OnSpeakStart;
+        //TextToSpeech.instance.onDoneCallback = OnSpeakStop;
         CheckPremmision();
 
     }
-    private void Update()
+    void Update()
     {
-       
-        if (!listening)
-        {
-            listening = true;
-            StartListening();
-        }
-        if (listening)
-        {
-            float listenTimer = 0;
-            float listenTime = 2;
-            listenTimer += Time.deltaTime;
-            if (listenTimer >= listenTime)
-            {
-                listening = false;
-                StopListening();
-                listenTimer = 0;
-            }
-        }
+        //Setup(LANG_CODE);
+        //SpeechToText.instance.onPartialResultsCallback = OnPartialSpeechResult;
+        //SpeechToText.instance.onResultCallback = OnFinaleSpeechResult;
+        //TextToSpeech.instance.onStartCallBack = OnSpeakStart;
+        //TextToSpeech.instance.onDoneCallback = OnSpeakStop;
+        //CheckPremmision();
+
+        //if (listening == false)
+        //{
+            
+        //    StartListening();
+        //    listening = true;
+        //}
+        //if (listening == true)
+        //{
+        //    listenTimer += Time.deltaTime;
+        //    if (listenTimer >= listenTime)
+        //    {
+                
+        //        StopListening();
+        //        listenTimer = 0;
+        //        listening = false;
+        //    }
+        //}
     }
     void CheckPremmision()
     {
@@ -52,52 +57,53 @@ public class VoiceController : MonoBehaviour
             Permission.RequestUserPermission(Permission.Microphone);
         }
     }
-    public void StartSpeaking(string message)
-    {
-        TextToSpeech.instance.StartSpeak(message);
-    }
-    public void StopSpeaking()
-    {
-        TextToSpeech.instance.StopSpeak();
-    }
+    //public void StartSpeaking(string message)
+    //{
+    //    TextToSpeech.instance.StartSpeak(message);
+    //}
+    //public void StopSpeaking()
+    //{
+    //    TextToSpeech.instance.StopSpeak();
+    //}
 
-    void OnSpeakStart()
-    {
-        Debug.Log("Talking started.. ");
-    }
-    void OnSpeakStop()
-    {
-        Debug.Log("stopped");
-    }
+    //void OnSpeakStart()
+    //{
+    //    Debug.Log("Talking started.. ");
+    //}
+    //void OnSpeakStop()
+    //{
+    //    Debug.Log("stopped");
+    //}
     public void StartListening()
     {
-        SpeechToText.instance.StartRecording();
+        SpeechToText.instance.StartRecording(speak any);
     }
     public void StopListening()
     {
-        listening = false;
+
         SpeechToText.instance.StopRecording();
+        
     }
     void OnFinaleSpeechResult(string result)
     {
-        uiText.text = result;
-        if(result.Contains("right")) 
-        {
-            Debug.Log("right");
-        }
-        else if (result.Contains("left"))
-        {
-            Debug.Log("left");
-        }
-        else if (result.Contains("jump"))
-        {
-            Debug.Log("jump");
-        }
+        uiText.GetComponent<Text>().text = result;
+        //if (result.Contains("right")) 
+        //{
+        //    Debug.Log("right");
+        //}
+        //else if (result.Contains("left"))
+        //{
+        //    Debug.Log("left");
+        //}
+        //else if (result.Contains("jump"))
+        //{
+        //    Debug.Log("jump");
+        //}
 
     }
     void OnPartialSpeechResult(string result)
     {
-        uiText.text = result;
+        uiText.GetComponent<Text>().text = result;
     }
 
     void Setup(string code)

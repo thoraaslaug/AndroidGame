@@ -444,6 +444,7 @@ GameObject:
   m_Component:
   - component: {fileID: 297928285}
   - component: {fileID: 297928284}
+  - component: {fileID: 297928286}
   m_Layer: 0
   m_Name: VoiceController
   m_TagString: Untagged
@@ -478,6 +479,19 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &297928286
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 297928283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f58fc5e31db59444a8f7b9c44c84dd78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  voiceControll: {fileID: 297928284}
 --- !u!1001 &309175558
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -858,6 +872,14 @@ PrefabInstance:
     - target: {fileID: 460522, guid: a592da1d5e8dba34f96c7ca9db6bc203, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114451114881936422, guid: a592da1d5e8dba34f96c7ca9db6bc203, type: 3}
+      propertyPath: rate
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114451114881936422, guid: a592da1d5e8dba34f96c7ca9db6bc203, type: 3}
+      propertyPath: pitch
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a592da1d5e8dba34f96c7ca9db6bc203, type: 3}
