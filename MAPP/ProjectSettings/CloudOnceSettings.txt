@@ -2,10 +2,10 @@
 	"AchievementIDs":[],
 	"LeaderboardIDs":[],
 	"CloudVariables":[],
-	"AppleSupported":true,
+	"AppleSupported":false,
 	"GoogleSupported":true,
-	"GoogleAppID":"",
-	"GoogleSetupRun":false,
+	"GoogleAppID":"1059095178286",
+	"GoogleSetupRun":true,
 	"DebugModeEnabled":false,
 	"Version":"2.7.2",
 	"SettingsLocation":"0"
