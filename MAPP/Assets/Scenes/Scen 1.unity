@@ -4787,6 +4787,14 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: jump.y
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: jump.z
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: animator
       value: 
       objectReference: {fileID: 290833025423032587}
