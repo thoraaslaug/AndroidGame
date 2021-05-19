@@ -2544,7 +2544,7 @@ MonoBehaviour:
   - play: Play
     pause: Pause
     exit: Exit
-    right: Amount Right
+    right: Score
     lose: Play again?
     mainmenu: Back to Main Menu
     die: You Died!
@@ -2583,11 +2583,11 @@ MonoBehaviour:
     congratz: Til Hamingju!
   - play: Jouer
     pause: Pause
-    exit: Sortir
-    right: Montant droit
-    lose: Tu as perdu
+    exit: Quitter
+    right: Score
+    lose: Rejouer?
     mainmenu: Retour au menu principal
-    die: Tu es mort
+    die: Tu es mort!
     restart: "Red\xE9marrer"
     quit: Quitter
     congratz: "F\xE9licitations"

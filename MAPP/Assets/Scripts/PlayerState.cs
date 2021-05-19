@@ -65,6 +65,7 @@ public class PlayerState : MonoBehaviour
     }
     public void DoHarm(int doHarmByThisMuch)
     {
+        print(healthPoints);
         healthPoints -= doHarmByThisMuch;
         if (healthPoints <= 0)
         {
@@ -80,6 +81,9 @@ public class PlayerState : MonoBehaviour
         gameObject.transform.position = respawnPosition.transform.position;
 
 
+    }
+    public void setHP() {
+        healthPoints = initialHealthPoints;
     }
 
 
