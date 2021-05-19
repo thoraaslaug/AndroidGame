@@ -5,30 +5,47 @@ using UnityEngine.UI;
 
 public class LifeCount : MonoBehaviour
 {
-    public Image[] lives;
+    public Image Life, Life1;
     public int livesRemaining;
+    public Obstacle obs;
 
- 
-    public void LoseLife()
+
+    public void Start()
     {
-        
-        if (livesRemaining == 0)
-            return;
-        
-        livesRemaining--;
-      
-        lives[livesRemaining].enabled = false;
+        livesRemaining = 2;
+        Life.gameObject.SetActive(true);
+        Life1.gameObject.SetActive(true);
 
-        //If we run out of lives we lose the game
-        if (livesRemaining == 0)
+
+        void Update()
         {
-            FindObjectOfType<PlayerMovement>().Die();
+            if (livesRemaining > 2)
+
+                livesRemaining = 2;
+
+            switch (livesRemaining)
+            {
+                case 2:
+                    Life.gameObject.SetActive(true);
+                    Life1.gameObject.SetActive(true);
+                    break;
+
+                case 1:
+                    Life.gameObject.SetActive(true);
+                    Life.gameObject.SetActive(false);
+                    break;
+
+                case 0:
+                    Life.gameObject.SetActive(false);
+                    Life.gameObject.SetActive(false);
+                    FindObjectOfType<PlayerMovement>().Die();
+                    break;
+            }
+
         }
     }
-
-    private void Update()
-    {
-        
-    }
-
 }
+
+
+
+    

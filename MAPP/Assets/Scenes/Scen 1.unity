@@ -5114,13 +5114,33 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2131869417603508971, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: Life
+      value: 
+      objectReference: {fileID: 1734585449}
+    - target: {fileID: 2131869417603508971, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: Life1
+      value: 
+      objectReference: {fileID: 2095209785}
+    - target: {fileID: 2131869417603508971, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: livesRemaining
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2131869417603508971, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: Life.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2131869417603508971, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: lives.Array.size
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 2131869417603508971, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: Life.Array.data[0]
+      value: 
+      objectReference: {fileID: 2095209785}
+    - target: {fileID: 2131869417603508971, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: Life.Array.data[1]
+      value: 
+      objectReference: {fileID: 1734585449}
     - target: {fileID: 2131869417603508971, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: lives.Array.data[0]
       value: 

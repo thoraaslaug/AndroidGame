@@ -1,3 +1,4 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -11,12 +12,12 @@ public class PlayerState : MonoBehaviour
     [SerializeField] private GameObject startPosition;
     [SerializeField] private bool useStartPosition = true;
     [SerializeField] private string diffString;
-    [SerializeField]private int diffAntal;
-    [SerializeField] private int antalRight=0;
+    [SerializeField] private int diffAntal;
+    [SerializeField] private int antalRight = 0;
     [SerializeField] private GameObject quizAntalText;
     [SerializeField] private GameObject winMeny;
-    
-   
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -43,7 +44,7 @@ public class PlayerState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(antalRight == diffAntal)
+        if (antalRight == diffAntal)
         {
             Time.timeScale = 0f;
             winMeny.SetActive(true);
@@ -67,24 +68,12 @@ public class PlayerState : MonoBehaviour
     {
         print(healthPoints);
         healthPoints -= doHarmByThisMuch;
-        if (healthPoints <= 0)
-        {
-            Respawn();
 
-        }
 
     }
-
-    public void Respawn()
+    public void setHP()
     {
         healthPoints = initialHealthPoints;
-        gameObject.transform.position = respawnPosition.transform.position;
-
-
     }
-    public void setHP() {
-        healthPoints = initialHealthPoints;
-    }
-
 
 }
