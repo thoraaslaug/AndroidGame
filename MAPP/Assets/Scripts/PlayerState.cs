@@ -1,7 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerState : MonoBehaviour
 {
@@ -58,7 +60,13 @@ public class PlayerState : MonoBehaviour
     public void quizCounter()
     {
         antalRight++;
+        Score.SaveRightToMemory(antalRight);
     }
+   
+ 
+
+        
+    
     public void setCounter()
     {
         quizAntalText.GetComponent<Text>().text = "" + antalRight;
