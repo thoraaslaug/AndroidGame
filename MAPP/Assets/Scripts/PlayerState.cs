@@ -46,12 +46,18 @@ public class PlayerState : MonoBehaviour
     {
         if (antalRight == diffAntal)
         {
-            Time.timeScale = 0f;
-            winMeny.SetActive(true);
+
+            Invoke("clearGameCall", 0.5f);
         }
 
 
     }
+  private void clearGameCall()
+    {
+        Time.timeScale = 0f;
+        winMeny.SetActive(true);
+    }
+
     public int getTotalRight()
     {
         return antalRight;

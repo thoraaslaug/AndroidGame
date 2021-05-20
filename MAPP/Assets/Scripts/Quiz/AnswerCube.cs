@@ -52,7 +52,7 @@ public class AnswerCube : MonoBehaviour
                 coll.GetComponent<PlayerState>().setCounter();
                 particles.Play();
                 removeGameObject = true;
-                //här var destory först
+                
             }
             else
             {
