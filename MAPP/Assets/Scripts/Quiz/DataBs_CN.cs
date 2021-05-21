@@ -18,19 +18,19 @@ public class DataBs_CN : MonoBehaviour
 
     void dataBs()
     {
-        addQuest(new Answer("哥德堡", false, -1), new Answer("马尔默", false, 0), new Answer("斯德哥尔摩", true, 1), "瑞典的首都是？");
+        addQuest(new Answer("哥德堡", false, -1), new Answer("马尔默", false, 0), new Answer("斯德哥尔摩", true, 1), "瑞典的首都是?");
 
         addQuest(new Answer("40", false, -1), new Answer("62", false, 0), new Answer("50", true, 1), "美国有多少个自治州?");
 
-        addQuest(new Answer("东京", true, -1), new Answer("京东", false, 0), new Answer("大版", false, 1), "日本的首都是");
+        addQuest(new Answer("东京", true, -1), new Answer("京东", false, 0), new Answer("大版", false, 1), "日本的首都是?");
 
-        addQuest(new Answer("奥斯陆", true, -1), new Answer("卑尔根", false, 0), new Answer("特隆赫姆", false, 1), "挪威的首都是");
+        addQuest(new Answer("奥斯陆", true, -1), new Answer("卑尔根", false, 0), new Answer("特隆赫姆", false, 1), "挪威的首都是?");
 
         addQuest(new Answer("俄罗斯", true, -1), new Answer("美国", false, 0), new Answer("澳大利亚", false, 1), "世界上土地面积最大的国家是?");
 
-        addQuest(new Answer("珠穆朗玛峰 ", true, -1), new Answer("乞力马扎罗山", false, 0), new Answer("乔戈里峰", false, 1), "世界上最高的山是？");
+        addQuest(new Answer("珠穆朗玛峰 ", true, -1), new Answer("乞力马扎罗山", false, 0), new Answer("乔戈里峰", false, 1), "世界上最高的山是?");
 
-        addQuest(new Answer("杜尔加河", true, -1), new Answer("多瑙河", false, 0), new Answer("第聂伯河", false, 1), "欧洲最长的河流是？");
+        addQuest(new Answer("杜尔加河", true, -1), new Answer("多瑙河", false, 0), new Answer("第聂伯河", false, 1), "欧洲最长的河流是?");
 
 
         addQuest(new Answer("乞力马扎罗山", false, -1), new Answer("乔戈里峰", true, 0), new Answer("马卡鲁峰", false, 1), "世界上第二高的山是？");

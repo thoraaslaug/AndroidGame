@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fad6b7e42438a943bc7a1197fa8d4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  representNumb: -1
+  representNumb: 0
   parent: {fileID: 2045334975520078406}
   particles: {fileID: 6092874764410286889}
   timeBeforeDeletion: 0.05
@@ -4916,7 +4916,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fad6b7e42438a943bc7a1197fa8d4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  representNumb: 0
+  representNumb: 1
   parent: {fileID: 2045334975520078406}
   particles: {fileID: 3836657375644128272}
   timeBeforeDeletion: 0.05
@@ -9752,7 +9752,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fad6b7e42438a943bc7a1197fa8d4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  representNumb: 1
+  representNumb: 2
   parent: {fileID: 2045334975520078406}
   particles: {fileID: 5097034685690969709}
   timeBeforeDeletion: 0.05

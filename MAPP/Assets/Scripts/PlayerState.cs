@@ -1,6 +1,4 @@
 
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -46,11 +44,8 @@ public class PlayerState : MonoBehaviour
     {
         if (antalRight == diffAntal)
         {
-
             Invoke("clearGameCall", 0.5f);
         }
-
-
     }
   private void clearGameCall()
     {
