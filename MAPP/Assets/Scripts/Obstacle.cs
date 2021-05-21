@@ -9,25 +9,28 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private GameObject objectToDestory;
     public int damage = 1;
     LifeCount lifecount;
+    public cameraShake cameraShake;
 
 
     void Start()
     {
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
         playerState = GameObject.FindObjectOfType<PlayerState>();
+        cameraShake = GameObject.FindObjectOfType<cameraShake>();
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.tag == "Answers")
         {
+            
             Destroy(objectToDestory);
         }
        
         if (collision.gameObject.CompareTag("Player") == true)
         {
             
-            
+            StartCoroutine(cameraShake.Shake(0.1f, 0.4f));
                 FindObjectOfType<LifeCount>().LoseLife();
             
             //collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
@@ -41,6 +44,8 @@ public class Obstacle : MonoBehaviour
             {
                 collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
                 //lifecount.LoseLife();
+                
+            
                 SoundManager.PlaySound("Bump");
             }
 
