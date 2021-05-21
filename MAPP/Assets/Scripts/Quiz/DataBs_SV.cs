@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class DataBs_SV :MonoBehaviour
 {
-
     private List<Question> questions;
     private void Awake()
     {
