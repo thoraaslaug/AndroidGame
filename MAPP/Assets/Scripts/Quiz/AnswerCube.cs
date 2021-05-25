@@ -12,6 +12,7 @@ public class AnswerCube : MonoBehaviour
 
     private bool removeGameObject = false;
     [SerializeField] private ParticleSystem particles;
+
     private float timer;
     [SerializeField] private float timeBeforeDeletion = 1f;
 
