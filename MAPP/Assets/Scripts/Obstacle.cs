@@ -9,7 +9,7 @@ public class Obstacle : MonoBehaviour
     [SerializeField] private GameObject objectToDestory;
     public int damage = 1;
     LifeCount lifecount;
-    public cameraShake cameraShake;
+   public cameraShake cameraShake;
 
 
     void Start()
@@ -30,8 +30,8 @@ public class Obstacle : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true)
         {
             
-            StartCoroutine(cameraShake.Shake(0.1f, 0.4f));
-                FindObjectOfType<LifeCount>().LoseLife();
+            /*StartCoroutine(cameraShake.Shake(0.1f, 0.4f));
+                FindObjectOfType<LifeCount>().LoseLife();*/
             
             //collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
             //SoundManager.PlaySound("Bump");
@@ -43,7 +43,7 @@ public class Obstacle : MonoBehaviour
             else
             {
                 collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
-                //lifecount.LoseLife();
+                lifecount.LoseLife();
                 
             
                 SoundManager.PlaySound("Bump");
