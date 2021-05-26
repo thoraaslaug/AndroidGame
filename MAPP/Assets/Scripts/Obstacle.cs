@@ -33,7 +33,7 @@ public class Obstacle : MonoBehaviour
         {
             // ELLER H�R
             particles.Play();
-            StartCoroutine(cameraShake.Shake(0.1f, 0.4f));
+            
                 FindObjectOfType<LifeCount>().LoseLife();
             
             
@@ -47,7 +47,8 @@ public class Obstacle : MonoBehaviour
             else
             {
                 collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
-                //lifecount.LoseLife();
+                lifecount.LoseLife();
+               
                 cameraShake.shouldShake = true;
 
 
