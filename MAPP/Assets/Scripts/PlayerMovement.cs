@@ -195,7 +195,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
                 {
-                    horizVel = 12;
+                    horizVel = 10;
                     StartCoroutine(stopSlide());
                     laneNum += 1;
                     controlLocked = "y";
@@ -204,7 +204,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
                 {
-                    horizVel = -12;
+                    horizVel = -10;
                     StartCoroutine(stopSlide());
                     laneNum -= 1;
                     controlLocked = "y";
