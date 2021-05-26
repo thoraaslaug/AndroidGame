@@ -49,6 +49,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   representNumb: 0
   parent: {fileID: 2045334975520078406}
+  rightAnswerEffeck: {fileID: 8300000, guid: e0c3ea8a26fd7984a856b790748b97e5, type: 3}
+  rightAnswerAudio: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
   particles: {fileID: 6092874764410286889}
   timeBeforeDeletion: 0.05
 --- !u!65 &7769963384885615899
@@ -4918,7 +4920,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   representNumb: 1
   parent: {fileID: 2045334975520078406}
-  particles: {fileID: 3836657375644128272}
+  rightAnswerEffeck: {fileID: 8300000, guid: e0c3ea8a26fd7984a856b790748b97e5, type: 3}
+  rightAnswerAudio: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  particles: {fileID: 6092874764410286889}
   timeBeforeDeletion: 0.05
 --- !u!65 &5937567331580254739
 BoxCollider:
@@ -9754,7 +9758,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   representNumb: 2
   parent: {fileID: 2045334975520078406}
-  particles: {fileID: 5097034685690969709}
+  rightAnswerEffeck: {fileID: 8300000, guid: e0c3ea8a26fd7984a856b790748b97e5, type: 3}
+  rightAnswerAudio: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  particles: {fileID: 6092874764410286889}
   timeBeforeDeletion: 0.05
 --- !u!65 &2111861187616605785
 BoxCollider:

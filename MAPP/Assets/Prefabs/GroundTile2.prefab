@@ -1945,6 +1945,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6762206396816002098}
     m_Modifications:
+    - target: {fileID: -3764384105875501502, guid: 0480571cf64de034d9d908aa51157db8, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1796756107964060, guid: 0480571cf64de034d9d908aa51157db8, type: 3}
       propertyPath: m_Name
       value: locker_3 (2)

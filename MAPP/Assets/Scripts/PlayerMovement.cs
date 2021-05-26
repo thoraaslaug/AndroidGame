@@ -22,7 +22,7 @@ public class PlayerMovement : MonoBehaviour
     public int QuizAmount = 0;
     private float time = 0;
     private float timer = 0.5f;
-    [SerializeField] private int amountToCollect = 20;
+
     [SerializeField] int levelToLoad;
     public float horizVel = 0;
     public float verticalMove = 0;
@@ -43,10 +43,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] LayerMask groundLayerMask;
 
-    //*********quiz
     [SerializeField] Animator animator;
     [SerializeField] Joystick joystick;
-    [SerializeField] int currentRightAnswer;
     SettingsMenu settingsMenu;
 
     [SerializeField] private ParticleSystem particles;
@@ -349,21 +347,9 @@ public class PlayerMovement : MonoBehaviour
         Debug.Log("I am pausing");
         return gameObject.transform;
     }
-
-    public void setCurrentAnswerIndex(int i)
-    {
-        currentRightAnswer = i;
-    }
-    public int getCurrentAnserIndex()
-    {
-        return currentRightAnswer;
-    }
     //*****************
 
-    public void QuizCounter()
-    {
-        QuizAmount++;
-    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Teacher") == true)
