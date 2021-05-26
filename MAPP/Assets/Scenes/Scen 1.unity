@@ -3948,7 +3948,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 51c659e84bb4d43478ca55994d772eba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  power: 0.5
+  power: 0.05
   duration: 0.07
   camera: {fileID: 1701829399}
   slowdown: 1
