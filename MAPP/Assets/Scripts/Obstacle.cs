@@ -1,7 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using System;
 
 public class Obstacle : MonoBehaviour
 {
@@ -11,7 +10,7 @@ public class Obstacle : MonoBehaviour
     public int damage = 1;
     LifeCount lifecount;
     public cameraShake cameraShake;
-    [SerializeField] private ParticleSystem particles;
+
 
     void Start()
     {
@@ -22,21 +21,18 @@ public class Obstacle : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-
         if (collision.gameObject.tag == "Answers")
         {
-            // H�R
+
             Destroy(objectToDestory);
         }
 
         if (collision.gameObject.CompareTag("Player") == true)
         {
-            // ELLER H�R
-            particles.Play();
-            
-                FindObjectOfType<LifeCount>().LoseLife();
-            
-            
+
+
+            FindObjectOfType<LifeCount>().LoseLife();
+
             //collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
             //SoundManager.PlaySound("Bump");
             if (playerState.healthPoints == 0)
@@ -47,8 +43,7 @@ public class Obstacle : MonoBehaviour
             else
             {
                 collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
-                lifecount.LoseLife();
-               
+                //lifecount.LoseLife();
                 cameraShake.shouldShake = true;
 
 
