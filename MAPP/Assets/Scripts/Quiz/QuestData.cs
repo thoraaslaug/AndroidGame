@@ -78,13 +78,11 @@ public class QuestData : MonoBehaviour
         Question q = questions[Random.Range(0, questions.Count)];
         List<Answer> ansList = new List<Answer>();
         //random answers text
-        int countNum = q.getAnswers().Count;
-        Debug.Log(q.getAnswers());
+        int countNum = q.getAnswers().Count;//should be 3
+        
         while (ansList.Count < countNum)
         {
-            int index = Random.Range(0, q.getAnswers().Count );
-            Debug.Log("current random " + index);
-           
+            int index = Random.Range(0, q.getAnswers().Count );                 
             if (!ansList.Contains(q.getAnswers()[index]))
             {
                 ansList.Add(q.getAnswers()[index]);
@@ -92,7 +90,7 @@ public class QuestData : MonoBehaviour
             }
                   
         }
-        Debug.Log(ansList);
+  
         //**
         
         questionText.GetComponent<Text>().text = q.getQuestionText();
@@ -108,11 +106,12 @@ public class QuestData : MonoBehaviour
         {
             if (ansList[i].isAnswerRight())
             {
-                player.GetComponent<PlayerMovement>().setCurrentAnswerIndex(i);
+                player.GetComponent<PlayerState>().setCurrentAnswerIndex(i);
             }
         }
-
-
+        //remove question after viewing 
+     
+        questions.Remove(q);       
         //set question UI to visible 
         questPanel.SetActive(true);
         //creat answer cube after 10s

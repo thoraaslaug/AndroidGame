@@ -14,11 +14,13 @@ public class PlayerState : MonoBehaviour
     [SerializeField] private int antalRight = 0;
     [SerializeField] private GameObject quizAntalText;
     [SerializeField] private GameObject winMeny;
+    [SerializeField] private int currentRightAnswerIndex;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        //get int from playerpref, to make sure the diffcity(20/40/60)
         if (PlayerPrefs.HasKey("Diff"))
         {
             diffString = PlayerPrefs.GetString("Diff");
@@ -49,6 +51,7 @@ public class PlayerState : MonoBehaviour
     }
   private void clearGameCall()
     {
+        //stop game and view panel
         Time.timeScale = 0f;
         winMeny.SetActive(true);
     }
@@ -57,20 +60,23 @@ public class PlayerState : MonoBehaviour
     {
         return antalRight;
     }
-    public void quizCounter()
+    public void setCurrentAnswerIndex(int i)
     {
-        antalRight++;
+        currentRightAnswerIndex = i;
+    }
+    public int getCurrentAnswerIndex()
+    {
+        return currentRightAnswerIndex;
     }
     public void setCounter()
     {
+        antalRight++;
         quizAntalText.GetComponent<Text>().text = "" + antalRight;
     }
     public void DoHarm(int doHarmByThisMuch)
     {
         print(healthPoints);
         healthPoints -= doHarmByThisMuch;
-
-
     }
     public void setHP()
     {

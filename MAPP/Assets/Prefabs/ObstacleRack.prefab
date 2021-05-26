@@ -250,7 +250,6 @@ MonoBehaviour:
   objectToDestory: {fileID: 1153582326421434}
   damage: 1
   cameraShake: {fileID: 0}
-  particles: {fileID: 1176964947686868336}
 --- !u!54 &723798029019252149
 Rigidbody:
   m_ObjectHideFlags: 0

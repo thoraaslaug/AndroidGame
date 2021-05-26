@@ -14,7 +14,7 @@ public class QuizCounter : MonoBehaviour
             timer += Time.deltaTime;
             if (timer >= timeBeforeDeletion)
             {
-               collision.GetComponent<PlayerMovement>().QuizCounter();
+               collision.GetComponent<PlayerState>().getTotalRight();
             }
             
 

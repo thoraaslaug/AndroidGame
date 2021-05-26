@@ -2574,7 +2574,7 @@ MonoBehaviour:
     easy: "\u7B80\u5355"
     normal: "\u666E\u901A"
     hard: "\u56F0\u96BE"
-    back: 
+    back: "\u8FD4\u56DE\u4E3B\u83DC\u5355"
   - lang: "\xCDslenska"
     play: Spila
     settings: Stillingar
