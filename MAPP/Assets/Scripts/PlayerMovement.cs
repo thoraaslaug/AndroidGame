@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
     public float horizVel = 0;
     public float verticalMove = 0;
     public string controlLocked = "n";
+    public string jumpLocked = "n";
     bool toggle = false;
     private Vector3 move;
     public float forwardSpeed;
@@ -165,7 +166,7 @@ public class PlayerMovement : MonoBehaviour
             //JoyStick
             if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
             {
-                horizVel = 12;
+                horizVel = 10;
                 StartCoroutine(stopSlide());
                 laneNum += 1;
                 controlLocked = "y";
@@ -173,7 +174,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
             {
-                horizVel = -12;
+                horizVel = -10;
                 StartCoroutine(stopSlide());
                 laneNum -= 1;
                 controlLocked = "y";
@@ -251,25 +252,32 @@ public class PlayerMovement : MonoBehaviour
         bool a = false;
         bool jump = false;
         time = 0.5f;
-        if (a)
-        {
-            timer += Time.deltaTime;
-        }
-        if (joystick.Vertical > 0.5 && timer > time)
+       
+        if (joystick.Vertical > 0.5)
         {
             a = true;
             jump = true;
         }
+        /*if (a) {
+            timer += Time.deltaTime;
+            print(timer);
+        } */
         if (jump)
         {
             float height = GetComponent<Collider>().bounds.size.y;
 
-            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) - 0.3f, groundLayerMask);
+            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
 
-            if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
+            if (isGrounded && jumpLocked == "n") 
             {
+
+                print("jump");
+                jumpLocked = "y";
+                rb.AddForce(Vector3.up * jumpForce);
                 particles.Play();
                 SoundManager.PlaySound("Jump");
+                StartCoroutine(stopJump());
+
             }
         }
     }
@@ -314,14 +322,20 @@ public class PlayerMovement : MonoBehaviour
         controlLocked = "n";
     }
 
+    IEnumerator stopJump() {
+        yield return new WaitForSeconds(.7f);
+        jumpLocked = "n";
+    }
+
     /*void Jump()
     {
         float height = GetComponent<Collider>().bounds.size.y;
 
         bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
 
-        if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
+        if (isGrounded) 
         {
+            rb.AddForce(Vector3.up * jumpForce);
             particles.Play();
             SoundManager.PlaySound("Jump");
         }
