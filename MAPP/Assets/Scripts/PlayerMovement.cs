@@ -249,21 +249,13 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         verticalMove = joystick.Vertical;
-        bool a = false;
         bool jump = false;
         time = 0.5f;
-       
-        if (joystick.Vertical > 0.5)
-        {
-            a = true;
+        if (joystick.Vertical > 0.5){
             jump = true;
         }
-        /*if (a) {
-            timer += Time.deltaTime;
-            print(timer);
-        } */
-        if (jump)
-        {
+        
+        if (jump){
             float height = GetComponent<Collider>().bounds.size.y;
 
             bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
