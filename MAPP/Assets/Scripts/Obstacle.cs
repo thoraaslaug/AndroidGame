@@ -30,7 +30,6 @@ public class Obstacle : MonoBehaviour
         if (collision.gameObject.CompareTag("Player") == true)
         {
 
-
             FindObjectOfType<LifeCount>().LoseLife();
 
             //collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
@@ -44,10 +43,10 @@ public class Obstacle : MonoBehaviour
             {
                 collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
                 //lifecount.LoseLife();
+                
+SoundManager.PlaySound("Bump");
                 cameraShake.shouldShake = true;
-
-
-                SoundManager.PlaySound("Bump");
+                
             }
 
 
