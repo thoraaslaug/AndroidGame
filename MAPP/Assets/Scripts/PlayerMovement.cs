@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
             //JoyStick
             if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
             {
-                horizVel = 10;
+                horizVel = 9;
                 StartCoroutine(stopSlide());
                 laneNum += 1;
                 controlLocked = "y";
@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
             {
-                horizVel = -10;
+                horizVel = -9;
                 StartCoroutine(stopSlide());
                 laneNum -= 1;
                 controlLocked = "y";
@@ -193,19 +193,21 @@ public class PlayerMovement : MonoBehaviour
 
                 if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
                 {
-                    horizVel = 10;
+                    controlLocked = "y";
+                    horizVel = 9;
                     StartCoroutine(stopSlide());
                     laneNum += 1;
-                    controlLocked = "y";
+                    
                 }
 
 
                 if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
                 {
-                    horizVel = -10;
+                    controlLocked = "y";
+                    horizVel = -9;
                     StartCoroutine(stopSlide());
                     laneNum -= 1;
-                    controlLocked = "y";
+                    
                 }
             }
         }
@@ -268,8 +270,6 @@ public class PlayerMovement : MonoBehaviour
 
             if (isGrounded && jumpLocked == "n") 
             {
-
-                print("jump");
                 jumpLocked = "y";
                 rb.AddForce(Vector3.up * jumpForce);
                 particles.Play();
