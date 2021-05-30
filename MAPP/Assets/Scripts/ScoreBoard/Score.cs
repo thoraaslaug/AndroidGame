@@ -17,7 +17,6 @@ public class Score : MonoBehaviour
         if(amount > PlayerPrefs.GetInt("AntalRight"))
         {
             PlayerPrefs.SetInt("AntalRight", amount);
-            CloudOnceServices.instance.SubmitScoreToLeaderboard(amount);
         }
         else
         {
