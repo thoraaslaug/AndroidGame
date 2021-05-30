@@ -29,15 +29,15 @@ public class CoinSpawner : MonoBehaviour {
         System.Random rand = new System.Random();
         int rndnmb = rand.Next(1, 3);
         if (rndnmb == 1) {
-            playerTransform.position = new Vector3(3, 2, z + 15);
+            playerTransform.position = new Vector3(3, 2.5f, z + 35);
             Instantiate(coinObject, playerTransform.position, Quaternion.identity, transform);
         }
         else if (rndnmb == 2) {
-            playerTransform.position = new Vector3(0, 2, z + 15);
+            playerTransform.position = new Vector3(0, 2.5f, z + 35);
             Instantiate(coinObject, playerTransform.position, Quaternion.identity, transform);
         }
         else {
-            playerTransform.position = new Vector3(-3, 2, z + 15);
+            playerTransform.position = new Vector3(-3, 2.5f, z + 35);
             Instantiate(coinObject, playerTransform.position, Quaternion.identity, transform);
         }
         coinLock = "y";
@@ -45,7 +45,7 @@ public class CoinSpawner : MonoBehaviour {
     
 
     IEnumerator CoinCooldown() {
-        yield return new WaitForSeconds(2f);
+        yield return new WaitForSeconds(15f);
         coinLock = "n";
     }
 }

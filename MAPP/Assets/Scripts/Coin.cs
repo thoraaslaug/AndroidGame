@@ -11,6 +11,7 @@ public class Coin : MonoBehaviour{
             SaveCoinsToMemory(1);
             pickupSound.Play();
             particles.Play();
+            gameObject.SetActive(false);
         }
 
     }
