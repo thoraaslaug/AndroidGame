@@ -1326,6 +1326,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  index: 0
 --- !u!114 &548852220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2346,6 +2347,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  index: 0
 --- !u!114 &979509984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2850,6 +2852,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  index: 1
 --- !u!1 &1059940345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2882,6 +2885,7 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  index: 0
 --- !u!4 &1059940347
 Transform:
   m_ObjectHideFlags: 0
@@ -5486,3 +5490,4 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+  index: 0

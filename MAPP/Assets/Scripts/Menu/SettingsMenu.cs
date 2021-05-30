@@ -10,19 +10,12 @@ public class SettingsMenu : MonoBehaviour
     public GameObject player;
     private bool joy = false;
 
-    [System.NonSerialized] public int index = 0;
+    public int index = 0;
 
 
     public int getIndex()
     {
-        if (joy)
-        {
-            return 1;
-        }
-        else
-        {
-            return 0;
-        }
+        
         return index;
     }
     private void Start()
@@ -38,13 +31,15 @@ public class SettingsMenu : MonoBehaviour
     {
         joy = true;
         index = 1;
+        PlayerPrefs.SetInt("c", index);
         settingsMenu.SetActive(false);
         menu.SetActive(true);
     }
     public void Swipe()
     {
-        joy = false;
         index = 0;
+        joy = false;
+        PlayerPrefs.SetInt("c", index);
         settingsMenu.SetActive(false);
         menu.SetActive(true);
 
