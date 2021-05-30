@@ -8,40 +8,56 @@ public class Obstacle : MonoBehaviour
     PlayerState playerState;
     [SerializeField] private GameObject objectToDestory;
     public int damage = 1;
+    LifeCount lifecount;
+    public cameraShake cameraShake;
 
 
     void Start()
     {
         playerMovement = GameObject.FindObjectOfType<PlayerMovement>();
         playerState = GameObject.FindObjectOfType<PlayerState>();
+        cameraShake = GameObject.FindObjectOfType<cameraShake>();
     }
 
     private void OnCollisionEnter(Collision collision)
-   {
-        if(collision.gameObject.tag == "Answers")
+    {
+        if (collision.gameObject.tag == "Answers")
         {
+
             Destroy(objectToDestory);
-        } 
-        if (collision.gameObject.CompareTag("Player") == true){
+        }
+
+        if (collision.gameObject.CompareTag("Player") == true)
+        {
+
+            FindObjectOfType<LifeCount>().LoseLife();
+
             //collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
             //SoundManager.PlaySound("Bump");
             if (playerState.healthPoints == 0)
-        {
-            playerMovement.Die();
+            {
+                playerMovement.Die();
 
             }
             else
             {
                 collision.gameObject.GetComponent<PlayerState>().DoHarm(damage);
-                SoundManager.PlaySound("Bump");
+                //lifecount.LoseLife();
+                
+SoundManager.PlaySound("Bump");
+                cameraShake.shouldShake = true;
+                
             }
+
+
         }
-        
+
+
 
     }
 
     void Update()
     {
-       
+
     }
 }

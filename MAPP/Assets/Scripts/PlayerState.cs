@@ -1,6 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
-using System.Runtime.InteropServices;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
@@ -13,15 +10,17 @@ public class PlayerState : MonoBehaviour
     [SerializeField] private GameObject startPosition;
     [SerializeField] private bool useStartPosition = true;
     [SerializeField] private string diffString;
-    [SerializeField]private int diffAntal;
-    [SerializeField] private int antalRight=0;
+    [SerializeField] private int diffAntal;
+    [SerializeField] private int antalRight = 0;
     [SerializeField] private GameObject quizAntalText;
     [SerializeField] private GameObject winMeny;
-    
-   
+    [SerializeField] private int currentRightAnswerIndex;
+
+
     // Start is called before the first frame update
     void Start()
     {
+        //get int from playerpref, to make sure the diffcity(20/40/60)
         if (PlayerPrefs.HasKey("Diff"))
         {
             diffString = PlayerPrefs.GetString("Diff");
@@ -45,22 +44,29 @@ public class PlayerState : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(antalRight == diffAntal)
+        if (antalRight == diffAntal)
         {
-            Time.timeScale = 0f;
-            winMeny.SetActive(true);
+            Invoke("clearGameCall", 0.5f);
         }
-
-
     }
+  private void clearGameCall()
+    {
+        //stop game and view panel
+        Time.timeScale = 0f;
+        winMeny.SetActive(true);
+    }
+
     public int getTotalRight()
     {
         return antalRight;
     }
-    public void quizCounter()
+    public void setCurrentAnswerIndex(int i)
     {
-        antalRight++;
-        Score.SaveRightToMemory(antalRight);
+        currentRightAnswerIndex = i;
+    }
+    public int getCurrentAnswerIndex()
+    {
+        return currentRightAnswerIndex;
     }
    
  
@@ -69,16 +75,16 @@ public class PlayerState : MonoBehaviour
     
     public void setCounter()
     {
+        antalRight++;
         quizAntalText.GetComponent<Text>().text = "" + antalRight;
     }
     public void DoHarm(int doHarmByThisMuch)
     {
         print(healthPoints);
         healthPoints -= doHarmByThisMuch;
-       
-
     }
-    public void setHP() {
+    public void setHP()
+    {
         healthPoints = initialHealthPoints;
     }
 

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 public class PlayerMovement : MonoBehaviour
 {
-    
+
     [SerializeField] GameObject deathMenu;
     [SerializeField] GameObject controller;
     [SerializeField] private AudioSource audioSource;
@@ -22,16 +22,17 @@ public class PlayerMovement : MonoBehaviour
     public int QuizAmount = 0;
     private float time = 0;
     private float timer = 0.5f;
-    [SerializeField] private int amountToCollect = 20;
+
     [SerializeField] int levelToLoad;
     public float horizVel = 0;
     public float verticalMove = 0;
     public string controlLocked = "n";
+    public string jumpLocked = "n";
     bool toggle = false;
     private Vector3 move;
     public float forwardSpeed;
     public float maxSpeed;
-
+    private bool jumping;
     [SerializeField] int control = 0;
 
     public Teacher teacher;
@@ -42,10 +43,8 @@ public class PlayerMovement : MonoBehaviour
 
     [SerializeField] LayerMask groundLayerMask;
 
-    //*********quiz
     [SerializeField] Animator animator;
     [SerializeField] Joystick joystick;
-    [SerializeField] int currentRightAnswer;
     SettingsMenu settingsMenu;
 
     [SerializeField] private ParticleSystem particles;
@@ -58,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         animator.SetBool("Dead", false);
         settingsMenu = GameObject.FindObjectOfType<SettingsMenu>();
-        control = settingsMenu.index;
+        control = settingsMenu.getIndex();
     }
 
     //private void FixedUpdate()
@@ -161,61 +160,77 @@ public class PlayerMovement : MonoBehaviour
         if (control == 1)
         {
 
-       
-        //JoyStick
-        if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
-        {
-            horizVel = 12;
-            StartCoroutine(stopSlide());
-            laneNum += 1;
-            controlLocked = "y";
-        }
 
-        if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
-        {
-            horizVel = -12;
-            StartCoroutine(stopSlide());
-            laneNum -= 1;
-            controlLocked = "y";
-        }
-        }
-        if (control == 0)
-        {
-            controller.SetActive(false);
-            //Touch Controll
-            if (Input.touchCount> 0 && Input.GetTouch(0).phase == TouchPhase.Began) {
-            startTouchPosition = Input.GetTouch(0).position;
-            }
-
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            //JoyStick
+            if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
             {
-            endTouchPosition = Input.GetTouch(0).position;
-
-            if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f) {
-                horizVel = 12;
+                horizVel = 9;
                 StartCoroutine(stopSlide());
                 laneNum += 1;
-                controlLocked = "y"; 
+                controlLocked = "y";
             }
-                
 
-            if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
+            if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
             {
-                horizVel = -12;
+                horizVel = -9;
                 StartCoroutine(stopSlide());
                 laneNum -= 1;
                 controlLocked = "y";
             }
         }
+        if (control == 0)
+        {
+            controller.SetActive(false);
+            //Touch Controll
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                startTouchPosition = Input.GetTouch(0).position;
+            }
+
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+                endTouchPosition = Input.GetTouch(0).position;
+
+                if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
+                {
+                    horizVel = -10;
+
+                    StartCoroutine(stopSlide());
+                    laneNum -= 1;
+                    controlLocked = "y";
+                }
+
+
+                if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
+                {
+
+                   horizVel = 10;
+                    StartCoroutine(stopSlide());
+                    laneNum += 1;
+                    controlLocked = "y"; 
+                }
+
+                
+                if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < 1f)
+                {
+                    jumping = true;
+                }
+
+
+
+            }
         }
-            
-        
+
+
 
             
         
 
-            GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
 
+
+
+        GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
+      
         float horizentalInput = joystick.Horizontal;
         verticalMove = joystick.Vertical;
 
@@ -225,14 +240,23 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
-
-        rb.MovePosition(rb.position + forwardMove);
+        if (gameObject.transform.position.x < -3.3f)
+        {
+            gameObject.transform.position = new Vector3(-3.3f, gameObject.transform.position.y, gameObject.transform.position.z);
+        }
+        if (gameObject.transform.position.x > 3.3f)
+        {
+            gameObject.transform.position = new Vector3(3.3f, gameObject.transform.position.y, gameObject.transform.position.z);
+        }
+        
+        
+    rb.MovePosition(rb.position + forwardMove);
 
         if (toggle)
         {
             toggle = false;
             if (forwardSpeed < maxSpeed)
-                forwardSpeed += 0.2f * Time.fixedDeltaTime;
+                forwardSpeed += 0.1f * Time.fixedDeltaTime;
         }
         else
         {
@@ -241,33 +265,44 @@ public class PlayerMovement : MonoBehaviour
                 Time.timeScale += 0.01f * Time.fixedDeltaTime;
         }
 
+
+
+       
+
+
     }
 
     void Update()
     {
         verticalMove = joystick.Vertical;
         bool a = false;
-        bool jump = false;
         time = 0.5f;
-        if (a)
-        {
-            timer += Time.deltaTime;
-        }
-        if (joystick.Vertical > 0.5 && timer > time)
+       
+        if (joystick.Vertical > 0.5)
         {
             a = true;
-            jump = true;
+            jumping = true;
         }
-        if (jump)
+        
+
+
+
+        if (jumping)
         {
             float height = GetComponent<Collider>().bounds.size.y;
 
-            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) - 0.3f, groundLayerMask);
+            bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
 
-            if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
+            if (isGrounded && jumpLocked == "n") 
             {
+                jumping = false;
+                print("jump");
+                jumpLocked = "y";
+                rb.AddForce(Vector3.up * jumpForce);
                 particles.Play();
                 SoundManager.PlaySound("Jump");
+                StartCoroutine(stopJump());
+
             }
         }
     }
@@ -307,9 +342,16 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator stopSlide()
     {
+      
         yield return new WaitForSeconds(.3f);
         horizVel = 0;
         controlLocked = "n";
+
+    }
+
+    IEnumerator stopJump() {
+        yield return new WaitForSeconds(.7f);
+        jumpLocked = "n";
     }
 
     /*void Jump()
@@ -318,36 +360,25 @@ public class PlayerMovement : MonoBehaviour
 
         bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
 
-        if (isGrounded) rb.AddForce(Vector3.up * jumpForce);
+        if (isGrounded) 
         {
+            rb.AddForce(Vector3.up * jumpForce);
             particles.Play();
             SoundManager.PlaySound("Jump");
         }
 
     }*/
 
-    //quiz
+    //quiz******************
     public Transform pauseGame()
     {
 
         Debug.Log("I am pausing");
         return gameObject.transform;
     }
-
-    public void setCurrentAnswerIndex(int i)
-    {
-        currentRightAnswer = i;
-    }
-    public int getCurrentAnserIndex()
-    {
-        return currentRightAnswer;
-    }
     //*****************
 
-    public void QuizCounter()
-    {
-        QuizAmount++;
-    }
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Teacher") == true)
@@ -357,5 +388,5 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-   
+
 }

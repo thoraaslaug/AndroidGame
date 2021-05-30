@@ -42,7 +42,6 @@ public class PauseLang : MonoBehaviour
         Restart.text = languages[index].restart;
         Quit.text = languages[index].quit;
         Congratz.text = languages[index].congratz;
-
         PlayerPrefs.SetInt("lang", index);
         currentLang = index;
 

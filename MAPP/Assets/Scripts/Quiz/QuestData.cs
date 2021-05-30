@@ -76,20 +76,42 @@ public class QuestData : MonoBehaviour
 
         //random choose a question
         Question q = questions[Random.Range(0, questions.Count)];
-
-        questionText.GetComponent<Text>().text = q.getQuestionText();
-        answer1.GetComponent<Text>().text = q.getAnswers()[0].getText();
-        answer2.GetComponent<Text>().text = q.getAnswers()[1].getText();
-        answer3.GetComponent<Text>().text = q.getAnswers()[2].getText();
-        //set right answer index on player
-        for (int i = 0; i < q.getAnswers().Count; i++)
+        List<Answer> ansList = new List<Answer>();
+        //random answers text
+        int countNum = q.getAnswers().Count;//should be 3
+        
+        while (ansList.Count < countNum)
         {
-            if (q.getAnswers()[i].isAnswerRight())
+            int index = Random.Range(0, q.getAnswers().Count );                 
+            if (!ansList.Contains(q.getAnswers()[index]))
             {
-                player.GetComponent<PlayerMovement>().setCurrentAnswerIndex(q.getAnswers()[i].getRightIndex());
+                ansList.Add(q.getAnswers()[index]);
+                q.getAnswers().Remove(q.getAnswers()[index]);
+            }
+                  
+        }
+  
+        //**
+        
+        questionText.GetComponent<Text>().text = q.getQuestionText();
+  
+        
+        
+        //set right answer index on player
+
+        answer1.GetComponent<Text>().text = ansList[0].getText();
+        answer2.GetComponent<Text>().text = ansList[1].getText();
+        answer3.GetComponent<Text>().text = ansList[2].getText();
+        for (int i = 0; i < ansList.Count; i++)
+        {
+            if (ansList[i].isAnswerRight())
+            {
+                player.GetComponent<PlayerState>().setCurrentAnswerIndex(i);
             }
         }
-
+        //remove question after viewing 
+     
+        questions.Remove(q);       
         //set question UI to visible 
         questPanel.SetActive(true);
         //creat answer cube after 10s
@@ -97,10 +119,11 @@ public class QuestData : MonoBehaviour
         //restart the game 
 
     }
+  
     private void setHinder()
     {
 
-        Vector3 pos = new Vector3(0f, 0f, n + 56f);
+        Vector3 pos = new Vector3(0f, 0f, n + 70f);
         Instantiate(hinder, pos, Quaternion.identity, null);
 
     }

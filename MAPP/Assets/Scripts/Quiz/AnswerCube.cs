@@ -7,11 +7,14 @@ public class AnswerCube : MonoBehaviour
     [SerializeField] private int representNumb;
 
     [SerializeField] private GameObject parent;
+    [SerializeField] private AudioClip rightAnswerEffeck;
+    [SerializeField] private AudioSource rightAnswerAudio;
     private Answer a;
     QuizUI quizUI;
 
     private bool removeGameObject = false;
     [SerializeField] private ParticleSystem particles;
+
     private float timer;
     [SerializeField] private float timeBeforeDeletion = 1f;
 
@@ -20,6 +23,8 @@ public class AnswerCube : MonoBehaviour
     {
         quizUI = GameObject.FindObjectOfType<QuizUI>();
         Invoke("changeColliderSize", 0.5f);
+        rightAnswerAudio.clip = rightAnswerEffeck;
+           
     }
 
     // Update is called once per frame
@@ -44,15 +49,14 @@ public class AnswerCube : MonoBehaviour
     {
         if (coll.gameObject.tag == "Player")
         {
-            if (coll.GetComponent<PlayerMovement>().getCurrentAnserIndex() == representNumb)
+            if (coll.GetComponent<PlayerState>().getCurrentAnswerIndex() == representNumb)
             {
-                Debug.Log("lol");
-                quizUI.setPanelOaktiv();
-                coll.GetComponent<PlayerState>().quizCounter();
+                
+                quizUI.setPanelOaktiv();               
                 coll.GetComponent<PlayerState>().setCounter();
                 particles.Play();
                 removeGameObject = true;
-                //här var destory först
+                rightAnswerAudio.Play();
             }
             else
             {

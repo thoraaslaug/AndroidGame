@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 290833025423032586}
   - component: {fileID: 8596864004174528779}
   - component: {fileID: 958979463126718853}
+  - component: {fileID: 2131869417603508971}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -110,20 +111,23 @@ MonoBehaviour:
   horizontalMuliplier: 2
   laneNum: 2
   QuizAmount: 0
-  amountToCollect: 20
   levelToLoad: 0
   horizVel: 0
   verticalMove: 0
   controlLocked: n
+  jumpLocked: n
   forwardSpeed: 1
   maxSpeed: 5
-  jumpForce: 800
+  control: 0
+  teacher: {fileID: 0}
+  isGrounded: 0
+  jump: {x: 0, y: 0, z: 0}
+  jumpForce: 840
   groundLayerMask:
     serializedVersion: 2
     m_Bits: 64
   animator: {fileID: 0}
   joystick: {fileID: 0}
-  currentRightAnswer: 0
   particles: {fileID: 8596864004174528779}
 --- !u!82 &290833025423032587
 AudioSource:
@@ -135,7 +139,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: e0c3ea8a26fd7984a856b790748b97e5, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1.14
@@ -237,12 +241,12 @@ MonoBehaviour:
   initialHealthPoints: 2
   startPosition: {fileID: 0}
   useStartPosition: 1
-  antalQuizSteg1: 20
-  antalQuizSteg2: 40
-  antalQuizSteg3: 60
+  diffString: 
+  diffAntal: 0
   antalRight: 0
   quizAntalText: {fileID: 0}
-  curentLang: 0
+  winMeny: {fileID: 0}
+  currentRightAnswerIndex: 0
 --- !u!198 &8596864004174528779
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -957,7 +961,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 1
+      value: 0.6
       mode: 0
       spread: 0
       speed:
@@ -5015,6 +5019,20 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &2131869417603508971
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 290833027307810432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cac36201dc550694ba639f4432bfc4fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives: []
+  livesRemaining: 0
 --- !u!1 &290833027307810434
 GameObject:
   m_ObjectHideFlags: 0

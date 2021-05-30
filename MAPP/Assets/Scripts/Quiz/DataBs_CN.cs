@@ -18,19 +18,19 @@ public class DataBs_CN : MonoBehaviour
 
     void dataBs()
     {
-        addQuest(new Answer("哥德堡", false, -1), new Answer("马尔默", false, 0), new Answer("斯德哥尔摩", true, 1), "瑞典的首都是？");
+        addQuest(new Answer("哥德堡", false, -1), new Answer("马尔默", false, 0), new Answer("斯德哥尔摩", true, 1), "瑞典的首都是?");
 
         addQuest(new Answer("40", false, -1), new Answer("62", false, 0), new Answer("50", true, 1), "美国有多少个自治州?");
 
-        addQuest(new Answer("东京", true, -1), new Answer("京东", false, 0), new Answer("大版", false, 1), "日本的首都是");
+        addQuest(new Answer("东京", true, -1), new Answer("京东", false, 0), new Answer("大版", false, 1), "日本的首都是?");
 
-        addQuest(new Answer("奥斯陆", true, -1), new Answer("卑尔根", false, 0), new Answer("特隆赫姆", false, 1), "挪威的首都是");
+        addQuest(new Answer("奥斯陆", true, -1), new Answer("卑尔根", false, 0), new Answer("特隆赫姆", false, 1), "挪威的首都是?");
 
         addQuest(new Answer("俄罗斯", true, -1), new Answer("美国", false, 0), new Answer("澳大利亚", false, 1), "世界上土地面积最大的国家是?");
 
-        addQuest(new Answer("珠穆朗玛峰 ", true, -1), new Answer("乞力马扎罗山", false, 0), new Answer("乔戈里峰", false, 1), "世界上最高的山是？");
+        addQuest(new Answer("珠穆朗玛峰 ", true, -1), new Answer("乞力马扎罗山", false, 0), new Answer("乔戈里峰", false, 1), "世界上最高的山是?");
 
-        addQuest(new Answer("杜尔加河", true, -1), new Answer("多瑙河", false, 0), new Answer("第聂伯河", false, 1), "欧洲最长的河流是？");
+        addQuest(new Answer("杜尔加河", true, -1), new Answer("多瑙河", false, 0), new Answer("第聂伯河", false, 1), "欧洲最长的河流是?");
 
 
         addQuest(new Answer("乞力马扎罗山", false, -1), new Answer("乔戈里峰", true, 0), new Answer("马卡鲁峰", false, 1), "世界上第二高的山是？");
@@ -162,6 +162,79 @@ public class DataBs_CN : MonoBehaviour
         // 物理化学26题
 
 
+        addQuest(new Answer("大", true, -1), new Answer("去", false, 0), new Answer("马", false, 1), "以下哪一个是形容词？");
+
+        addQuest(new Answer("跑", false, -1), new Answer("红", false, 0), new Answer("马", true, 1), "以下哪一个是名词？");
+
+        addQuest(new Answer("最大的", true, -1), new Answer("大的", false, 0), new Answer("很大的", false, 1), "Stor的最高级是什么？");
+
+        addQuest(new Answer("削", true, -1), new Answer("销", false, 0), new Answer("消", true, 1), "选词填空我昨天--一个橙子");
+
+        addQuest(new Answer("6", false, -1), new Answer("10", false, 0), new Answer("9", true, 1), "普通来说，瑞典语有多少个词类");
+
+        addQuest(new Answer("谁", true, -1), new Answer("哪", false, 0), new Answer("如何", false, 1), "以下哪个例子是代词？");
+
+        addQuest(new Answer("While", true, -1), new Answer("Wile", false, 0), new Answer("Wihle", false, 1), "尽管，然后，却的英文是什么？");
+
+        addQuest(new Answer("Enouf", false, -1), new Answer("Enough", true, 0), new Answer("Enogh", false, 1), "英语足够怎么说？");
+
+        addQuest(new Answer("麦片", false, -1), new Answer("粥", true, 0), new Answer("谷物", false, 1), "餬(糊)又可以叫做什么？");
+
+        addQuest(new Answer("喘气", true, -1), new Answer("叹气", false, 0), new Answer("打哈欠", false, 1), "英语pant是什么意思");
+
+        addQuest(new Answer("优秀的", true, -1), new Answer("女性内衣", false, 0), new Answer("糟糕", false, 1), "瑞典语中的bra是什么意思？");
+
+        addQuest(new Answer("列举", false, -1), new Answer("连接", true, 0), new Answer("决定", false, 1), "瑞典语中，以下哪一个是avtal的同义词？");
+
+        addQuest(new Answer("出去", false, -1), new Answer("到达", true, 0), new Answer("建造", false, 1), "瑞典语中，avfärd的反义词是什么？");
+
+        addQuest(new Answer("奇怪的", false, -1), new Answer("引人注目的", false, 0), new Answer("普通的", true, 1), "瑞典语中，konstig的反义词是哪一个？");
+
+        addQuest(new Answer("康健", true, -1), new Answer("衰弱", false, 0), new Answer("虚弱", false, 1), "瑞典语中，以下哪一个是frisk的同义词？");
+
+        addQuest(new Answer("Longist", false, -1), new Answer("Longest", true, 0), new Answer("Longst", false, 1), "英语最长的怎么说？");
+
+        addQuest(new Answer("Dog", false, -1), new Answer("Kourv", false, 0), new Answer("Sausage", true, 1), "英语香肠怎么说？");
+
+        addQuest(new Answer("0", false, -1), new Answer("2", false, 0), new Answer("5", true, 1), "瑞典有多少个少数名族语言？");
+
+        addQuest(new Answer("100", false, -1), new Answer("200", true, 0), new Answer("400", false, 1), "瑞典居住人口中一共有多少语言？");
+
+        addQuest(new Answer("5908", false, -1), new Answer("5209", false, 0), new Answer("6809", true, 1), "全世界有多少语言？");
+
+        addQuest(new Answer("中文", true, -1), new Answer("英文", false, 0), new Answer("印度语", false, 1), "世界最大的语言是什么？");
+
+        addQuest(new Answer("九亿七千万", false, -1), new Answer("八亿四千万", true, 0), new Answer("六亿一千万", false, 1), "世界上又大约多少人说中文？");
+
+        //22 english and swedish quz
+
+        addQuest(new Answer("6905", false, -1), new Answer("7340", false, 0), new Answer("7260 ", true, 1), "1443 + 5817 ");
+        addQuest(new Answer("5002", false, -1), new Answer("4670", false, 0), new Answer("4748 ", true, 1), "2779 + 1969 ");
+        addQuest(new Answer("5832", false, -1), new Answer("6455", false, 0), new Answer("6188 ", true, 1), "3326 + 2862");
+        addQuest(new Answer("16700", false, -1), new Answer("12600", false, 0), new Answer("13081 ", true, 1), "6480 + 6601");
+        addQuest(new Answer("9832", false, -1), new Answer("10666", false, 0), new Answer("10888 ", true, 1), "3918 + 6970");
+        addQuest(new Answer("61.35", false, -1), new Answer(" 81.5", false, 0), new Answer("71.395 ", true, 1), "71.8 − 0.405");
+        addQuest(new Answer("2.32", false, -1), new Answer(" 1.35", false, 0), new Answer("2.35 ", true, 1), "9.16 − 6.81");
+        addQuest(new Answer("48", false, -1), new Answer(" 47.4", false, 0), new Answer("48.56 ", true, 1), "53.6 − 5.04");
+        addQuest(new Answer("60", false, -1), new Answer("65", false, 0), new Answer("72 ", true, 1), "1.2分钟有多少秒");
+        addQuest(new Answer("170 ", false, -1), new Answer("100", false, 0), new Answer("144 ", true, 1), "1008天大概是多少周？");
+        addQuest(new Answer("20 ", false, -1), new Answer("2,52", false, 0), new Answer("25,2 ", true, 1), "3.6周大概是多少天");
+        addQuest(new Answer("90% ", false, -1), new Answer("70%", false, 0), new Answer("97,5%", true, 1), "0.975的百分比格式是");
+        addQuest(new Answer("0,8 ", false, -1), new Answer(" 0,89", false, 0), new Answer("0,875", true, 1), "7 / 8大概是多少");
+        addQuest(new Answer("7/9 ", false, -1), new Answer("7/11 ", false, 0), new Answer("7/10", true, 1), "百分之七十大概是多少");
+        addQuest(new Answer("15 ", false, -1), new Answer(" 11 ", false, 0), new Answer("12", true, 1), "11 = 132 / t，t是多少");
+        addQuest(new Answer("9 ", false, -1), new Answer(" 6", false, 0), new Answer("8", true, 1), "p ^ 2 = 64，p是多少");
+        addQuest(new Answer("1 ", false, -1), new Answer(" 4", false, 0), new Answer("2", true, 1), "q + 6 = 8，q是多少");
+        addQuest(new Answer("5", false, -1), new Answer("2", false, 0), new Answer("3", true, 1), "5c = 15，c是多少");
+        addQuest(new Answer("31", false, -1), new Answer("29.78", false, 0), new Answer("30.704", true, 1), "4.04 × 7.6");
+        addQuest(new Answer("1700", false, -1), new Answer("1640", false, 0), new Answer("1560", true, 1), "26 × 60");
+        addQuest(new Answer("1.69", false, -1), new Answer("1.8", false, 0), new Answer("1.6596", true, 1), "9.22 × 0.18");
+        addQuest(new Answer("10.41", false, -1), new Answer("8.789", false, 0), new Answer("9.898", true, 1), "1.4 × 7.07");
+        addQuest(new Answer("141.412", false, -1), new Answer("8.789", false, 0), new Answer("212.25", true, 1), "25 × 8.49");
+        addQuest(new Answer("1", false, -1), new Answer("3", false, 0), new Answer("5", true, 1), "15 / 3");
+        addQuest(new Answer("1", false, -1), new Answer("0", false, 0), new Answer("2", true, 1), "2 x 1");
+        addQuest(new Answer("64", false, -1), new Answer("600", false, 0), new Answer("256", true, 1), "16 ^ 2");
+        addQuest(new Answer("0", false, -1), new Answer("2", false, 0), new Answer("1", true, 1), "0.2 x 5");
 
 
 

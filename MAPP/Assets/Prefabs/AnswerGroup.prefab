@@ -28,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 932913433350461505}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.54, y: 0, z: 0}
+  m_LocalPosition: {x: -3.02, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 8459062699793179272}
@@ -47,8 +47,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fad6b7e42438a943bc7a1197fa8d4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  representNumb: -1
+  representNumb: 0
   parent: {fileID: 2045334975520078406}
+  rightAnswerEffeck: {fileID: 8300000, guid: e0c3ea8a26fd7984a856b790748b97e5, type: 3}
+  rightAnswerAudio: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
   particles: {fileID: 6092874764410286889}
   timeBeforeDeletion: 0.05
 --- !u!65 &7769963384885615899
@@ -62,8 +64,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5969734, y: 2.8832731, z: 8.126646}
-  m_Center: {x: 0.05963189, y: 0.94163585, z: 0.1011312}
+  m_Size: {x: 2.9093804, y: 3.8450265, z: 5.2269115}
+  m_Center: {x: -0.22789629, y: 1.604548, z: -0.252712}
 --- !u!198 &6092874764410286889
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -691,7 +693,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -778,7 +780,7 @@ ParticleSystem:
     sphericalDirectionAmount: 1
     randomPositionAmount: 0
     radius:
-      value: 0.6
+      value: 0.3
       mode: 0
       spread: 0
       speed:
@@ -4916,8 +4918,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fad6b7e42438a943bc7a1197fa8d4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  representNumb: 0
+  representNumb: 1
   parent: {fileID: 2045334975520078406}
+  rightAnswerEffeck: {fileID: 8300000, guid: e0c3ea8a26fd7984a856b790748b97e5, type: 3}
+  rightAnswerAudio: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
   particles: {fileID: 3836657375644128272}
   timeBeforeDeletion: 0.05
 --- !u!65 &5937567331580254739
@@ -4931,8 +4935,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5969734, y: 2.8832731, z: 8.126646}
-  m_Center: {x: 0.05963189, y: 0.94163585, z: 0.1011312}
+  m_Size: {x: 2.5695066, y: 3.6955597, z: 5.3258524}
+  m_Center: {x: -0.092463836, y: 1.5938561, z: -0.19689287}
 --- !u!198 &3836657375644128272
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -5560,7 +5564,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -5647,7 +5651,7 @@ ParticleSystem:
     sphericalDirectionAmount: 1
     randomPositionAmount: 0
     radius:
-      value: 0.6
+      value: 0.3
       mode: 0
       spread: 0
       speed:
@@ -9733,7 +9737,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7746120830480789597}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2.48, y: 0, z: 0}
+  m_LocalPosition: {x: 2.94, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 6039559225955103960}
@@ -9752,8 +9756,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fad6b7e42438a943bc7a1197fa8d4b3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  representNumb: 1
+  representNumb: 2
   parent: {fileID: 2045334975520078406}
+  rightAnswerEffeck: {fileID: 8300000, guid: e0c3ea8a26fd7984a856b790748b97e5, type: 3}
+  rightAnswerAudio: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
   particles: {fileID: 5097034685690969709}
   timeBeforeDeletion: 0.05
 --- !u!65 &2111861187616605785
@@ -9767,8 +9773,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 2.5969734, y: 2.8832731, z: 8.126646}
-  m_Center: {x: 0.05963189, y: 0.94163585, z: 0.1011312}
+  m_Size: {x: 2.9022148, y: 3.6337755, z: 5.169989}
+  m_Center: {x: -0.092988595, y: 1.6247486, z: -0.29638058}
 --- !u!198 &5097034685690969709
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -10396,7 +10402,7 @@ ParticleSystem:
   ShapeModule:
     serializedVersion: 6
     enabled: 1
-    type: 0
+    type: 10
     angle: 25
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
@@ -10483,7 +10489,7 @@ ParticleSystem:
     sphericalDirectionAmount: 1
     randomPositionAmount: 0
     radius:
-      value: 0.6
+      value: 0.3
       mode: 0
       spread: 0
       speed:
@@ -14558,7 +14564,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14624,7 +14634,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_LocalPosition.x
@@ -14690,7 +14704,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.5
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 4173873760860446, guid: c46afe706fb2cde4883f7afaeaa67a78, type: 3}
       propertyPath: m_LocalPosition.x

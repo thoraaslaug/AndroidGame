@@ -17,6 +17,7 @@ public class Teacher : MonoBehaviour
     {
         player = GameObject.FindGameObjectWithTag("Player").transform;
         animator = gameObject.GetComponent<Animator>();
+        SoundManager.PlaySound("AngryTeacher");
     }
 
     // Update is called once per frame

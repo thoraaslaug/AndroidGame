@@ -12,6 +12,7 @@ public class SetLanguage : MonoBehaviour
     public Text easy;
     public Text normal;
     public Text hard;
+    public Text Back;
 
     public GameObject menuPanel;
     public GameObject langPanel;
@@ -38,6 +39,7 @@ public class SetLanguage : MonoBehaviour
         easy.text = languages[index].easy;
         normal.text = languages[index].normal;
         hard.text = languages[index].hard;
+        Back.text = languages[index].back;
         PlayerPrefs.SetInt("lang", index);
         currentLang = index;
     }
