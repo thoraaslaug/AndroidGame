@@ -164,7 +164,7 @@ public class PlayerMovement : MonoBehaviour
             //JoyStick
             if (joystick.Horizontal > 0.5 && (laneNum < 3) && (controlLocked == "n"))
             {
-                horizVel = 10;
+                horizVel = 9;
                 StartCoroutine(stopSlide());
                 laneNum += 1;
                 controlLocked = "y";
@@ -172,7 +172,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (joystick.Horizontal < -0.5 && (laneNum > 1) && (controlLocked == "n"))
             {
-                horizVel = -10;
+                horizVel = -9;
                 StartCoroutine(stopSlide());
                 laneNum -= 1;
                 controlLocked = "y";
@@ -194,6 +194,7 @@ public class PlayerMovement : MonoBehaviour
                 if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
                 {
                     horizVel = -10;
+
                     StartCoroutine(stopSlide());
                     laneNum -= 1;
                     controlLocked = "y";
@@ -202,6 +203,7 @@ public class PlayerMovement : MonoBehaviour
 
                 if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
                 {
+
                    horizVel = 10;
                     StartCoroutine(stopSlide());
                     laneNum += 1;
@@ -221,11 +223,14 @@ public class PlayerMovement : MonoBehaviour
 
 
 
+            
+        
+
 
 
 
         GetComponent<Rigidbody>().velocity = new Vector3(horizVel, GetComponent<Rigidbody>().velocity.y, 4);
-
+      
         float horizentalInput = joystick.Horizontal;
         verticalMove = joystick.Vertical;
 
@@ -235,14 +240,23 @@ public class PlayerMovement : MonoBehaviour
         {
             Die();
         }
-
-        rb.MovePosition(rb.position + forwardMove);
+        if (gameObject.transform.position.x < -3.3f)
+        {
+            gameObject.transform.position = new Vector3(-3.3f, gameObject.transform.position.y, gameObject.transform.position.z);
+        }
+        if (gameObject.transform.position.x > 3.3f)
+        {
+            gameObject.transform.position = new Vector3(3.3f, gameObject.transform.position.y, gameObject.transform.position.z);
+        }
+        
+        
+    rb.MovePosition(rb.position + forwardMove);
 
         if (toggle)
         {
             toggle = false;
             if (forwardSpeed < maxSpeed)
-                forwardSpeed += 0.2f * Time.fixedDeltaTime;
+                forwardSpeed += 0.1f * Time.fixedDeltaTime;
         }
         else
         {
@@ -250,6 +264,11 @@ public class PlayerMovement : MonoBehaviour
             if (Time.timeScale < 2f)
                 Time.timeScale += 0.01f * Time.fixedDeltaTime;
         }
+
+
+
+       
+
 
     }
 
@@ -323,9 +342,11 @@ public class PlayerMovement : MonoBehaviour
     }
     IEnumerator stopSlide()
     {
+      
         yield return new WaitForSeconds(.3f);
         horizVel = 0;
         controlLocked = "n";
+
     }
 
     IEnumerator stopJump() {

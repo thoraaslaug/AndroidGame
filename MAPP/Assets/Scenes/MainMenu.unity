@@ -3188,10 +3188,10 @@ MonoBehaviour:
     play: Jouer
     settings: "R\xE9glage"
     exit: Sortir
-    easy: Easy
-    normal: Normal
-    hard: Hard
-    back: 
+    easy: 'Facile '
+    normal: Ordinaire
+    hard: Difficile
+    back: Retourner
   Play: {fileID: 1119786339}
   Settings: {fileID: 1385358518}
   Exit: {fileID: 1479873022}
