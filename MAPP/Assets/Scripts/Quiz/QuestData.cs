@@ -123,7 +123,7 @@ public class QuestData : MonoBehaviour
     private void setHinder()
     {
 
-        Vector3 pos = new Vector3(0f, 0f, n + 56f);
+        Vector3 pos = new Vector3(0f, 0f, n + 70f);
         Instantiate(hinder, pos, Quaternion.identity, null);
 
     }
