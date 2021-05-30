@@ -1,6 +1,6 @@
-
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerState : MonoBehaviour
 {
@@ -68,6 +68,11 @@ public class PlayerState : MonoBehaviour
     {
         return currentRightAnswerIndex;
     }
+   
+ 
+
+        
+    
     public void setCounter()
     {
         antalRight++;

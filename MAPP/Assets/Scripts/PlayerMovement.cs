@@ -57,7 +57,10 @@ public class PlayerMovement : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         animator.SetBool("Dead", false);
         settingsMenu = GameObject.FindObjectOfType<SettingsMenu>();
-        control = settingsMenu.getIndex();
+       // control = settingsMenu.getIndex();
+        control = PlayerPrefs.GetInt("c");
+
+
     }
 
     //private void FixedUpdate()
@@ -178,48 +181,46 @@ public class PlayerMovement : MonoBehaviour
                 controlLocked = "y";
             }
         }
-        if (control == 0)
-        {
-            controller.SetActive(false);
-            //Touch Controll
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                startTouchPosition = Input.GetTouch(0).position;
-            }
+        //if (control == 0)
+        //{
+        //    controller.SetActive(false);
+        //    //Touch Controll
+        //    if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+        //    {
+        //        startTouchPosition = Input.GetTouch(0).position;
+        //    }
 
-            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-            {
-                endTouchPosition = Input.GetTouch(0).position;
+        //    if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+        //    {
+        //        endTouchPosition = Input.GetTouch(0).position;
 
-                if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
-                {
-                    horizVel = -10;
+        //        if ((endTouchPosition.x < startTouchPosition.x+25) && transform.position.x > -1f)
+        //        {
+        //            horizVel = -10;
 
-                    StartCoroutine(stopSlide());
-                    laneNum -= 1;
-                    controlLocked = "y";
-                }
+        //            StartCoroutine(stopSlide());
+        //            laneNum -= 1;
+        //            controlLocked = "y";
+        //            jumpLocked = "y";
+        //        }
 
 
-                if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
-                {
+        //        if ((endTouchPosition.x > startTouchPosition.x+25) && transform.position.x < 1f)
+        //        {
 
-                   horizVel = 10;
-                    StartCoroutine(stopSlide());
-                    laneNum += 1;
-                    controlLocked = "y"; 
-                }
+        //           horizVel = 10;
+        //            StartCoroutine(stopSlide());
+        //            laneNum += 1;
+        //            controlLocked = "y";
+        //            jumpLocked = "y";
+        //        }
 
                 
-                if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < 1f)
-                {
-                    jumping = true;
-                }
 
 
 
-            }
-        }
+        //    }
+        //}
 
 
 
@@ -283,12 +284,54 @@ public class PlayerMovement : MonoBehaviour
             a = true;
             jumping = true;
         }
-        
 
+        if (control == 0)
+        {
+            controller.SetActive(false);
+            //Touch Controll
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Began)
+            {
+                startTouchPosition = Input.GetTouch(0).position;
+            }
+
+            if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
+            {
+                endTouchPosition = Input.GetTouch(0).position;
+
+
+                if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < 0.3f)
+                {
+                    jumping = true;
+                }
+                if ((endTouchPosition.x < startTouchPosition.x + 250) && transform.position.x > -1f)
+                {
+                    horizVel = -10;
+
+                    StartCoroutine(stopSlide());
+                    laneNum -= 1;
+                    controlLocked = "y";
+                    jumpLocked = "y";
+                }
+
+
+                if ((endTouchPosition.x > startTouchPosition.x + 250) && transform.position.x < 1f)
+                {
+
+                    horizVel = 10;
+                    StartCoroutine(stopSlide());
+                    laneNum += 1;
+                    controlLocked = "y";
+                    jumpLocked = "y";
+                }
+
+
+            }
+        }
 
 
         if (jumping)
         {
+            jumping = false;
             float height = GetComponent<Collider>().bounds.size.y;
 
             bool isGrounded = Physics.Raycast(transform.position, Vector3.down, (height / 2) + 0.1f, groundLayerMask);
@@ -346,6 +389,7 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(.3f);
         horizVel = 0;
         controlLocked = "n";
+        jumpLocked = "n";
 
     }
 
