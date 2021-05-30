@@ -77,6 +77,7 @@ public class PlayerState : MonoBehaviour
     {
         antalRight++;
         quizAntalText.GetComponent<Text>().text = "" + antalRight;
+        PlayerPrefs.SetInt("AntalRight", antalRight);
     }
     public void DoHarm(int doHarmByThisMuch)
     {
