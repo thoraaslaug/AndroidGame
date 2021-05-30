@@ -10,7 +10,8 @@ public class SettingsMenu : MonoBehaviour
     public GameObject player;
     private bool joy = false;
 
-    public int index = 0;
+    public int index = 1;
+    
 
 
     public int getIndex()
@@ -21,6 +22,7 @@ public class SettingsMenu : MonoBehaviour
     private void Start()
     {
         GameObject.DontDestroyOnLoad(transform.gameObject);
+        PlayerPrefs.SetInt("c", index);
     }
     public void Settings()
     {
