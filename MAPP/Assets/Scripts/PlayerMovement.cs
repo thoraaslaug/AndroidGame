@@ -32,7 +32,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector3 move;
     public float forwardSpeed;
     public float maxSpeed;
-
+    private bool jumping;
     [SerializeField] int control = 0;
 
     public Teacher teacher;
@@ -57,7 +57,7 @@ public class PlayerMovement : MonoBehaviour
         animator = gameObject.GetComponent<Animator>();
         animator.SetBool("Dead", false);
         settingsMenu = GameObject.FindObjectOfType<SettingsMenu>();
-        control = settingsMenu.index;
+        control = settingsMenu.getIndex();
     }
 
     //private void FixedUpdate()
@@ -193,20 +193,29 @@ public class PlayerMovement : MonoBehaviour
 
                 if ((endTouchPosition.x < startTouchPosition.x) && transform.position.x > -1.75f)
                 {
-                    horizVel = 10;
+                    horizVel = -10;
                     StartCoroutine(stopSlide());
-                    laneNum += 1;
+                    laneNum -= 1;
                     controlLocked = "y";
                 }
 
 
                 if ((endTouchPosition.x > startTouchPosition.x) && transform.position.x < 1.75f)
                 {
-                    horizVel = -10;
+                   horizVel = 10;
                     StartCoroutine(stopSlide());
-                    laneNum -= 1;
-                    controlLocked = "y";
+                    laneNum += 1;
+                    controlLocked = "y"; 
                 }
+
+                
+                if ((endTouchPosition.y > startTouchPosition.y) && transform.position.y < 1f)
+                {
+                    jumping = true;
+                }
+
+
+
             }
         }
 
@@ -248,19 +257,18 @@ public class PlayerMovement : MonoBehaviour
     {
         verticalMove = joystick.Vertical;
         bool a = false;
-        bool jump = false;
         time = 0.5f;
        
         if (joystick.Vertical > 0.5)
         {
             a = true;
-            jump = true;
+            jumping = true;
         }
-        /*if (a) {
-            timer += Time.deltaTime;
-            print(timer);
-        } */
-        if (jump)
+        
+
+
+
+        if (jumping)
         {
             float height = GetComponent<Collider>().bounds.size.y;
 
@@ -268,7 +276,7 @@ public class PlayerMovement : MonoBehaviour
 
             if (isGrounded && jumpLocked == "n") 
             {
-
+                jumping = false;
                 print("jump");
                 jumpLocked = "y";
                 rb.AddForce(Vector3.up * jumpForce);

@@ -5627,6 +5627,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: Priority
+      value: 131
+      objectReference: {fileID: 0}
+    - target: {fileID: 290833025423032587, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
+      propertyPath: m_Volume
+      value: 0.058
+      objectReference: {fileID: 0}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: speed
       value: 6
@@ -5662,7 +5670,7 @@ PrefabInstance:
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: musicClip
       value: 
-      objectReference: {fileID: 8300000, guid: 4c83948f489ebeb419ab310578af89d7, type: 3}
+      objectReference: {fileID: 8300000, guid: ef30cbb67ece3fc4a9643da9b2d0e51a, type: 3}
     - target: {fileID: 290833025451896408, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
       propertyPath: particles
       value: 

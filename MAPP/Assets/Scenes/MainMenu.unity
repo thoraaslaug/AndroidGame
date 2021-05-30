@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657874, g: 0.49641258, b: 0.5748172, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1233,7 +1233,6 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
-  index: 1
 --- !u!114 &548852220
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2254,7 +2253,6 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
-  index: 1
 --- !u!114 &979509984
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2682,9 +2680,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1054729594}
-        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
-        m_MethodName: JoyStick
+      - m_Target: {fileID: 914002044}
+        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2694,9 +2692,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 914002044}
-        m_TargetAssemblyTypeName: UnityEngine.AudioSource, UnityEngine
-        m_MethodName: Play
+      - m_Target: {fileID: 1054729594}
+        m_TargetAssemblyTypeName: SettingsMenu, Assembly-CSharp
+        m_MethodName: JoyStick
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2759,7 +2757,6 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
-  index: 1
 --- !u!1 &1059940345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2792,7 +2789,6 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
-  index: 1
 --- !u!4 &1059940347
 Transform:
   m_ObjectHideFlags: 0
@@ -5396,4 +5392,3 @@ MonoBehaviour:
   settingsMenu: {fileID: 979509981}
   menu: {fileID: 1749334623}
   player: {fileID: 290833027307810432, guid: 74f8b87ee2ca0f74f9c56f8662fdc925, type: 3}
-  index: 1
