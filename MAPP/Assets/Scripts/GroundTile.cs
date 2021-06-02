@@ -33,19 +33,31 @@ public class GroundTile : MonoBehaviour
     public UnityEngine.GameObject obstaclePrefab;
     public UnityEngine.GameObject obstaclePrefabtwo;
     public UnityEngine.GameObject obstaclePrefabthree;
+    public UnityEngine.GameObject obstaclePrefabFour;
 
     void SpawnObstacle()
     {
         
-        GameObject[] obstacles = new GameObject[4];
+        GameObject[] obstacles = new GameObject[5];
         obstacles.SetValue(obstaclePrefab, 1);
         obstacles.SetValue(obstaclePrefabtwo, 2);
         obstacles.SetValue(obstaclePrefabthree, 3);
+        obstacles.SetValue(obstaclePrefabFour, 4);
         System.Random rand = new System.Random();
-        int rndnmb = rand.Next(1, 4);
-        int obstacleSpawnIndex = UnityEngine.Random.Range(2, 5);
+        int rndnmb = rand.Next(1, 5);
+        int obstacleSpawnIndex = UnityEngine.Random.Range(2, 5);//left mid right
         Transform spawnPoint = transform.GetChild(obstacleSpawnIndex).transform;
-        Instantiate(obstacles[rndnmb], spawnPoint.position, Quaternion.identity, transform);
+        if(rndnmb == 4)
+        {
+  
+            Instantiate(obstacles[rndnmb], transform.GetChild(3).transform.position, Quaternion.identity, transform);
+        }
+        else
+        {
+            Instantiate(obstacles[rndnmb], spawnPoint.position, Quaternion.identity, transform);
+        }
+        
+    
     }
 
     
